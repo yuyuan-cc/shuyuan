@@ -1,0 +1,51 @@
+[
+  {
+    "bookSourceGroup": "📚 搜书",
+    "bookSourceName": "夜伴书屋（优+）",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.yeban360.com",
+    "customButton": false,
+    "customOrder": 65,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "奇幻玄幻::/list/qihuan{{page}}.html\n科幻游戏::/list/kehuan{{page}}.html\n武侠仙侠::/list/wuxia{{page}}.html\n女生言情::/list/yanqing{{page}}.html\n都市娱乐::/list/dushi{{page}}.html\n历史军事::/list/lishi{{page}}.html\n悬疑灵异::/list/xuanyi{{page}}.html\n耽美纯爱::/list/chunai{{page}}.html\n外国文学::/list/foreign{{page}}.html\n成长励志::/list/lizhi{{page}}.html\n散文随笔::/list/sanwen{{page}}.html\n现代当代::/list/china{{page}}.html\n轻の小说::/list/lightnovel{{page}}.html\n健康生活::/list/health{{page}}.html\n文学名著::/list/mingzhu{{page}}.html",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 8.0.0; MIX 2 Build/OPR1.170623.027) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 YaBrowser/18.9.1.2199.00 Mobile Safari/537.36\"\n}",
+    "lastUpdateTime": 1788069826719,
+    "respondTime": 6958,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": ".book-detail@textNodes",
+      "kind": "[property=\"og:novel:status\"]@content&&[property=\"og:novel:update_time\"]@content##\\s.*",
+      "lastChapter": "[property=\"og:novel:latest_chapter_name\"]@content",
+      "name": "[property=\"og:novel:book_name\"]@content"
+    },
+    "ruleContent": {
+      "content": "#cont-body@html",
+      "imageStyle": "FULL",
+      "nextContentUrl": ".text-center@tag.a.2@href"
+    },
+    "ruleExplore": {
+      "bookList": ".media",
+      "bookUrl": "tag.a.1@href",
+      "coverUrl": "tag.img@src",
+      "intro": ".media-info@text",
+      "name": "tag.a.1@text"
+    },
+    "ruleSearch": {
+      "author": "tag.td.1@text",
+      "bookList": "tbody@tag.tr",
+      "bookUrl": "tag.a@href",
+      "name": "tag.td.0@text##\\《|\\》"
+    },
+    "ruleToc": {
+      "chapterList": ".col-md-6 a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/plus/search.php?q={{key}}",
+    "weight": 0
+  }
+]

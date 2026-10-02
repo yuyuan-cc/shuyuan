@@ -1,0 +1,56 @@
+[
+  {
+    "bookSourceComment": "// 修复1(关键)：正文容器不统一——站点正文 div 有 readcons/duboxs/chapterbo/chapterbox 四种 class，原规则只写 .readcons，导致大部分书\"正文失效\"。已改为 JS：定位 .tjlm+div 正文块并剔除 .ydgong 导航、article.hid/shid、.shidp 等水印。\n// 修复2：上一版 JS 用了顶层 return，Rhino 会抛 \"invalid return\" 导致\"正文获取失败\"，已改为末行表达式返回。\n// 原 作者：深院锁清秋",
+    "bookSourceGroup": "📖 小说",
+    "bookSourceName": "品书斋（优）",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.pinshuzhai.com",
+    "customButton": false,
+    "customOrder": 26,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "书香文库::/bookcat/shuxiangwenku/page/{{page}}\n中国文学::/bookcat/zhongguowenxue/page/{{page}}\n世界文学::/bookcat/shijiewenxue/page/{{page}}\n经典名著::/bookcat/jingdianmingzhu/page/{{page}}\n悬疑推理::/bookcat/xuanyituili-2/page/{{page}}\n散文集::/bookcat/sanwenji/page/{{page}}\n传记::/bookcat/zhuanji/page/{{page}}\n以下是网络小说分类 \n网络小说总类::/bookcat/wangluoxiaoshuo/page/{{page}}                          \n玄幻奇幻::/bookcat/xuanhuanqihuan/page/{{page}}\n武侠仙侠::/bookcat/wuxiaxianxia/page/{{page}}\n恋爱言情::/bookcat/lianaiyanqing/page/{{page}}\n都市生活::/bookcat/dushishenghuo/page/{{page}}\n悬疑推理::/bookcat/xuanyituili/page/{{page}}\n恐怖灵异::/bookcat/kongbulingyi/page/{{page}}\n科学幻想::/bookcat/kehuan/page/{{page}}\n历史军事::/bookcat/lishijunshi/page/{{page}}\n穿越重生::/bookcat/chuanyuechongsheng/page/{{page}}",
+    "header": "{  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36\"}",
+    "lastUpdateTime": 1790002390202,
+    "loginUrl": "https://www.pinshuzhai.com",
+    "respondTime": 2676,
+    "ruleBookInfo": {
+      "author": "@XPath://meta[@property='og:novel:author']/@content",
+      "coverUrl": "@XPath://meta[@property='og:image']/@content@js:encodeURI(result) + ',{\"headers\":{\"Referer\":\"https://www.pinshuzhai.com\"}}'",
+      "intro": ".docspt@text##作品简介：",
+      "kind": ".catb a@text&&",
+      "name": "@XPath://meta[@property='og:novel:book_name']/@content",
+      "wordCount": ".nif span@text"
+    },
+    "ruleContent": {
+      "content": "@js:\nvar html = String(result);\nif (html.indexOf(\"readbox\") < 0 && html.indexOf(\"tjlm\") < 0) { try { html = String(src); } catch(e){} }\nvar doc = Packages.org.jsoup.Jsoup.parse(html);\nvar wrap = doc.selectFirst(\".tjlm + div\");\nif (wrap == null) { wrap = doc.selectFirst(\".readcons, .duboxs, .chapterbo, .chapterbox\"); }\nvar out = \"\";\nif (wrap != null) {\n    var junk = wrap.select(\".ydgong, article.hid, article.shid, .shid, .shidp, script, style\");\n    junk.remove();\n    out = String(wrap.html());\n}\nout;\n"
+    },
+    "ruleExplore": {
+      "author": ".bookinfo .author a@text",
+      "bookList": ".catdanlist ul li",
+      "bookUrl": ".bookinfo h4 a@href",
+      "coverUrl": "div:first-child a img@src@js:encodeURI(result) + ',{\"headers\":{\"Referer\":\"https://www.pinshuzhai.com\"}}'",
+      "intro": ".bookinfo p:last-of-type@text",
+      "kind": ".bookinfo .cats@text",
+      "name": ".bookinfo h4 a@text"
+    },
+    "ruleSearch": {
+      "author": ".bookinfo .author a@text",
+      "bookList": ".catdanlist ul li",
+      "bookUrl": ".bookinfo h4 a@href",
+      "coverUrl": "div:first-child a img@src@js:encodeURI(result) + ',{\"headers\":{\"Referer\":\"https://www.pinshuzhai.com\"}}'",
+      "intro": ".bookinfo p:last-of-type@text",
+      "kind": ".bookinfo .cats@text",
+      "name": ".bookinfo h4 a@text"
+    },
+    "ruleToc": {
+      "chapterList": ".newzxzj .zjlist a",
+      "chapterName": "@text",
+      "chapterUrl": "@href"
+    },
+    "searchUrl": "page/{{page}}?s={{key}}",
+    "weight": 0
+  }
+]

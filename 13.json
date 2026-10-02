@@ -1,0 +1,44 @@
+[
+  {
+    "bookSourceComment": "25.4.4 修复目录、线路优选改为单线程\n25.3.21增加多条线路\n25.1.3 添加多线路优选功能，修复目录乱序\n24.12.18修复by 明月",
+    "bookSourceGroup": "📚 搜书",
+    "bookSourceName": "海棠搜书/蓝海⊙明月⊙",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.haitangsoushu.com",
+    "customButton": false,
+    "customOrder": 69,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "eventListener": false,
+    "jsLib": "function bhost(){var d=\"www.lanlanbo.com\",s=this.source;try{var u=(p=>p?Object.values(p[0])[0]:d)(s.getVariable()&&JSON.parse(s.getVariable()))||d;return(/^https?:/.test(u)?u:\"https://\"+u).replace(/\\/$/,\"\")}catch(e){return(/^https?:/.test(d)?d:\"https://\"+d).replace(/\\/$/,\"\")}}",
+    "lastUpdateTime": 1788054448346,
+    "loginUi": "[\n{\"name\":\"多线路优选\",\"type\":\"button\",\n\"action\":\"checkHostsLatency(hosts)\"}\n]",
+    "loginUrl": "var Importer = new JavaImporter(\n    Packages.java.net,\n    Packages.java.io,\n    Packages.java.util,\n    Packages.java.lang,\n    Packages.java.util.concurrent\n);\n\nvar hosts = [\n    \"www.lansebook.com\",\n    \"www.nicelib.cc\",\n    \"www.sadseas.com\",\n    \"www.letsboox.com\",\n    \"www.everjump.cc\",\n    \"www.lanlanbo.com\",\n    \"www.memeblue.com\",\n    \"www.lhss.cc\",\n    \"https://www.memelib.net/\",\n    \n];\n\nfunction getTimestamp() {\n    return Packages.java.lang.System.currentTimeMillis();\n}\n\nfunction checkLatency(urlString) {\n    var connection = null;\n    try {\n        if (!urlString.startsWith(\"http://\") && !urlString.startsWith(\"https://\")) {\n            urlString = \"https://\" + urlString;\n        }\n        var startTime = getTimestamp();\n        var url = new Packages.java.net.URL(urlString);\n        connection = url.openConnection();\n        connection.setRequestMethod(\"GET\");\n        connection.setConnectTimeout(3000);\n        connection.setReadTimeout(3000);\n        \n        var inputStream = connection.getInputStream();\n        inputStream.close();\n        \n        var latency = getTimestamp() - startTime;\n        java.log(\"[SUCCESS] \" + urlString + \" | \" + latency + \"ms\");\n        return latency;\n    } catch (e) {\n        java.log(\"[FAILED] \" + urlString + \" | \" + e);\n        return null;\n    } finally {\n        try {\n            if (connection) connection.disconnect();\n        } catch (e) {}\n    }\n}\n\nfunction checkHostsLatency(hosts) {\n    with (Importer) {\n        try {\n            var totalStart = getTimestamp();\n            java.longToast(\"🚀 启动检测\");\n            \n            var results = [];\n            var total = hosts.length;\n            \n            for (var i = 0; i < hosts.length; i++) {\n                var host = hosts[i];\n                // 更新进度提示\n                java.longToast(\"🔍 检测中 (\" + (i+1) + \"/\" + total + \")\");\n                \n                var latency = checkLatency(host);\n                if (latency !== null) {\n                    results.push({\n                        host: host,\n                        latency: latency\n                    });\n                }\n            }\n\n            var totalTime = getTimestamp() - totalStart;\n            java.log(\"总耗时: \" + totalTime + \"ms\");\n            \n            if (results.length === 0) {\n                java.toast(\"❌ 无可用主机\");\n            } else {\n                results.sort(function(a, b) {\n                    return a.latency - b.latency;\n                });\n                \n                var best = results[0];\n                var summary = \"✅ 完成检测\\n最佳: \" + best.host + \"\\n⏱️ \" + best.latency + \"ms\";\n                java.longToast(summary);\n                let ms = \"共找到 \" + results.length + \"/\" + total + \" 可用节点\"\n                java.longToast(ms);\n                java.log(ms);\n                source.setVariable(JSON.stringify(results, null, 2));\n            }\n        } catch (e) {\n            java.log(\"[FATAL] \" + e);\n        }\n    }\n}",
+    "respondTime": 5913,
+    "ruleBookInfo": {
+      "intro": "<js>\nlist=java.getElements(\"@@class.BGsectionThree-content@li\").toArray();\nintro=java.getElements('#intro').html();\nhref='';text='';\nfor(i in list){\nhref=href+list[i].select('a:eq(1)').attr('href')+'\\n';\ntext=text+'【'+i+'】'+list[i].html()+'\\n';\n}\njava.put('list',href);\nxu=(book.getVariable(\"custom\")==null||book.getVariable(\"custom\")==\"\")?\"0\":book.getVariable(\"custom\");\nlaiyuan='当前来源【'+xu+'】';\nresult='换源列表（点击设置书籍变量，输入序号，确认后刷新，可更改对应的源，默认为0）\\n'+text+'\\n'+laiyuan+'\\n--------------\\n'+intro\n</js>\n##更新 .*",
+      "tocUrl": "@js:\nlist=java.get('list').split('\\n');\nintro=String(book.intro);\ncustomIntro=intro.match(/来源【(\\d+)】/)[1];\nresult=list[customIntro]\n##$##catalog%2F"
+    },
+    "ruleContent": {
+      "content": "@js:\nfunction d(a, b) {\n    b = java.md5Encode(b);\n    var d = b.substring(0, 16);\n    var e = b.substring(16);\n    return java.aesBase64DecodeToString(\n        a, \n        e, \n        \"AES/CBC/PKCS5Padding\", \n        d\n    );\n}\n\neval(result.match(/(d\\(\"[\\s\\S]+?\"\\))\\)/)[1]);"
+    },
+    "ruleExplore": {},
+    "ruleSearch": {
+      "author": "tag.a.1@text",
+      "bookList": "@css:.SHsectionThree-middle p:not(.intro)",
+      "bookUrl": "tag.a.0@href",
+      "checkKeyWord": "传说",
+      "kind": "tag.a.-1@text",
+      "name": "tag.a.0@text##《|》"
+    },
+    "ruleToc": {
+      "chapterList": "class.BCsectionTwo-top-chapter@li\n<js>\nlist = result.toArray();\ns = /originalOrder = .*?;/.test(src)?eval(src.match(/originalOrder = (.*?);/)[1]):result;\nl = [];\nif(/<li.*?\"\\d+\" .*?-[^\"]+=\"\\d+\">/.test(result)){\n\tnum = String(result).match(/<li.*?\"\\d+\" (.*?-[^\"]+)=\"\\d+\">/)[1];\n\tl = list.sort((a,b)=>a.attr(num)-b.attr(num));\n\t}else{\nfor(i in list){ l[s[i]] = list[i]};\n}\nl.join(\"\")\n</js>\ntag.a",
+      "chapterName": "<js>\n//java.log(result)\ntry{\nresult = String(result);\n!/\\.html/.test(result)?result.match(/class=\"g\".*?=\"L2[a-zA-Z\\d\\+=\\/]+?\".*?=\"(.*?)\"/)[1]:java.getString(\"@@data-real||text\");\n}catch(e){\n\tresult = result.match(/class=\"g\".*?=\"(.*?)\".*?=\"L2[A-Za-z\\d\\+=\\/]+?\"/)[1]\n\t}\n</js>\n",
+      "chapterUrl": "@href\n<js>\ntry{\nlet re = /class=\"g\".*?=\"(L2[A-Za-z\\d\\+=\\/]+)/;\nresult = /\\.html/.test(result)?result:java.base64Decode(java.log(String(src).match(re)[1]))\n}catch(e){}\n</js>",
+      "nextTocUrl": "text.下一页@href||text.下一頁@href"
+    },
+    "searchUrl": "{{bhost()}}/s/{{key}}/{{page}}",
+    "weight": 0
+  }
+]

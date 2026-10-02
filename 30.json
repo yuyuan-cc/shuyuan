@@ -1,0 +1,51 @@
+[
+  {
+    "bookSourceComment": "动漫啦（dongman.la）｜日漫/国漫/港台/欧美，正常向作品，无广告。正文走 all.html（一话全部图片单页加载）。",
+    "bookSourceGroup": "🎨 漫画",
+    "bookSourceName": "动漫啦",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.dongman.la",
+    "customButton": false,
+    "customOrder": 14,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "[{\"title\": \"日本漫画\", \"url\": \"https://www.dongman.la/manhua/japan/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"国产漫画\", \"url\": \"https://www.dongman.la/manhua/guochan/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"韩国漫画\", \"url\": \"https://www.dongman.la/manhua/hanguo/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"港台漫画\", \"url\": \"https://www.dongman.la/manhua/hongkongtaiwan/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"欧美漫画\", \"url\": \"https://www.dongman.la/manhua/oumei/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"连载中\", \"url\": \"https://www.dongman.la/manhua/serial/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"已完结\", \"url\": \"https://www.dongman.la/manhua/finish/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"少年热血\", \"url\": \"https://www.dongman.la/manhua/node/2/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"少女爱情\", \"url\": \"https://www.dongman.la/manhua/node/3/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"耽美百合\", \"url\": \"https://www.dongman.la/manhua/node/10/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"恐怖灵异\", \"url\": \"https://www.dongman.la/manhua/node/1/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"武侠格斗\", \"url\": \"https://www.dongman.la/manhua/node/4/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"竞技体育\", \"url\": \"https://www.dongman.la/manhua/node/5/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"侦探悬疑\", \"url\": \"https://www.dongman.la/manhua/node/6/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"幽默搞笑\", \"url\": \"https://www.dongman.la/manhua/node/7/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"科幻魔法\", \"url\": \"https://www.dongman.la/manhua/node/8/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"其他漫画\", \"url\": \"https://www.dongman.la/manhua/node/9/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}]",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 13; SM-S918B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\", \"Referer\": \"https://www.dongman.la/\"}",
+    "lastUpdateTime": 1790594306065,
+    "respondTime": 13815,
+    "ruleBookInfo": {
+      "author": "a[href=\"#\"] span[itemprop=\"name\"]@text",
+      "coverUrl": "meta[property=\"og:image\"]@content",
+      "intro": "meta[property=\"og:description\"]@content",
+      "name": "h1@text"
+    },
+    "ruleContent": {
+      "content": "@webjs:(function(){var im=document.querySelectorAll('img.lazy-image');var out=[];for(var i=0;i<im.length;i++){var s=im[i].getAttribute('data-src')||im[i].getAttribute('src');if(s&&s.indexOf('img.dongman.la')>-1){if(s.indexOf('//')===0)s='https:'+s;out.push('<img src=\"'+s+'\">');}}return out.join('\\n');})()"
+    },
+    "ruleExplore": {
+      "bookList": ".cy_list_mh > ul",
+      "bookUrl": "li.title a@href",
+      "coverUrl": "a.pic img@src",
+      "intro": "li.info@text##^简介：##",
+      "kind": "li.biaoqian@text##^标签：##",
+      "name": "li.title a@text"
+    },
+    "ruleSearch": {
+      "bookList": ".cy_list_mh > ul",
+      "bookUrl": "li.title a@href",
+      "coverUrl": "a.pic img@src",
+      "intro": "li.info@text##^简介：##",
+      "kind": "li.biaoqian@text##^标签：##",
+      "name": "li.title a@text"
+    },
+    "ruleToc": {
+      "chapterList": "@webjs:(function(){var a=[].slice.call(document.querySelectorAll('div.grid > a[href^=\"/manhua/chapter/\"]'));a.reverse();var seen={},r=[];for(var i=0;i<a.length;i++){var u=a[i].getAttribute('href');if(u&&!seen[u]){seen[u]=1;r.push({name:a[i].textContent.trim(),url:'https://www.dongman.la'+u+'all.html'});}}return JSON.stringify(r);})()",
+      "chapterName": "name",
+      "chapterUrl": "url"
+    },
+    "searchUrl": "https://www.dongman.la/manhua/search/?key={key}",
+    "weight": 0
+  }
+]

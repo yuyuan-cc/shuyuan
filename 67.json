@@ -1,0 +1,48 @@
+[
+  {
+    "bookSourceComment": "W漫画 source.wmanhua.com | 发现页四列 | 目录走 POST /comic/{id} 全量并正序 | 正文图由页面 JS 参数(num+pasd)生成",
+    "bookSourceGroup": "🎨 漫画",
+    "bookSourceName": "W漫画",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://source.wmanhua.com",
+    "customButton": false,
+    "customOrder": 41,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "[{\"title\": \"全部\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=0&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"日本漫画\", \"url\": \"https://source.wmanhua.com/sort?category=1&tag=0&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"韩国漫画\", \"url\": \"https://source.wmanhua.com/sort?category=2&tag=0&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"大陆漫画\", \"url\": \"https://source.wmanhua.com/sort?category=3&tag=0&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"港台漫画\", \"url\": \"https://source.wmanhua.com/sort?category=4&tag=0&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}},{\"title\": \"欢乐\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=1&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"爱情\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=3&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"奇幻\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=4&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"冒险\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=5&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"重生\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=8&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"修仙\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=9&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"校园\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=10&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"悬疑\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=11&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"玄幻\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=13&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"搞笑\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=15&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"格斗\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=16&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"灵异\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=18&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"都市\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=21&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"后宫\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=22&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"穿越\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=23&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"百合\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=24&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"热血\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=27&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"异能\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=30&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"魔法\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=35&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"科幻\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=36&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"恋爱\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=72&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"彩色\", \"url\": \"https://source.wmanhua.com/sort?category=0&tag=73&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}]",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; SM-G973F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.105 Mobile Safari/537.36\", \"Referer\": \"https://source.wmanhua.com/\", \"Accept\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\"}",
+    "lastUpdateTime": 1789278686289,
+    "respondTime": 12270,
+    "ruleBookInfo": {
+      "author": "//div[contains(text(),'作者：')]/text()##作者：",
+      "coverUrl": "class.cover@data-src",
+      "intro": "//meta[@name='description']/@content##[\\s\\S]*简介：",
+      "kind": "//div[contains(text(),'标签')]/a/text()",
+      "name": "class.info@tag.h1@text"
+    },
+    "ruleContent": {
+      "content": "@js:(function(){try{var h=''+result;var mb=h.match(/var\\s+pasd\\s*=\\s*\"([^\"]+)\"/)||h.match(/(https:\\/\\/image\\d*\\.wmanhua\\.com\\/mh\\/[0-9a-f]+\\/[0-9a-f\\-]+\\/)/);if(!mb){return '';}var base=mb[1];if(base.charAt(base.length-1)!='/'){base+='/';}var mn=h.match(/var\\s+num\\s*=\\s*eval\\(\"(\\d+)\"\\)/)||h.match(/var\\s+num\\s*=\\s*(\\d+)/);var n=mn?parseInt(mn[1]):0;if(!n){return '';}var out='';for(var i=1;i<=n;i++){out+='<img src=\"'+base+i+'.webp\" />';}return out;}catch(e){return '';}})()"
+    },
+    "ruleExplore": {
+      "bookList": "class.card-content",
+      "bookUrl": "tag.a@href",
+      "coverUrl": "tag.img@data-src",
+      "name": "class.cardtitle@text"
+    },
+    "ruleSearch": {
+      "bookList": "class.card-content",
+      "bookUrl": "tag.a@href",
+      "coverUrl": "tag.img@data-src",
+      "name": "class.cardtitle@text"
+    },
+    "ruleToc": {
+      "chapterList": "@js:(function(){try{var u=''+baseUrl;var m=u.match(/\\/comic\\/(\\d+)/);if(!m){m=(''+result).match(/\\/comic\\/(\\d+)/);}if(!m){return [];}var id=m[1];var headers={'Content-Type':'application/json','Referer':'https://source.wmanhua.com/','User-Agent':'Mozilla/5.0 (Linux; Android 10; SM-G973F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.105 Mobile Safari/537.36'};var resp=java.post('https://source.wmanhua.com/comic/'+id,'{}',headers);var obj=JSON.parse(resp.body());var list=(obj&&obj.data&&obj.data.chapters)?obj.data.chapters:null;if(!list){return [];}var arr=[];for(var i=0;i<list.length;i++){var c=list[i];arr.push({chapterName:String(c.chapterName||c.name||''),chapterUrl:'https://source.wmanhua.com/chapter/'+id+'-'+c.id+'.html'});}arr.reverse();return arr;}catch(e){return [];}})()",
+      "chapterName": "chapterName",
+      "chapterUrl": "chapterUrl"
+    },
+    "searchUrl": "https://source.wmanhua.com/search?query={{key}}",
+    "weight": 0
+  }
+]

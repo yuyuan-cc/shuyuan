@@ -1,0 +1,49 @@
+[
+  {
+    "bookSourceComment": "已补全搜索规则（2026-09-28）",
+    "bookSourceGroup": "🎨 漫画",
+    "bookSourceName": "桃子漫画",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://jsnanyan.com",
+    "customButton": false,
+    "customOrder": 13,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "<js>\nvar arr = [\n  {title:\"🔥热门\", url:\"https://jsnanyan.com/category/order/hits/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"🕐更新时间\", url:\"https://jsnanyan.com/category/order/addtime/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"🇨🇳国产漫画\", url:\"https://jsnanyan.com/category/list/1/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"🇯🇵日本漫画\", url:\"https://jsnanyan.com/category/list/2/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"🇰🇷韩国漫画\", url:\"https://jsnanyan.com/category/list/5/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"🖌画涯漫画\", url:\"https://jsnanyan.com/category/list/3/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"🍊金桔漫画\", url:\"https://jsnanyan.com/category/list/4/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"❤爱情\", url:\"https://jsnanyan.com/category/tags/60/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"💕言情\", url:\"https://jsnanyan.com/category/tags/55/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"✨奇幻\", url:\"https://jsnanyan.com/category/tags/52/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"⚡异能\", url:\"https://jsnanyan.com/category/tags/53/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"🏳️ABO\", url:\"https://jsnanyan.com/category/tags/50/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"⚫黑白漫\", url:\"https://jsnanyan.com/category/tags/51/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"😄欢乐向\", url:\"https://jsnanyan.com/category/tags/58/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"📚合集\", url:\"https://jsnanyan.com/category/tags/57/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"📄短篇\", url:\"https://jsnanyan.com/category/tags/49/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"🌍西方\", url:\"https://jsnanyan.com/category/tags/56/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25},\n  {title:\"👤单女主\", url:\"https://jsnanyan.com/category/tags/54/page/{{page}}\", layout_flexGrow:1, layout_flexBasisPercent:0.25}\n];\nJSON.stringify(arr)\n</js>",
+    "header": "@js:\nJSON.stringify({\n\"User-Agent\": \"Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Mobile Safari/537.36\",\n\"Accept-Language\": \"zh-CN,zh;q=0.9\"\n})",
+    "lastUpdateTime": 1790814784449,
+    "respondTime": 3582,
+    "ruleBookInfo": {
+      "author": "@css:a[href=/author] span@text",
+      "coverUrl": "@css:[data-cover]@attr[data-cover]",
+      "intro": "@css:meta[name=description]@attr[content]",
+      "name": "@css:h1@text"
+    },
+    "ruleContent": {
+      "content": "@js:\ntry {\n  var h = String(result || '');\n  var seg = h;\n  var mc = h.match(/<div[^>]*id=\"chapcontent\"[\\s\\S]*?<\\/div>\\s*<\\/div>\\s*<\\/div>/);\n  if (seg.indexOf('h-auto') < 0) seg = h;\n  var re = /<img[^>]*>/g, m, c = [];\n  while ((m = re.exec(seg)) !== null) {\n    var tag = m[0];\n    var cls = (tag.match(/class=\"([^\"]*)\"/) || [])[1] || '';\n    var src = (tag.match(/src=\"([^\"]*)\"/) || [])[1] || '';\n    if (!src) continue;\n    if (cls.indexOf('h-auto') < 0) continue;\n    if (cls.indexOf('lazyload') >= 0) continue;\n    c.push(src);\n  }\n  var out = c.map(function(u){ return '<img src=\"' + u + '\">'; }).join('\\n');\n  out;\n} catch(e) { '' }",
+      "imageStyle": "FULL",
+      "title": "@css:.article-title@text"
+    },
+    "ruleExplore": {
+      "bookList": "@css:div.cardlist div.pb-2",
+      "bookUrl": "@css:a@href",
+      "coverUrl": "@css:img.card@src",
+      "name": "@css:h3.cardtitle@text"
+    },
+    "ruleSearch": {
+      "bookList": "@css:div.cardlist div.pb-2",
+      "bookUrl": "@css:a@href",
+      "coverUrl": "@css:img.card@src",
+      "name": "@css:h3.cardtitle@text"
+    },
+    "ruleToc": {
+      "chapterList": "@js:\ntry {\n    let html = String(result || '');\n    // 正则提取章节（a标签 + 标题），不依赖元素API\n    let re = /<a href=\"(\\/chapter\\/\\d+)\"[^>]*>[\\s\\S]*?<span class=\"chaptertitle[^\"]*\"[^>]*>([\\s\\S]*?)<\\/span>/g;\n    let arr = [], m, idx = 0;\n    while ((m = re.exec(html)) !== null) {\n        let title = m[2].replace(/<[^>]+>/g, '').trim();\n        // 排序键：预告/序章特殊处理，其余按\"第X话\"\n        let key = 999;\n        if (/^预告/.test(title)) key = -1;\n        else if (/^序章/.test(title)) key = 0.5;\n        else { let tm = title.match(/第\\s*(\\d+)\\s*话/); if (tm) key = parseInt(tm[1]); }\n        arr.push({chapterName: title, chapterUrl: m[1], key: key, idx: idx++});\n    }\n    // 按话数排序，同话数保持原顺序\n    arr.sort(function(a,b){ return a.key !== b.key ? a.key - b.key : a.idx - b.idx; });\n    // 去重：识别出话数的(key<999)按话数去重，未识别的全部保留\n    let seen = {}, out = [];\n    arr.forEach(function(it){ if (it.key === 999 || !seen[it.key]) { seen[it.key] = 1; out.push({chapterName: it.chapterName, chapterUrl: it.chapterUrl}); } });\n    out;\n} catch(e) { [] }",
+      "chapterName": "chapterName",
+      "chapterUrl": "chapterUrl"
+    },
+    "searchUrl": "https://www.jsnanyan.com/search?key={{key}}",
+    "weight": 0
+  }
+]

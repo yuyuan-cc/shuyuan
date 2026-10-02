@@ -1,0 +1,50 @@
+[
+  {
+    "bookSourceComment": "得奇小说网 www.deqixs.org（杰奇CMS）。支持模糊搜索（书名包含关键词即命中，全部结果单页返回）；注意同一会话约10秒内连续搜索会被网站静默拦截返回空结果，稍等再搜即可。精确命中书名时网站直接返回详情页，模糊时返回列表页，两种布局已用||兜底兼容。正文有章节内分页（已自动拼接），页尾推广行已净化。UTF-8 编码。",
+    "bookSourceGroup": "📖 小说",
+    "bookSourceName": "得奇小说网",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.deqixs.org",
+    "customButton": false,
+    "customOrder": 52,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": false,
+    "eventListener": false,
+    "header": "{\"User-Agent\":\"Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\"}",
+    "lastUpdateTime": 1788885130790,
+    "respondTime": 2778,
+    "ruleBookInfo": {
+      "author": "class.itemtxt@tag.p.1@tag.a@text##^作者：",
+      "coverUrl": "class.item@tag.img@src",
+      "intro": "class.des.0@textNodes",
+      "kind": "class.itemtxt@tag.p.0@tag.span@text",
+      "lastChapter": "class.itemtxt@tag.ul@tag.li.0@tag.a@text",
+      "name": "class.itemtxt@tag.h1@tag.a@text",
+      "wordCount": "class.itemtxt@tag.p.0@tag.span.2@text"
+    },
+    "ruleContent": {
+      "content": "class.con@html##求书、催更、报错.*?deqixs",
+      "nextContentUrl": "text.下一页@href"
+    },
+    "ruleExplore": {},
+    "ruleSearch": {
+      "author": "class.itemtxt@tag.p.1@tag.a@text||class.itemtxt@tag.ul@tag.li.0@text##^作者：",
+      "bookList": "class.item",
+      "bookUrl": "tag.h1@tag.a@href||tag.h3@tag.a@href###dir",
+      "coverUrl": "tag.img@src",
+      "intro": "class.itemtxt@tag.p.0@text##^简介：\\s*|^连载中.*",
+      "kind": "class.itemtxt@tag.p.0@tag.span@text",
+      "lastChapter": "class.itemtxt@tag.ul@tag.li.0@tag.a@text||class.itemtxt@tag.ul@tag.li.2@tag.a@text",
+      "name": "tag.h1@tag.a@text||tag.h3@tag.a@text",
+      "wordCount": "class.itemtxt@tag.p.0@tag.span.2@text"
+    },
+    "ruleToc": {
+      "chapterList": "id.list@tag.li",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href"
+    },
+    "searchUrl": "https://www.deqixs.org/modules/article/search.php,{\"method\":\"POST\",\"body\":\"searchkey={{key}}&action=login&searchtype=articlename\"}",
+    "weight": 0
+  }
+]

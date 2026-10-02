@@ -1,0 +1,53 @@
+[
+  {
+    "bookSourceGroup": "📖 小说",
+    "bookSourceName": "来读小说（+++）",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.laidudu.com/",
+    "bookUrlPattern": "https://www.laidudu.com/book/\\d+/",
+    "customButton": false,
+    "customOrder": 44,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "玄幻小说::/dusort1/{{page}}.html\n武侠小说::/dusort2/{{page}}.html\n都市小说::/dusort3/{{page}}.html\n历史小说::/dusort4/{{page}}.html\n网游小说::/dusort5/{{page}}.html\n科幻小说::/dusort6/{{page}}.html\n女生小说::/dusort7/{{page}}.html",
+    "lastUpdateTime": 1787467749114,
+    "respondTime": 3377,
+    "ruleBookInfo": {
+      "author": "class.info@class.small@tag.span.0@text",
+      "coverUrl": "class.cover@img@src",
+      "intro": "class.intro@text##简介：",
+      "kind": "class.info@class.small@tag.span.1@text&&\nclass.info@class.small@tag.span.4@text&&\nclass.info@class.small@tag.span.2@text##分类：|状态：|更新时间：",
+      "lastChapter": "class.info@class.small@tag.span.5@a@text",
+      "name": "class.info@h2@text"
+    },
+    "ruleContent": {
+      "content": "id.content@html##请记住本书首发.*com"
+    },
+    "ruleExplore": {
+      "author": "class.s4@text",
+      "bookList": "class.l@li",
+      "bookUrl": "class.s2@a@href",
+      "coverUrl": "class.s2@tag.a@href<js>\nvar id = result.match(/(\\d+)\\/?$/)[1];\nvar iid = parseInt(id/1000);\n'https://www.laidudu.com/headimgs/'+iid+'/'+id+'/s'+id+'.jpg';\n</js>",
+      "kind": "class.s5@text",
+      "lastChapter": "class.s3@a@text",
+      "name": "class.s2@a@text"
+    },
+    "ruleSearch": {
+      "author": "class.author@text",
+      "bookList": "class.bookbox",
+      "bookUrl": "h4@a@href",
+      "coverUrl": "img@src",
+      "lastChapter": "class.update@a@text",
+      "name": "h4@a@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.listmain@dd",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href"
+    },
+    "searchUrl": "https://www.laidudu.com/read/search/,<\n\"method\": \"POST\",\n\"body\": \"searchkey={{key}}\"\n>",
+    "weight": 0
+  }
+]

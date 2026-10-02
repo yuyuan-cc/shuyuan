@@ -1,0 +1,54 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "📖 小说",
+    "bookSourceName": "海棠书屋",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://wap.haitangshuwu.info",
+    "customButton": false,
+    "customOrder": 76,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "@js:\nvar menus = [\n    { title: \"完本\", url: \"/full/{{page}}/\", flexBasis: 1 },\n    \n    { title: \"════ 排 行 ════\", url: \"\", flexBasis: 1 },\n    \n    { title: \"总点击\", url: \"/top/allvisit_{{page}}/\", flexBasis: 0.2 },\n    { title: \"月点击\", url: \"/top/monthvisit_{{page}}/\", flexBasis: 0.2 },\n    { title: \"周点击\", url: \"/top/weekvisit_{{page}}/\", flexBasis: 0.2 },\n    \n    { title: \"════ 分 类 ════\", url: \"\", flexBasis: 1 },\n    \n    { title: \"玄幻奇幻\", url: \"/sort/1_{{page}}/\", flexBasis: 0.25 },\n    { title: \"武侠仙侠\", url: \"/sort/2_{{page}}/\", flexBasis: 0.25 },\n    { title: \"都市言情\", url: \"/sort/3_{{page}}/\", flexBasis: 0.25 },\n    { title: \"历史穿越\", url: \"/sort/4_{{page}}/\", flexBasis: 0.25 },\n    \n    { title: \"网游竞技\", url: \"/sort/5_{{page}}/\", flexBasis: 0.25 },\n    { title: \"科幻灵异\", url: \"/sort/6_{{page}}/\", flexBasis: 0.25 },\n    { title: \"恐怖惊悚\", url: \"/sort/7_{{page}}/\", flexBasis: 0.25 },\n    { title: \"其他类型\", url: \"/sort/8_{{page}}/\", flexBasis: 0.25 }\n];\n\nvar result = [];\nfor (var i = 0; i < menus.length; i++) {\n    var item = menus[i];\n    var style = {\n        layout_flexGrow: 1,\n        layout_flexBasisPercent: item.flexBasis\n    };\n    \n    result.push({\n        title: item.title,\n        url: item.url,\n        style: style\n    });\n}\n\nJSON.stringify(result);",
+    "lastUpdateTime": 1785664944946,
+    "respondTime": 19017,
+    "ruleBookInfo": {
+      "author": "class.xx@ul@li.2@text",
+      "coverUrl": "class.xsfm@img@src",
+      "intro": "class.jianjie@text",
+      "kind": "class.xx@ul@li.1@a@text",
+      "lastChapter": "class.xx@ul@li.3@a@text",
+      "name": "class.xx@ul@li.0@text",
+      "tocUrl": "text.查看更多章节@href"
+    },
+    "ruleContent": {
+      "content": "article@html@js:java.t2s(result)"
+    },
+    "ruleExplore": {
+      "author": "span.1@a@text",
+      "bookList": "class.list@ul",
+      "bookUrl": "li.0@a@href",
+      "coverUrl": "li.0@a@img@src",
+      "intro": "span.2@text",
+      "kind": "span.3@text",
+      "name": "span.0@text"
+    },
+    "ruleSearch": {
+      "author": "@a.2@text",
+      "bookList": "class.fk@li",
+      "bookUrl": "@a.1@href",
+      "kind": "@a.0@text",
+      "name": "@a.1@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.zjlb@class.lb@ul@li!-1",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": "class.showpage@ul@li.-3@a@href\n<js>\nlet list = [];\nconst maxPageUrl = String(result[0]);\nconst baseMatch = maxPageUrl.match(/(.*)_/);\nconst pageMatch = maxPageUrl.match(/_(\\d+)\\//);\n\nif (baseMatch && pageMatch) {\n    const basePath = baseMatch[1];\n    const maxPageNum = parseInt(pageMatch[1]);\n    \n    if (maxPageNum > 2) {\n        for (let pageIndex = 2; pageIndex <= maxPageNum; pageIndex++) {\n            list.push(`${basePath}_${pageIndex}/`);\n        }\n    }\n}\nlist;\n</js>"
+    },
+    "searchUrl": "https://wap.haitangshuwu.info/s.php,{\n  \"body\": \"submit=&type=articlename&s={{key}}\",\n  \"charset\": \"GBK\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]

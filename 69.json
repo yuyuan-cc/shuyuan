@@ -1,0 +1,51 @@
+[
+  {
+    "bookSourceComment": "瓜子漫画 guazimanhua.com | 发现页四列(23分类+榜单) | 正文仅取 reader-images 已去广告",
+    "bookSourceGroup": "🎨 漫画",
+    "bookSourceName": "瓜子漫画",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.guazimanhua.com",
+    "customButton": false,
+    "customOrder": 43,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "[{\"title\": \"全部\", \"url\": \"https://www.guazimanhua.com/category.php?page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"最新更新\", \"url\": \"https://www.guazimanhua.com/category.php?sort=update&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"人气榜\", \"url\": \"https://www.guazimanhua.com/category.php?sort=hits&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"日榜\", \"url\": \"https://www.guazimanhua.com/category.php?sort=daily&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"高分榜\", \"url\": \"https://www.guazimanhua.com/category.php?sort=score&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"耽美\", \"url\": \"https://www.guazimanhua.com/category.php?cid=41&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"恋爱\", \"url\": \"https://www.guazimanhua.com/category.php?cid=9&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"校园\", \"url\": \"https://www.guazimanhua.com/category.php?cid=29&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"霸总\", \"url\": \"https://www.guazimanhua.com/category.php?cid=5&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"都市\", \"url\": \"https://www.guazimanhua.com/category.php?cid=42&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"穿越\", \"url\": \"https://www.guazimanhua.com/category.php?cid=8&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"古风\", \"url\": \"https://www.guazimanhua.com/category.php?cid=23&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"玄幻\", \"url\": \"https://www.guazimanhua.com/category.php?cid=25&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"奇幻\", \"url\": \"https://www.guazimanhua.com/category.php?cid=31&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"科幻\", \"url\": \"https://www.guazimanhua.com/category.php?cid=22&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"灵异\", \"url\": \"https://www.guazimanhua.com/category.php?cid=21&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"动作\", \"url\": \"https://www.guazimanhua.com/category.php?cid=54&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"悬疑\", \"url\": \"https://www.guazimanhua.com/category.php?cid=11&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"冒险\", \"url\": \"https://www.guazimanhua.com/category.php?cid=30&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"搞笑\", \"url\": \"https://www.guazimanhua.com/category.php?cid=15&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"热血\", \"url\": \"https://www.guazimanhua.com/category.php?cid=13&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"恐怖\", \"url\": \"https://www.guazimanhua.com/category.php?cid=14&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"系统\", \"url\": \"https://www.guazimanhua.com/category.php?cid=148&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"逆袭\", \"url\": \"https://www.guazimanhua.com/category.php?cid=97&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"脑洞\", \"url\": \"https://www.guazimanhua.com/category.php?cid=55&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"复仇\", \"url\": \"https://www.guazimanhua.com/category.php?cid=61&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"真人\", \"url\": \"https://www.guazimanhua.com/category.php?cid=17&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"其它\", \"url\": \"https://www.guazimanhua.com/category.php?cid=27&page={{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}]",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; SM-G973F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.105 Mobile Safari/537.36\", \"Referer\": \"https://www.guazimanhua.com/\"}",
+    "lastUpdateTime": 1789279351058,
+    "respondTime": 2911,
+    "ruleBookInfo": {
+      "author": "//span[text()='作者']/../b/a/text()",
+      "coverUrl": "class.cinema-cover@src",
+      "intro": "class.cinema-info@tag.p@text",
+      "kind": "class.meta@tag.a@text",
+      "lastChapter": "//span[text()='最新']/../b/text()",
+      "name": "class.cinema-info@tag.h1@text"
+    },
+    "ruleContent": {
+      "content": "class.reader-images@html##<[^>]*/assets/ad[^>]*>"
+    },
+    "ruleExplore": {
+      "author": "class.meta@text",
+      "bookList": "class.card",
+      "bookUrl": "tag.a@href",
+      "coverUrl": "class.cover@src",
+      "name": "tag.h3@text"
+    },
+    "ruleSearch": {
+      "author": "class.meta@text",
+      "bookList": "class.card",
+      "bookUrl": "tag.a@href",
+      "coverUrl": "class.cover@src",
+      "name": "tag.h3@text"
+    },
+    "ruleToc": {
+      "chapterList": "-class.mobile-chapter-grid@tag.a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "https://www.guazimanhua.com/category.php?keyword={{key}}",
+    "weight": 0
+  }
+]

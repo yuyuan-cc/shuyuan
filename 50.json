@@ -1,0 +1,59 @@
+[
+  {
+    "bookSourceComment": "耽美小说网（danmei.la 301→https://www.bengben.com），GBK站。搜索为POST /search/book（body需gbk编码）实测命中「魔道祖师」；发现页 list1~list9 共9个分类，翻页实测第1/2页不同；目录位于详情页 div.mulu（119章有序）；封面实测200 image/jpeg；正文 div.yd_text2 完整。搜索结果域名为站群镜像 i7uu.net，已用正则统一为 bengben.com。",
+    "bookSourceGroup": "📖 小说",
+    "bookSourceName": "耽美小说网",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.bengben.com",
+    "customButton": false,
+    "customOrder": 7,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "玄幻修仙::https://www.bengben.com/list1/{{page}}.html\n现代都市::https://www.bengben.com/list2/{{page}}.html\n古代架空::https://www.bengben.com/list3/{{page}}.html\n穿越重生::https://www.bengben.com/list4/{{page}}.html\n网游动漫::https://www.bengben.com/list5/{{page}}.html\n科幻未来::https://www.bengben.com/list6/{{page}}.html\n恐怖灵异::https://www.bengben.com/list7/{{page}}.html\nBG言情::https://www.bengben.com/list8/{{page}}.html\n其他类型::https://www.bengben.com/list9/{{page}}.html",
+    "header": "{\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\",\"Accept\":\"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\",\"Accept-Language\":\"zh-CN,zh;q=0.9,en;q=0.8\"}",
+    "lastUpdateTime": 0,
+    "respondTime": 18662,
+    "ruleBookInfo": {
+      "author": "class.msg.0@tag.em.0@text##\\s*作者：\\s*",
+      "coverUrl": "class.jieshao.0@tag.img.0@src",
+      "intro": "class.intro.0@text",
+      "kind": "class.place.0@tag.a.1@text",
+      "lastChapter": "class.msg.0@tag.em.3@text##\\s*最新章节：\\s*",
+      "name": "class.jieshao.0@tag.h1.0@text",
+      "tocUrl": ""
+    },
+    "ruleContent": {
+      "content": "div.yd_text2@html",
+      "nextContentUrl": ""
+    },
+    "ruleExplore": {
+      "author": "span.zz@text",
+      "bookList": "div.booklist ul li:has(a)",
+      "bookUrl": "span.sm a@href",
+      "coverUrl": "",
+      "intro": "",
+      "kind": "div.booklist h1@text",
+      "lastChapter": "span.zj a@text",
+      "name": "span.sm a@title"
+    },
+    "ruleSearch": {
+      "author": "span.zz@text",
+      "bookList": "div.booklist ul li:has(a)",
+      "bookUrl": "span.mz a@href##https?://www\\.i7uu\\.net##https://www.bengben.com",
+      "coverUrl": "",
+      "intro": "",
+      "kind": "",
+      "lastChapter": "span.zj a@text",
+      "name": "span.mz a@title"
+    },
+    "ruleToc": {
+      "chapterList": "div.mulu ul li:has(a)",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/search/book,{\"method\":\"POST\",\"body\":\"searchkey={{key}}\",\"charset\":\"gbk\"}",
+    "weight": 0
+  }
+]

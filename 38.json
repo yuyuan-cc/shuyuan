@@ -1,0 +1,51 @@
+[
+  {
+    "bookSourceComment": "by狼崽儿 //2026.6.28\n老耽美小说文站。含港台言情、GL等其他类型的小说。",
+    "bookSourceGroup": "🌙 耽美",
+    "bookSourceName": "蛋文库（耽美）",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://danwenku.cc",
+    "customButton": false,
+    "customOrder": 191,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "[\n    {\"title\":\"完结新区\",\"url\":\"@js:var p=page;'/wanjie'+(p==1?'/':'/index_'+p+'.html')\"},\n    {\"title\":\"同人\",\"url\":\"@js:var p=page;'/tongren'+(p==1?'/':'/index_'+p+'.html')\"},\n    {\"title\":\"言情\",\"url\":\"@js:var p=page;'/gangtai'+(p==1?'/':'/index_'+p+'.html')\"},\n    {\"title\":\"玄幻\",\"url\":\"@js:var p=page;'/xuanhuan'+(p==1?'/':'/index_'+p+'.html')\"},\n    {\"title\":\"穿越\",\"url\":\"@js:var p=page;'/chuanyue'+(p==1?'/':'/index_'+p+'.html')\"},\n    {\"title\":\"其他\",\"url\":\"@js:var p=page;'/qita'+(p==1?'/':'/index_'+p+'.html')\"}\n  ]",
+    "header": "{  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36\"}",
+    "lastUpdateTime": 1784108882172,
+    "respondTime": 3648,
+    "ruleBookInfo": {
+      "author": "@css:.zuozheqt@text",
+      "name": "@css:h1.entry-title@text"
+    },
+    "ruleContent": {
+      "content": "@js:\nvar startMark = '<!-- #d蛋文开 -->';\nvar endMark = '<!-- #d蛋文结 -->';\nvar a = src.indexOf(startMark);\nvar b = src.indexOf(endMark);\nvar c = a >= 0 && b > a ? src.substring(a + startMark.length, b) : '';\n\nvar nl = String.fromCharCode(10);\nc = c.split('<br/>').join(nl);\nc = c.split('<br>').join(nl);\nc = c.split('<BR>').join(nl);\nc = c.split('&nbsp;').join(' ');\nc = c.replaceAll('<[^>]+>', '');\n\n// 去掉开头的多余换行\nc = c.replace(/^\\n+/, '');\n\nc;"
+    },
+    "ruleExplore": {
+      "author": "@css:.archive-content@text@js:var m=result.match(/作者[：:]([^\\u3000】\\\\s]+)/);m?m[1]:''",
+      "bookList": "@css:article.post",
+      "bookUrl": "h2.entry-title a@href",
+      "intro": "@css:.archive-content@text@js:var i=result.indexOf('文案：');i>=0?result.substring(i):result",
+      "kind": "@css:.comment a@text",
+      "lastChapter": "@css:.date@text",
+      "name": "h2.entry-title a@text@js:result.replace(/[（(].*/,'').replace(/[—–]{2}.*/,'').replace(/by.*$/,'').trim()"
+    },
+    "ruleSearch": {
+      "author": "@css:.archive-content@text@js:var m=result.match(/作者[：:]([^【】\\\\s]+)/);m?m[1]:''",
+      "bookList": "@css:article.post",
+      "bookUrl": "h2.entry-title a@href",
+      "intro": "@css:.archive-content@text",
+      "kind": "@css:.comment a@text",
+      "lastChapter": "@css:.date@text",
+      "name": "h2.entry-title a@text@js:result.replace(/by[^]*$/,'')"
+    },
+    "ruleToc": {
+      "chapterList": "@js:\nvar m = src.match(/<b>(\\d+)<\\/b>\\s*\\/\\s*<b>(\\d+)<\\/b>/);\nvar total = m ? parseInt(m[2]) : 1;\nvar base = baseUrl.replace('.html', '');\nvar arr = [];\nfor (var i = 1; i <= total; i++) {\n  arr.push({\n    title: '第' + i + '页',\n    url: base + (i == 1 ? '.html' : '_' + i + '.html')\n  });\n}\narr;",
+      "chapterName": "title",
+      "chapterUrl": "url"
+    },
+    "searchUrl": "/e/search/index.php,{\n  \"charset\": \"gbk\",\n  \"method\": \"POST\",\n  \"body\": \"show=title,newstext&keyboard={{key}}\",\n  \"headers\": {\n    \"User-Agent\": \"Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36\"\n  }\n}",
+    "weight": 0
+  }
+]

@@ -1,0 +1,63 @@
+[
+  {
+    "bookSourceComment": "发现页已改为网阅式侧分栏（频道选择器 + 子类4列网格）",
+    "bookSourceGroup": "📚 搜书",
+    "bookSourceName": "QB女生",
+    "bookSourceType": 0,
+    "bookSourceUrl": "DragonQuestQBkd1",
+    "customButton": false,
+    "customOrder": 67,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "<js>\nvar mainCat = infoMap[\"频道\"] || \"现代言情\";\n\nvar gidMap = {\n    \"现代言情\": \"1524\",\n    \"古代言情\": \"1523\",\n    \"悬疑侦探\": \"1518\",\n    \"仙侠奇缘\": \"1517\",\n    \"玄幻言情\": \"1516\",\n    \"浪漫青春\": \"1522\",\n    \"科幻空间\": \"1519\",\n    \"游戏竞技\": \"1520\",\n    \"纯爱\": \"1707\",\n};\n\nvar cats = {\n    \"现代言情\": [\"婚恋情缘\", \"豪门世家\", \"都市生活\", \"娱乐明星\", \"都市异能\", \"商战职场\", \"民国情缘\", \"官场沉浮\"],\n    \"古代言情\": [\"古典架空\", \"穿越奇情\", \"古代情缘\", \"宫闱宅斗\", \"经商种田\", \"女尊王朝\", \"热血江湖\", \"上古蛮荒\"],\n    \"悬疑侦探\": [\"推理侦探\", \"悬疑探险\", \"神秘文化\", \"恐怖惊悚\", \"幽冥情缘\"],\n    \"仙侠奇缘\": [\"古典仙侠\", \"仙侣奇缘\", \"武侠情缘\", \"现代修真\", \"远古洪荒\"],\n    \"玄幻言情\": [\"东方玄幻\", \"异世大陆\", \"魔法幻情\", \"异能超术\", \"异族恋情\", \"西方奇幻\", \"远古神话\"],\n    \"浪漫青春\": [\"青春校园\", \"青春纯爱\", \"青春疼痛\", \"叛逆成长\"],\n    \"科幻空间\": [\"时空穿梭\", \"末世危机\", \"未来世界\", \"星际恋歌\", \"超级科技\", \"进化变异\", \"古武机甲\"],\n    \"游戏竞技\": [\"网游情缘\", \"电子竞技\", \"游戏异界\", \"体育竞技\"],\n    \"纯爱\": [\"婚恋情缘\", \"时空穿梭\", \"穿越奇情\", \"古典架空\", \"古代情缘\", \"都市生活\"],\n};\n\nvar result = [];\nresult.push({\n    \"title\": \"频道\",\n    \"type\": \"select\",\n    \"chars\": [\"现代言情\", \"古代言情\", \"悬疑侦探\", \"仙侠奇缘\", \"玄幻言情\", \"浪漫青春\", \"科幻空间\", \"游戏竞技\", \"纯爱\"],\n    \"default\": mainCat,\n    \"action\": \"java.refreshExplore()\",\n    \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 1}\n});\n\nvar selected = cats[mainCat];\nvar gid = gidMap[mainCat];\nvar base = \"https://bookshelf.html5.qq.com/qbread/api/rank/list?groupid=\";\nif (selected) {\n    for (var i = 0; i < selected.length; i++) {\n        result.push({\n            \"title\": selected[i],\n            \"url\": base + gid + \"&start={{page}}&count=20&sub=\" + selected[i],\n            \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}\n        });\n    }\n}\n\nJSON.stringify(result);\n</js>",
+    "header": "{\n\t\"user-agent\":\"Mozilla/5.0 (Linux; Android 10; MI 8 Build/QKQ1.190828.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.101 Mobile Safari/537.36\",\n\t\"Referer\":\"https://bookshelf.html5.qq.com/qbread\"\n\t}",
+    "lastUpdateTime": 1788241967776,
+    "respondTime": 2733,
+    "ruleBookInfo": {
+      "author": "$.author",
+      "coverUrl": "$.picurl",
+      "init": "$.data.bookInfo",
+      "intro": "<p>{{(t=String(java.getString('$.tag'))).length?'🏷️ '+t.replace(/\\|/g,', '):''}}</p>{{'\\n&lrm;'}}\n<p>{{$.summary}}</p>",
+      "kind": "{{$.userscore}}分\n{{$.subject}}\n{{java.getString('$.isfinish')=='true'?'已完结':'连载中'}}\n{{java.put('time',String(java.timeFormat(java.getString('$.lastUpdatetime')*1000)).replace(/\\//g,'-').replace(/\\s.*/,''))}}",
+      "lastChapter": "{{$.lastSerialname}} • {{java.get('time')}}",
+      "name": "$.resourceName",
+      "tocUrl": "https://bookshelf.html5.qq.com/qbread/api/book/all-chapter?bookId={{$.resourceID}}",
+      "wordCount": "$.contentsize"
+    },
+    "ruleContent": {
+      "content": "<p>{{$.data.Content[0].Content}}</p>"
+    },
+    "ruleExplore": {
+      "author": "$.author",
+      "bookList": "$.rows[*]",
+      "bookUrl": "https://bookshelf.html5.qq.com/qbread/api/novel/intro-info?bookid={{$.resourceID}}",
+      "coverUrl": "$.picurl",
+      "intro": "$.summary",
+      "kind": "{{$.userscore}}分\n{{$.subject}}\n{{java.getString('$.isfinish')=='true'?'已完结':'连载中'}}\n{{String(java.timeFormat(java.getString('$.lastUpdatetime')*1000)).replace(/\\//g,'-').replace(/\\s.*/,'')}}",
+      "lastChapter": "$.lastSerialname",
+      "name": "$.resourceName##（.*",
+      "wordCount": "$.contentsize"
+    },
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "$.data.state[?(@.dataName == 'novel_search_list')].items[*]",
+      "bookUrl": "https://bookshelf.html5.qq.com/qbread/api/novel/intro-info?bookid={{$.docId##.*_}}",
+      "checkKeyWord": "大王饶命",
+      "coverUrl": "$.cover_url",
+      "intro": "$.abstract",
+      "kind": "{{$.tag_views##\\s+##,}}\n{{java.getString('$.is_finished')==1?'已完结':'连载中'}}",
+      "name": "$.title"
+    },
+    "ruleToc": {
+      "chapterList": "$.rows",
+      "chapterName": "$.serialName",
+      "chapterUrl": "https://novel.html5.qq.com/be-api/content/ads-read,{\n\t\"method\": \"POST\",\n\t\"body\": {\n\t\t\"Scene\": \"chapter\",\n\t\t\"ContentAnchorBatch\": [{\n\t\t\t\t\"BookID\": \"{{baseUrl.match(/bookId=(\\d+)/)[1]}}\",\n\t\t\t\t\"ChapterSeqNo\": [{{$.serialID}}]\n\t\t\t}]\n\t},\n\t\"headers\": {\n\t\t\"Q-GUID\": \"4aa27c7cf2d9aca3359656ea186488cb\"\n\t}\n}",
+      "isPay": "$.isFree",
+      "isVip": "//删掉这行字，vip章节会显示🔓\n$.isFree"
+    },
+    "searchUrl": "https://so.html5.qq.com/ajax/real/search_result?tabId=360&q={{key}}",
+    "weight": 0
+  }
+]

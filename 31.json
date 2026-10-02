@@ -1,0 +1,56 @@
+[
+  {
+    "bookSourceComment": "飞文阁 (www7.feiwenge.com)",
+    "bookSourceGroup": "📖 小说",
+    "bookSourceName": "飞文阁（优）",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www7.feiwenge.com",
+    "customButton": false,
+    "customOrder": 88,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "@js:\nsort=[];\npush=(title,url,type)=>sort.push({\n\t\ttitle: title,\n\t\turl: url,\n\t\tstyle: {\n\t\t\t\tlayout_flexGrow: 1,\n\t\t\t\tlayout_flexBasisPercent: type\n\t\t\t}\n\t});\n[\n[\"📚 全部\",[\n[\"全部小说\",\"https://www7.feiwenge.com/category/0/{{page}}.html\"],\n[\"精品\",\"https://www7.feiwenge.com/category/16/{{page}}.html\"]\n]],\n[\"❤️ 言情耽美\",[\n[\"言情\",\"https://www7.feiwenge.com/category/6/{{page}}.html\"],\n[\"耽美\",\"https://www7.feiwenge.com/category/1/{{page}}.html\"],\n[\"辣文\",\"https://www7.feiwenge.com/category/2/{{page}}.html\"],\n[\"私密\",\"https://www7.feiwenge.com/category/4/{{page}}.html\"]\n]],\n[\"📖 题材分类\",[\n[\"玄幻\",\"https://www7.feiwenge.com/category/7/{{page}}.html\"],\n[\"仙侠\",\"https://www7.feiwenge.com/category/18/{{page}}.html\"],\n[\"武侠\",\"https://www7.feiwenge.com/category/8/{{page}}.html\"],\n[\"都市\",\"https://www7.feiwenge.com/category/14/{{page}}.html\"],\n[\"现代\",\"https://www7.feiwenge.com/category/9/{{page}}.html\"],\n[\"穿越\",\"https://www7.feiwenge.com/category/17/{{page}}.html\"]\n]]\n].map([title,list]=>{\n\t\tpush(title,null,1);\n\t\tlist.map([name,url]=>{\n\t\t\t\tpush(name,url,1/3);\n\t\t\t});\n\t});\nJSON.stringify(sort);",
+    "header": "{\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"}",
+    "lastUpdateTime": 1788057640153,
+    "respondTime": 5900,
+    "ruleBookInfo": {
+      "author": "meta[property=\"og:novel:author\"]@content##[\\u200b-\\u200f\\u00ad\\ufeff]",
+      "coverUrl": "meta[property=\"og:image\"]@content",
+      "intro": "meta[property=\"og:description\"]@content##[\\u200b-\\u200f\\u00ad\\ufeff]",
+      "kind": "meta[property=\"og:novel:category\"]@content,meta[property=\"og:novel:status\"]@content##[\\u200b-\\u200f\\u00ad\\ufeff]",
+      "lastChapter": "meta[property$=\"chapter_name\"]@content##[\\u200b-\\u200f\\u00ad\\ufeff]",
+      "name": "meta[property=\"og:novel:book_name\"]@content##[\\u200b-\\u200f\\u00ad\\ufeff]",
+      "tocUrl": "a[href*=\"/catalog/\"]@href"
+    },
+    "ruleContent": {
+      "content": "<js>\nfunction decryptAes(enc, pass) {\n  try {\n    if (typeof java.aesDecodeToStr === 'function') {\n      var md5 = java.md5Encode(pass);\n      return String(java.aesDecodeToStr(enc, md5.substring(16), 'AES/CBC/PKCS5Padding', md5.substring(0, 16)));\n    }\n  } catch(e) {}\n  try {\n    var md5 = java.md5Encode(pass);\n    var ivStr = md5.substring(0, 16);\n    var keyStr = md5.substring(16);\n    var cipher = javax.crypto.Cipher.getInstance('AES/CBC/PKCS5Padding');\n    var keySpec = new javax.crypto.spec.SecretKeySpec(new java.lang.String(keyStr).getBytes('UTF-8'), 'AES');\n    var ivSpec = new javax.crypto.spec.IvParameterSpec(new java.lang.String(ivStr).getBytes('UTF-8'));\n    cipher.init(javax.crypto.Cipher.DECRYPT_MODE, keySpec, ivSpec);\n    var rawEnc = java.util.Base64.getDecoder().decode(enc);\n    var decryptedBytes = cipher.doFinal(rawEnc);\n    return String(new java.lang.String(decryptedBytes, 'UTF-8'));\n  } catch(e2) {\n    return '';\n  }\n}\nvar content = '';\nvar m = result.match(/\\.html\\(d\\([\"']([^\"']+)[\"'],[ \\t]*[\"']([^\"']+)[\"']\\)\\)/);\nif (m) {\n  content = decryptAes(m[1], m[2]);\n}\nif (!content) {\n  try {\n    content = org.jsoup.Jsoup.parse(result).select('.RBGsectionThree-content').html();\n  } catch(e3) {}\n}\nString(content).replace(/[\\u200b-\\u200f\\u00ad\\ufeff]/g, '').trim();\n</js>",
+      "replaceRegex": "##未加载完，尝试.*|尝试更换.*|移动流量偶尔打不开.*|收藏网址：.*|（＞人＜；）|Loading..."
+    },
+    "ruleExplore": {
+      "author": "a[href*=\"/writer/\"]@text",
+      "bookList": ".CGsectionTwo-right-content-unit",
+      "bookUrl": "a.title@href",
+      "intro": "p:nth-child(4)@text",
+      "lastChapter": "p:nth-child(5)@text##最近更新 ",
+      "name": "a.title@text"
+    },
+    "ruleSearch": {
+      "author": "a[href*=\"/writer/\"]@text##[\\u200b-\\u200f\\u00ad\\ufeff]",
+      "bookList": ".SHsectionThree-middle p",
+      "bookUrl": "a[href*=\"/book/\"]@href",
+      "checkKeyWord": "人",
+      "kind": "span a[href*=\"/category/\"]@text##[\\u200b-\\u200f\\u00ad\\ufeff]",
+      "name": "a[href*=\"/book/\"]@text##[\\u200b-\\u200f\\u00ad\\ufeff]"
+    },
+    "ruleToc": {
+      "chapterList": "li.BCsectionTwo-top-chapter",
+      "chapterName": "<js>\nvar a = result.selectFirst('a');\nvar title = '';\nif (a) {\n  var list = a.attributes().asList();\n  for (var i = 0; i < list.size(); i++) {\n    var attr = list.get(i);\n    var k = String(attr.getKey());\n    var v = String(attr.getValue());\n    if (k.indexOf('data-c') === 0 && (v.length < 10 || !/^[A-Za-z0-9+/=]+$/.test(v))) {\n      title = v;\n      break;\n    }\n  }\n  if (!title) title = a.text();\n}\nString(title).replace(/[\\u200b-\\u200f\\u00ad\\ufeff]/g, '').trim();\n</js>",
+      "chapterUrl": "<js>\nfunction b64(s) {\n  var c = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';\n  var o = '', b, bc = 0, bs, idx = 0;\n  s = String(s).replace(/[^A-Za-z0-9+/=]/g, '');\n  while (idx < s.length) {\n    var e1 = c.indexOf(s.charAt(idx++));\n    var e2 = c.indexOf(s.charAt(idx++));\n    var e3 = c.indexOf(s.charAt(idx++));\n    var e4 = c.indexOf(s.charAt(idx++));\n    var c1 = (e1 << 2) | (e2 >> 4);\n    var c2 = ((e2 & 15) << 4) | (e3 >> 2);\n    var c3 = ((e3 & 3) << 6) | e4;\n    o += String.fromCharCode(c1);\n    if (e3 !== 64 && e3 !== -1) o += String.fromCharCode(c2);\n    if (e4 !== 64 && e4 !== -1) o += String.fromCharCode(c3);\n  }\n  return o;\n}\nvar a = result.selectFirst('a');\nvar url = '';\nif (a) {\n  var list = a.attributes().asList();\n  for (var i = 0; i < list.size(); i++) {\n    var attr = list.get(i);\n    var k = String(attr.getKey());\n    var v = String(attr.getValue());\n    if (k.indexOf('data-c') === 0 && v.length >= 10 && /^[A-Za-z0-9+/=]+$/.test(v)) {\n      try { url = java.base64Decode(v); } catch(e) { url = b64(v); }\n      break;\n    }\n  }\n  if (!url) url = a.attr('href');\n}\nString(url).trim();\n</js>",
+      "nextTocUrl": "a#next@href"
+    },
+    "searchUrl": "https://www7.feiwenge.com/search/{{key}}",
+    "weight": 0
+  }
+]

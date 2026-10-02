@@ -1,0 +1,65 @@
+[
+  {
+    "bookSourceGroup": "🎨 漫画",
+    "bookSourceName": "如漫画",
+    "bookSourceType": 2,
+    "bookSourceUrl": "http://www.rumanhua2.com",
+    "bookUrlPattern": "https?://(www\\.)?rumanhua2?\\.com/[A-Za-z0-9]{4,12}/?$",
+    "customButton": false,
+    "customOrder": 39,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "<js>\nvar exploreUrl = [];\nfunction explore(title, url, Grow, Basis, bool) {\n  return { title: title, url: url, style: { layout_flexGrow: Grow, layout_flexBasisPercent: Basis, layout_wrapBefore: bool } };\n}\nexploreUrl.push(explore('✣　　　　　  ✣  榜　　单  ✣  　　　　　✣', '', 1, 1, false));\nvar rank = ['精品榜','人气榜','推荐榜','黑马榜','更新榜','新漫画'];\nfor (var i in rank) {\n  exploreUrl.push(explore(rank[i], 'http://www.rumanhua2.com/rank/' + (parseInt(i) + 1), 1, 0.25, false));\n}\nexploreUrl.push(explore('✣　　　　　  ✣  标　　签  ✣  　　　　　✣', '', 1, 1, false));\nvar sort = ['冒险','热血','都市','玄幻','悬疑','耽美','恋爱','生活','搞笑','穿越','修真','后宫','女主','古风','连载','完结'];\nfor (var i in sort) {\n  exploreUrl.push(explore(sort[i], 'http://www.rumanhua2.com/sort/' + (parseInt(i) + 1), 1, 0.2, false));\n}\nJSON.stringify(exploreUrl);\n</js>",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1\", \"Accept\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\", \"Referer\": \"http://www.rumanhua2.com/\", \"Content-Type\": \"application/x-www-form-urlencoded; charset=UTF-8\"}",
+    "lastUpdateTime": 1789295347010,
+    "respondTime": 10181,
+    "ruleBookInfo": {
+      "author": "author",
+      "canReName": "reName",
+      "coverUrl": "cover",
+      "downloadUrls": "durl",
+      "init": "<js>\nvar J = org.jsoup.Jsoup.parse(result);\nfunction text(sel){ return String(J.select(sel).text()); }\nvar s = text('.detinfo span:contains(态：)').replace(/.*态：\\s*/, '').replace(/[中已]/g, '');\nvar k = text('.detinfo span:contains(签：)').replace(/.*签：\\s*/, '').replace(/\\s/g, ',');\nvar t = text('.detinfo span:contains(更新时间：)').replace(/更新时间：\\s*/, '').replace(/[年月]/g, '-').replace(/日/g, '');\nvar l = J.select('ul a').first().text();\nvar book = {\n  name: text('.name_mh'),\n  author: text('.detinfo span:contains(者：)').replace(/.*者：\\s*/, '').replace(/[、，,·+&]|\\sx\\s/g, '/').replace(/\\s*\\/\\s*/g, '/').replace(/\\/+/g, '/').replace(/（/g, '(').replace(/）/g, ')'),\n  kind: s + ',' + k,\n  word: '',\n  latest: l + '〔' + t + '〕',\n  intro: (t != '' ? ('更新时间：' + t + '\\nㅤ\\n') : '') + text('.content').replace(/(^)/g, '$1<br>'),\n  cover: String(J.select('.himg img').attr('data-src')),\n  url: baseUrl,\n  durl: '',\n  reName: true\n};\nbook;\n</js>",
+      "intro": "intro",
+      "kind": "kind",
+      "lastChapter": "latest",
+      "name": "name",
+      "tocUrl": "url",
+      "wordCount": "word"
+    },
+    "ruleContent": {
+      "content": "@webjs:(function(){\n  try{\n    var jsr=document.querySelector('head > script:not([src])');\n    var jsrText=jsr?jsr.textContent:'';\n    eval(jsrText.replace(/<\\/?script.*?>/g,''));\n    var id=document.querySelector('.readerContainer').getAttribute('data-id');\n    var keys=[\"c21raHkyNTg=\",\"c21rZDk1ZnY=\",\"bWQ0OTY5NTI=\",\"Y2Rjc2R3cQ==\",\"dmJmc2EyNTY=\",\"Y2F3ZjE1MWM=\",\"Y2Q1NmN2ZGE=\",\"OGtpaG50OQ==\",\"ZHNvMTV0bG8=\",\"NWtvNnBsaHk=\"];\n    var key=String(atob(keys[id]));\n    var data=String(atob(__c0rst96));\n    var res=\"\";\n    for(var i=0;i<data.length;i++){var k=i%key.length;res+=String.fromCharCode(data.charCodeAt(i)^key.charCodeAt(k))}\n    var result=String(atob(res));\n    var imglist=JSON.parse(result);\n    result=\"\";\n    for(var i in imglist){result+=\"<img src=\\\"\"+imglist[i]+\"\\\">\\n\"}\n    return result;\n  }catch(e){return \"\";}\n})()",
+      "imageStyle": "FULL"
+    },
+    "ruleExplore": {
+      "author": "author",
+      "bookList": "<js>\nvar data = [];\nvar list = org.jsoup.Jsoup.parse(result).select('.likedata');\nfor (var i in list) {\n  var card = list[i];\n  data.push({\n    name: card.select('.le-t').text(),\n    author: String(card.select('p')[1].text()).replace(/作者：/, '').replace(/[、，,·+&]|\\sx\\s/g, '/').replace(/\\s*\\/\\s*/g, '/').replace(/\\/+/g, '/').replace(/（/g, '(').replace(/）/g, ')'),\n    kind: '',\n    word: '',\n    latest: String(card.select('p')[2].text()).replace(/最新：/, ''),\n    intro: card.select('.le-j').text(),\n    cover: card.select('img').attr('data-src'),\n    url: 'http://www.rumanhua2.com' + card.select('a').attr('href')\n  });\n}\ndata;\n</js>",
+      "bookUrl": "url",
+      "coverUrl": "cover",
+      "intro": "intro",
+      "kind": "kind",
+      "lastChapter": "latest",
+      "name": "name",
+      "wordCount": "word"
+    },
+    "ruleSearch": {
+      "author": "author",
+      "bookList": "<js>\nvar data = [];\nvar list = org.jsoup.Jsoup.parse(result).select('.col-auto');\nfor (var i in list) {\n  var card = list[i];\n  data.push({\n    name: card.select('.e-title').text(),\n    author: String(card.select('.tip').text()).replace(/[、，,·+&]|\\sx\\s/g, '/').replace(/\\s*\\/\\s*/g, '/').replace(/\\/+/g, '/').replace(/（/g, '(').replace(/）/g, ')'),\n    kind: '',\n    word: '',\n    latest: '',\n    intro: '',\n    cover: card.select('img').attr('data-src'),\n    url: 'http://www.rumanhua2.com' + card.select('a').attr('href')\n  });\n}\ndata;\n</js>",
+      "bookUrl": "url",
+      "coverUrl": "cover",
+      "intro": "intro",
+      "kind": "kind",
+      "lastChapter": "latest",
+      "name": "name",
+      "wordCount": "word"
+    },
+    "ruleToc": {
+      "chapterList": "<js>\nvar data=[];\nvar J=org.jsoup.Jsoup.parse(result);\nvar id=String(baseUrl).replace(/\\/+$/, '').replace(/^.*\\//, '');\nvar date=String(J.select('.detinfo span:contains(更新时间：)').text()).replace(/更新时间：\\s*/, '').replace(/[年月]/g, '-').replace(/日/g, '');\nvar list=J.select('div.chapterlistload a');\nfor(var i=0;i<list.size();i++){\n  var a=list.get(i);\n  var href=String(a.attr('href'));\n  var cid=href.replace(/^.*\\//, '').replace(/\\.html$/, '');\n  data.push({title:String(a.text()), link:'http://www.rumanhua2.com/'+id+'/'+cid+'.html'});\n}\nvar url='http://www.rumanhua2.com/morechapter,{\"body\":\"id='+id+'\",\"method\":\"POST\"}';\ntry{\n  var mc=JSON.parse(java.ajax(url)).data;\n  for(var i=0;i<mc.length;i++){\n    data.push({title:String(mc[i].chaptername), link:'http://www.rumanhua2.com/'+id+'/'+String(mc[i].chapterid)+'.html'});\n  }\n}catch(e){}\ndata=data.reverse();\nif(data.length>0){data[0].title=data[0].title+'〔'+date+'〕';}\ndata;\n</js>",
+      "chapterName": "title",
+      "chapterUrl": "link"
+    },
+    "searchUrl": "<js>\n(function(e){\n  var body = 'k=' + java.encodeURI(e);\n  return 'http://www.rumanhua2.com/s,{\"body\":\"' + body + '\",\"method\":\"POST\",\"headers\":{\"Content-Type\":\"application/x-www-form-urlencoded; charset=UTF-8\"}}';\n}(key));\n</js>",
+    "weight": 0
+  }
+]
