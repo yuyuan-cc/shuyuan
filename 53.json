@@ -1,56 +1,50 @@
 [
-  {
-    "bookSourceComment": "// 修复1(关键)：正文容器不统一——站点正文 div 有 readcons/duboxs/chapterbo/chapterbox 四种 class，原规则只写 .readcons，导致大部分书\"正文失效\"。已改为 JS：定位 .tjlm+div 正文块并剔除 .ydgong 导航、article.hid/shid、.shidp 等水印。\n// 修复2：上一版 JS 用了顶层 return，Rhino 会抛 \"invalid return\" 导致\"正文获取失败\"，已改为末行表达式返回。\n// 原 作者：深院锁清秋",
-    "bookSourceGroup": "📖 小说",
-    "bookSourceName": "品书斋（优）",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://www.pinshuzhai.com",
-    "customButton": false,
-    "customOrder": 26,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "书香文库::/bookcat/shuxiangwenku/page/{{page}}\n中国文学::/bookcat/zhongguowenxue/page/{{page}}\n世界文学::/bookcat/shijiewenxue/page/{{page}}\n经典名著::/bookcat/jingdianmingzhu/page/{{page}}\n悬疑推理::/bookcat/xuanyituili-2/page/{{page}}\n散文集::/bookcat/sanwenji/page/{{page}}\n传记::/bookcat/zhuanji/page/{{page}}\n以下是网络小说分类 \n网络小说总类::/bookcat/wangluoxiaoshuo/page/{{page}}                          \n玄幻奇幻::/bookcat/xuanhuanqihuan/page/{{page}}\n武侠仙侠::/bookcat/wuxiaxianxia/page/{{page}}\n恋爱言情::/bookcat/lianaiyanqing/page/{{page}}\n都市生活::/bookcat/dushishenghuo/page/{{page}}\n悬疑推理::/bookcat/xuanyituili/page/{{page}}\n恐怖灵异::/bookcat/kongbulingyi/page/{{page}}\n科学幻想::/bookcat/kehuan/page/{{page}}\n历史军事::/bookcat/lishijunshi/page/{{page}}\n穿越重生::/bookcat/chuanyuechongsheng/page/{{page}}",
-    "header": "{  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36\"}",
-    "lastUpdateTime": 1790002390202,
-    "loginUrl": "https://www.pinshuzhai.com",
-    "respondTime": 2676,
-    "ruleBookInfo": {
-      "author": "@XPath://meta[@property='og:novel:author']/@content",
-      "coverUrl": "@XPath://meta[@property='og:image']/@content@js:encodeURI(result) + ',{\"headers\":{\"Referer\":\"https://www.pinshuzhai.com\"}}'",
-      "intro": ".docspt@text##作品简介：",
-      "kind": ".catb a@text&&",
-      "name": "@XPath://meta[@property='og:novel:book_name']/@content",
-      "wordCount": ".nif span@text"
-    },
-    "ruleContent": {
-      "content": "@js:\nvar html = String(result);\nif (html.indexOf(\"readbox\") < 0 && html.indexOf(\"tjlm\") < 0) { try { html = String(src); } catch(e){} }\nvar doc = Packages.org.jsoup.Jsoup.parse(html);\nvar wrap = doc.selectFirst(\".tjlm + div\");\nif (wrap == null) { wrap = doc.selectFirst(\".readcons, .duboxs, .chapterbo, .chapterbox\"); }\nvar out = \"\";\nif (wrap != null) {\n    var junk = wrap.select(\".ydgong, article.hid, article.shid, .shid, .shidp, script, style\");\n    junk.remove();\n    out = String(wrap.html());\n}\nout;\n"
-    },
-    "ruleExplore": {
-      "author": ".bookinfo .author a@text",
-      "bookList": ".catdanlist ul li",
-      "bookUrl": ".bookinfo h4 a@href",
-      "coverUrl": "div:first-child a img@src@js:encodeURI(result) + ',{\"headers\":{\"Referer\":\"https://www.pinshuzhai.com\"}}'",
-      "intro": ".bookinfo p:last-of-type@text",
-      "kind": ".bookinfo .cats@text",
-      "name": ".bookinfo h4 a@text"
-    },
-    "ruleSearch": {
-      "author": ".bookinfo .author a@text",
-      "bookList": ".catdanlist ul li",
-      "bookUrl": ".bookinfo h4 a@href",
-      "coverUrl": "div:first-child a img@src@js:encodeURI(result) + ',{\"headers\":{\"Referer\":\"https://www.pinshuzhai.com\"}}'",
-      "intro": ".bookinfo p:last-of-type@text",
-      "kind": ".bookinfo .cats@text",
-      "name": ".bookinfo h4 a@text"
-    },
-    "ruleToc": {
-      "chapterList": ".newzxzj .zjlist a",
-      "chapterName": "@text",
-      "chapterUrl": "@href"
-    },
-    "searchUrl": "page/{{page}}?s={{key}}",
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "得奇小说网 www.deqixs.org（杰奇CMS）。支持模糊搜索（书名包含关键词即命中，全部结果单页返回）；注意同一会话约10秒内连续搜索会被网站静默拦截返回空结果，稍等再搜即可。精确命中书名时网站直接返回详情页，模糊时返回列表页，两种布局已用||兜底兼容。正文有章节内分页（已自动拼接），页尾推广行已净化。UTF-8 编码。",
+  "bookSourceGroup": "📖 小说",
+  "bookSourceName": "得奇小说网",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://www.deqixs.org",
+  "customButton": false,
+  "customOrder": 52,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": false,
+  "eventListener": false,
+  "header": "{\"User-Agent\":\"Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\"}",
+  "lastUpdateTime": 1788885130790,
+  "respondTime": 2778,
+  "ruleBookInfo": {
+   "author": "class.itemtxt@tag.p.1@tag.a@text##^作者：",
+   "coverUrl": "class.item@tag.img@src",
+   "intro": "class.des.0@textNodes",
+   "kind": "class.itemtxt@tag.p.0@tag.span@text",
+   "lastChapter": "class.itemtxt@tag.ul@tag.li.0@tag.a@text",
+   "name": "class.itemtxt@tag.h1@tag.a@text",
+   "wordCount": "class.itemtxt@tag.p.0@tag.span.2@text"
+  },
+  "ruleContent": {
+   "content": "class.con@html##求书、催更、报错.*?deqixs",
+   "nextContentUrl": "text.下一页@href"
+  },
+  "ruleExplore": {},
+  "ruleSearch": {
+   "author": "class.itemtxt@tag.p.1@tag.a@text||class.itemtxt@tag.ul@tag.li.0@text##^作者：",
+   "bookList": "class.item",
+   "bookUrl": "tag.h1@tag.a@href||tag.h3@tag.a@href###dir",
+   "coverUrl": "tag.img@src",
+   "intro": "class.itemtxt@tag.p.0@text##^简介：\\s*|^连载中.*",
+   "kind": "class.itemtxt@tag.p.0@tag.span@text",
+   "lastChapter": "class.itemtxt@tag.ul@tag.li.0@tag.a@text||class.itemtxt@tag.ul@tag.li.2@tag.a@text",
+   "name": "tag.h1@tag.a@text||tag.h3@tag.a@text",
+   "wordCount": "class.itemtxt@tag.p.0@tag.span.2@text"
+  },
+  "ruleToc": {
+   "chapterList": "id.list@tag.li",
+   "chapterName": "tag.a@text",
+   "chapterUrl": "tag.a@href"
+  },
+  "searchUrl": "https://www.deqixs.org/modules/article/search.php,{\"method\":\"POST\",\"body\":\"searchkey={{key}}&action=login&searchtype=articlename\"}",
+  "weight": 0
+ }
 ]

@@ -1,58 +1,48 @@
 [
-  {
-    "bookSourceComment": "",
-    "bookSourceGroup": "📖 小说",
-    "bookSourceName": "精华书阁",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://m.jhsssd.com/",
-    "customButton": false,
-    "customOrder": 71,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "[\n{\"title\":\"排行榜\",\"url\":\"\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"总点击\",\"url\":\"/Ranking_allvisit/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"日点击\",\"url\":\"/Ranking_dayvisit/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"周点击\",\"url\":\"/Ranking_weekvisit/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"月点击\",\"url\":\"/Ranking_monthvisit/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"总推荐\",\"url\":\"/Ranking_allvote/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"周推荐\",\"url\":\"/Ranking_weekvote/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"月推荐\",\"url\":\"/Ranking_monthvote/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"收藏推荐\",\"url\":\"/Ranking_goodnum/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"字数排行\",\"url\":\"/Ranking_size/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"最新入库\",\"url\":\"/Ranking_postdate/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"最近更新\",\"url\":\"/Ranking_lastupdate/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"新书榜单\",\"url\":\"/Ranking_goodnew/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"分类\",\"url\":\"\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"玄幻\",\"url\":\"/list/1_{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"修真\",\"url\":\"/list/2_{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"都市\",\"url\":\"/list/3_{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"穿越\",\"url\":\"/list/4_{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"网游\",\"url\":\"/list/5_{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"科幻\",\"url\":\"/list/6_{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"灵异\",\"url\":\"/list/7_{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"女生\",\"url\":\"/list/8_{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"其他\",\"url\":\"/list/9_{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"完本\",\"url\":\"/wanben_{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n]",
-    "lastUpdateTime": 1735263080677,
-    "loginUrl": "",
-    "respondTime": 58157,
-    "ruleBookInfo": {
-      "author": "p.2@text##作者：",
-      "coverUrl": "",
-      "intro": ".intro_info@textNodes",
-      "kind": "p.3@text&&p.4@text##分类：|状态：|小说",
-      "lastChapter": "p.6@text##最新：",
-      "name": "h2@text"
-    },
-    "ruleContent": {
-      "content": "id.nr1@html",
-      "nextContentUrl": "id.pb_next@href",
-      "replaceRegex": "##阅读提示：为防止内容获取不全，请勿使用浏览器阅读模式。.*|本章未完，请点击下一页继续阅读》》.*|"
-    },
-    "ruleExplore": {
-      "author": ".xsm.0@textNodes##\\(|\\)",
-      "bookList": "ul@class.xbk",
-      "bookUrl": "li.0@a@href",
-      "coverUrl": "img@src",
-      "intro": "{{@@span.1@text}}{{@@span.-2@text}}##最新.*|简介：|作者：|\\.\\.\\.",
-      "kind": "",
-      "name": ".xsm.0@a@text"
-    },
-    "ruleSearch": {
-      "author": ".author@text##作者：",
-      "bookList": ".searchbook",
-      "bookUrl": "a@href",
-      "coverUrl": "img@src",
-      "kind": ".cat@text##分类：",
-      "lastChapter": ".update@text最新章节：",
-      "name": ".bookname@text"
-    },
-    "ruleToc": {
-      "chapterList": "ul.1@a",
-      "chapterName": "text",
-      "chapterUrl": "href",
-      "nextTocUrl": "text.下一页@href"
-    },
-    "searchUrl": "/search.html?ie=utf-8&word={{key}}&page={{page}}",
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "//2025.1.7 by ◎辞晨◎  2026-09-01 修复：API 升级至 v2.apikk.top(/api/v2/)，图片加密(自定义字母表+7分组反转+base64url)已适配，line3图床 c-nd3-1.6wm.top",
+  "bookSourceGroup": "🎨 漫画",
+  "bookSourceName": "吉站漫画（优+）",
+  "bookSourceType": 2,
+  "bookSourceUrl": "https://manhuafree.com/",
+  "customButton": false,
+  "customOrder": 77,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "eventListener": false,
+  "exploreUrl": "@js:\nsort=[];\npush=(title,url,type1,type2)=>sort.push({\n\t\ttitle: title,\n\t\turl: url,\n\t\tstyle: {\n\t\t\t\tlayout_flexGrow: type1,\n\t\t\t\tlayout_flexBasisPercent: type2\n\t\t\t}\n\t});\n\tpush(\"全部分类\", null, 1, 1);\n\tarList = [[\"全部类型\",\"/manga\"],[\"人气推荐\",\"/hots\"],[\"热门推荐\",\"/dayup\"],[\"最新上架\",\"/newss\"]];\narList.map(([title, uri]) => {\n  let url = `${uri}<,/page/{{page+1}}>`;\n  push(title, url, 1, 0.35);\n  })\n\t  xrList = [[\"全部\",\"\"],[\"韩漫\",\"-genre/kr\"],[\"热门漫画\",\"-genre/hots\"],[\"国漫\",\"-genre/cn\"],[\"其他\",\"-genre/qita\"],[\"日漫\",\"-genre/jp\"],[\"欧美\",\"-genre/ou-mei\"],[\"复仇\",\"-tag/fuchou\"],[\"古风\",\"-tag/gufeng\"],[\"奇幻\",\"-tag/qihuan\"],[\"逆袭\",\"-tag/nixi\"],[\"异能\",\"-tag/yineng\"],[\"宅向\",\"-tag/zhaixiang\"],[\"穿越\",\"-tag/chuanyue\"],[\"热血\",\"-tag/rexue\"],[\"纯爱\",\"-tag/chunai\"],[\"系统\",\"-tag/xitong\"],[\"重生\",\"-tag/zhongsheng\"],[\"冒险\",\"-tag/maoxian\"],[\"灵异\",\"-tag/lingyi\"],[\"大女主\",\"-tag/danvzhu\"],[\"剧情\",\"-tag/juqing\"],[\"恋爱\",\"-tag/lianai\"],[\"玄幻\",\"-tag/xuanhuan\"],[\"女神\",\"-tag/nvshen\"],[\"科幻\",\"-tag/kehuan\"],[\"魔幻\",\"-tag/mohuan\"],[\"推理\",\"-tag/tuili\"],[\"猎奇\",\"-tag/lieqi\"],[\"治愈\",\"-tag/zhiyu\"],[\"都市\",\"-tag/doushi\"],[\"异形\",\"-tag/yixing\"],[\"末日\",\"-tag/qingchun\"],[\"嫌疑\",\"-tag/xuanyi\"],[\"修仙\",\"-tag/xiuxian\"],[\"战斗\",\"-tag/zhandou\"]];\n  xrList.map(([tag, uro]) => {\n    url = `/manga${uro}<,/page/{{page+1}}>`;\n    push(tag, url, 1, 0.25);\n  });\nJSON.stringify(sort)",
+  "header": "{\n  'User-Agent': \"Mozilla/5.0 (Linux; Android 15; V2304A Build/AP3A.240905.015.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/126.0.6478.71 Mobile Safari/537.36\",\n  'sec-ch-ua-platform': \"\\\"Android\\\"\",\n  'origin': \"https://manhuafree.com/\",\n  'x-requested-with': \"cn.mujiankeji.mbrowser\",\n  'referer': \"https://manhuafree.com/\",\n  'accept-language': \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"\n}",
+  "lastUpdateTime": 1788242611352,
+  "respondTime": 5942,
+  "ruleBookInfo": {
+   "author": ".pb-2.0@text##编剧:|作画:",
+   "coverUrl": "[property=\"og:image\"]@content",
+   "intro": ".text-medium.0@text",
+   "kind": ".py-1.2@a@text",
+   "lastChapter": ".italic.0@text",
+   "name": "h1@textNodes",
+   "tocUrl": "<js>\nlet p = result.match(/data-mid\\=\\\"(.*?)\\\"/);\nif (p) {\n  java.put('bi', p[1]);\n  url = \"https://v2.apikk.top/api/v2/manga/get?mid=\" + p[1] + \"&mode=all\";\n}\nurl;\n</js>\n"
+  },
+  "ruleContent": {
+   "content": "<js>\n(function(){\n  function decodeImages(images) {\n    var SRC = \"_-9876543210abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\";\n    var DST = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_\";\n    if (images.indexOf(\"J7r\") !== 0 || images.lastIndexOf(\"nQ\") !== images.length - 2) {\n      throw new Error(\"前后缀校验失败\");\n    }\n    var core = images.substring(3, images.length - 2);\n    var L = core.length - 5;\n    var N = Math.floor(L / 3);\n    var F = Math.floor((L - N) / 2);\n    var G = (L - N) - F;\n    var A = core.substring(0, F);\n    var B = core.substring(F, F + 2);\n    var C = core.substring(F + 2, F + 2 + G);\n    var D = core.substring(F + 2 + G, F + 2 + G + 3);\n    var E = core.substring(F + 2 + G + 3);\n    if (B !== \"kD\" || D !== \"W4s\" || E.length !== N) {\n      throw new Error(\"标记校验失败\");\n    }\n    var combined = E + A + C;\n    var out = \"\";\n    var gi = 0;\n    for (var i = 0; i < combined.length; i += 7) {\n      var ch = combined.substring(i, i + 7);\n      out += (gi % 2 === 1) ? ch.split(\"\").reverse().join(\"\") : ch;\n      gi++;\n    }\n    var mapped = \"\";\n    for (var j = 0; j < out.length; j++) {\n      var idx = SRC.indexOf(out.charAt(j));\n      if (idx < 0) throw new Error(\"非法字符\");\n      mapped += DST.charAt(idx);\n    }\n    var b64 = mapped.replace(/-/g, \"+\").replace(/_/g, \"/\");\n    var pad = (4 - (b64.length % 4)) % 4;\n    if (pad) b64 += \"====\".substring(0, pad);\n    var raw = java.base64Decode(b64);\n    return JSON.parse(raw);\n  }\n  try {\n    var data = JSON.parse(result).data;\n    var images = data.info.images.images;\n    var line = data.info.images.line;\n    var list = decodeImages(images);\n    var base = (line == 2) ? \"https://c-nd2-1.6wm.top\" : \"https://c-nd3-1.6wm.top\";\n    var headers = JSON.stringify({\"headers\": {\"Referer\": \"https://manhuafree.com/\"}});\n    var html = \"\";\n    for (var x = 0; x < list.length; x++) {\n      html += '<img src=\"' + base + list[x].url + ',' + headers + '\"/>';\n    }\n    return html;\n  } catch (e) {\n    return '<p>解密异常: ' + e + '</p>';\n  }\n})();\n</js>",
+   "imageStyle": "FULL",
+   "replaceRegex": "##.*base64.*"
+  },
+  "ruleExplore": {},
+  "ruleSearch": {
+   "bookList": ".pb-2",
+   "bookUrl": "a.0@href",
+   "coverUrl": "img@src",
+   "name": "h3@text"
+  },
+  "ruleToc": {
+   "chapterList": "$..chapters[*]@put:{bid:$.data.id}",
+   "chapterName": "$..title",
+   "chapterUrl": "https://v2.apikk.top/api/v2/chapter/getinfo?m=@get:{bid}&c={{$..id}}",
+   "updateTime": "$..updatedAt"
+  },
+  "searchUrl": "/s/{{key}}?page={{page}}",
+  "weight": 0
+ }
 ]

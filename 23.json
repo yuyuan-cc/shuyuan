@@ -1,55 +1,50 @@
 [
-  {
-    "bookSourceComment": "#破冰",
-    "bookSourceGroup": "📚 搜书",
-    "bookSourceName": "全本小说（优）",
-    "bookSourceType": 0,
-    "bookSourceUrl": "http://www.xs5200.com/#♤pb",
-    "bookUrlPattern": "http://www.xs5200.com/\\d+_\\d+/",
-    "customButton": false,
-    "customOrder": 94,
-    "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "玄幻小说::/xuanhuanxiaoshuo/1_{{page}}.html\n修真小说::/xiuzhenxiaoshuo/2_{{page}}.html\n都市小说::/dushixiaoshuo/3_{{page}}.html\n穿越小说::/chuanyuexiaoshuo/4_{{page}}.html\n网游小说::/wangyouxiaoshuo/5_{{page}}.html\n科幻小说::/kehuanxiaoshuo/6_{{page}}.html",
-    "lastUpdateTime": 1788021571941,
-    "respondTime": 8341,
-    "ruleBookInfo": {
-      "author": "id.info@tag.p.0@text##作 者：",
-      "coverUrl": "id.bookimg@img@src",
-      "intro": "id.intro@tag.p.1@text",
-      "kind": "id.info@tag.p.2@text&&\nid.info@tag.p.1@text##最后更新：|状 态：",
-      "lastChapter": "id.info@tag.p.3@a@text##免费章节 |正文卷 |正文 |VIP章节 ",
-      "name": "id.info@h1@text"
-    },
-    "ruleContent": {
-      "content": "id.content@html##一秒记住.*最新章节！|清爽免费阅读请记.*|手机免费.*|www.*cc"
-    },
-    "ruleExplore": {
-      "author": "class.s5@text",
-      "bookList": "class.l@li",
-      "bookUrl": "class.s2@a@href",
-      "coverUrl": "class.s2@a@href<js>\nvar id = result.match(/_(\\d+)/)[1];\nvar iid = parseInt(id/1000);\n'http://www.xs5200.com/files/article/image/'+iid+'/'+id+'/'+id+'s.jpg';\n</js>",
-      "lastChapter": "class.s3@text",
-      "name": "class.s2@a@text"
-    },
-    "ruleSearch": {
-      "author": "tag.td.2@text",
-      "bookList": "class.grid@id.nr",
-      "bookUrl": "tag.td.0@tag.a@href",
-      "coverUrl": "tag.td.0@tag.a@href<js>\nvar id = result.match(/_(\\d+)/)[1];\nvar iid = parseInt(id/1000);\n'http://www.xs5200.com/files/article/image/'+iid+'/'+id+'/'+id+'s.jpg';\n</js>",
-      "kind": "tag.td.4@text&&\ntag.td.5@text",
-      "lastChapter": "tag.td.1@tag.a@text##免费章节 |正文卷 |正文 |VIP章节 ",
-      "name": "tag.td.0@tag.a@text",
-      "wordCount": "tag.td.3@text"
-    },
-    "ruleToc": {
-      "chapterList": "id.list@tag.dd",
-      "chapterName": "tag.a@text",
-      "chapterUrl": "tag.a@href"
-    },
-    "searchUrl": "http://www.xs5200.com/modules/article/search.php?s=10362325638345863231&q={{key}}",
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "池鱼 2025.05.15\n本网站所有的小说都是免费的，目前已经有了PC端和wap端，APP端目前还有点问题需要调试\n如果想要查看插图的话可以去网页端，为了避免被刷昂贵的图床流量，所以阅读的书源没有适配插图\n更多详情内容，可以关注：www.huanmengacg.com\n网站QQ群：907189428",
+  "bookSourceGroup": "📖 小说",
+  "bookSourceName": "幻梦轻说（+++）",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://www.huanmengacg.com",
+  "customButton": false,
+  "customOrder": 128,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "eventListener": false,
+  "header": "@js: \nJSON.stringify({\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36\"\n})",
+  "lastUpdateTime": 1787407806203,
+  "respondTime": 4243,
+  "ruleBookInfo": {
+   "author": ".book-metas.0@text##作者：",
+   "coverUrl": "dt@img@src",
+   "intro": ".book-summary@text",
+   "kind": ".book-metas.1@text&&.book-metas.2@text&&.book-metas.3@text##(?:分类|状态|更新)：| [\\d：:]+\n<js>result.replace(/ /,\",\")</js>",
+   "name": ".book-title@text",
+   "tocUrl": "text.章节列表@href"
+  },
+  "ruleContent": {
+   "content": "#BookText@p@text\n<js>\nresult.replace(/(<img src=\"[^\"]+\")[^>]+>/g,\"$1>\")\n</js>\n##本文来自 幻梦轻小说|最新最全的日本动漫轻小说 幻梦轻小说|更多轻小说与TXT下载，尽在幻梦轻小说网（www.huanmengacg.com）|\\(http://www.huanmengacg.com\\)|",
+   "imageStyle": "FULL",
+   "nextContentUrl": "text.下一页@href"
+  },
+  "ruleExplore": {},
+  "ruleSearch": {
+   "author": ".book-module@text##··.*",
+   "bookList": ".boxbd@.common-list",
+   "bookUrl": "a@href",
+   "checkKeyWord": "--https://www.huanmengacg.com/index.php/book_read_794_763.html",
+   "coverUrl": "img@data-original",
+   "intro": ".book-profile@text",
+   "kind": ".book-module@text##.*··",
+   "name": "dt@text"
+  },
+  "ruleToc": {
+   "chapterList": "#chapterlist li a",
+   "chapterName": "text",
+   "chapterUrl": "href",
+   "nextTocUrl": "text.下一页@href"
+  },
+  "searchUrl": "/index.php/book/search?action=search&key={{key}}",
+  "weight": 0
+ }
 ]

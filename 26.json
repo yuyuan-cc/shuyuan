@@ -1,50 +1,50 @@
 [
-  {
-    "bookSourceGroup": "🎨 漫画",
-    "bookSourceName": "漫画狗网（繁）",
-    "bookSourceType": 2,
-    "bookSourceUrl": "https://dogemanga.com",
-    "customButton": false,
-    "customOrder": 246,
-    "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "热门排行::https://dogemanga.com/?s=0\n最新连载::https://dogemanga.com/?s=1",
-    "header": "{\"User-Agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.70\"}",
-    "lastUpdateTime": 1788007651656,
-    "loginCheckJs": "var src = result.body();\nif (src.match(/Just a moment|Checking your browser|Performing security verification|Verifying you are human/)) {\n    cookie.removeCookie(source.bookSourceUrl);\n    var url = result.url();\n    java.startBrowserAwait(url, \"Cloudflare验证\");\n    result = java.connect(url);\n}\nresult;",
-    "loginUrl": "https://dogemanga.com",
-    "respondTime": 7056,
-    "ruleBookInfo": {
-      "author": "tag.h4@text",
-      "intro": ".site-card__brief@text",
-      "kind": "class.text-muted@text@js:String(result).match(/連載完結|連載中/)",
-      "lastChapter": "class.vstack.0@text",
-      "name": ".site-navbar__title@text"
-    },
-    "ruleContent": {
-      "content": "class.site-reader__image@data-page-image-url@js:\nlist = result.split(\"\\n\");\nvar ref = JSON.stringify({headers: {Referer: \"https://dogemanga.com/\"}});\nvar html = \"\";\nfor (var i = 0; i < list.length; i++) {\n    var u = list[i].trim();\n    if (u) {\n        html += '<img src=\"' + u + ',' + ref + '\">\\n';\n    }\n}\nhtml;",
-      "imageStyle": "FULL"
-    },
-    "ruleExplore": {},
-    "ruleSearch": {
-      "author": "tag.h6@text",
-      "bookList": ".site-scroll__list@.col-12 ",
-      "bookUrl": "tag.a.0@href",
-      "coverUrl": "tag.img@src@js:result + ',{\"headers\":{\"Referer\":\"https://dogemanga.com/\"}}'",
-      "intro": "tag.p@text",
-      "kind": "class.text-muted@text@js:String(result).match(/連載完結|連載中/)",
-      "lastChapter": "class.list-group-item.0@text",
-      "name": "tag.h5@text",
-      "wordCount": "class.mb-2@tag.li.1@text##.*連載狀態：|最快更新："
-    },
-    "ruleToc": {
-      "chapterList": "-class.site-selector@option!0",
-      "chapterName": "text",
-      "chapterUrl": "value"
-    },
-    "searchUrl": "https://dogemanga.com/?q={{key}}&o={{(page-1)*12}}",
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "好看漫画排行榜 haokantxt.com，含发现页四列分类",
+  "bookSourceGroup": "🎨 漫画",
+  "bookSourceName": "好看漫画",
+  "bookSourceType": 2,
+  "bookSourceUrl": "https://haokantxt.com/",
+  "customButton": false,
+  "customOrder": 46,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "eventListener": false,
+  "exploreUrl": "[{\"title\": \"热血\", \"url\": \"https://haokantxt.com/category/tags/6/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"冒险\", \"url\": \"https://haokantxt.com/category/tags/7/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"科幻\", \"url\": \"https://haokantxt.com/category/tags/8/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"玄幻\", \"url\": \"https://haokantxt.com/category/tags/10/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"校园\", \"url\": \"https://haokantxt.com/category/tags/11/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"修真\", \"url\": \"https://haokantxt.com/category/tags/12/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"搞笑\", \"url\": \"https://haokantxt.com/category/tags/13/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"穿越\", \"url\": \"https://haokantxt.com/category/tags/14/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"恋爱\", \"url\": \"https://haokantxt.com/category/tags/17/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"耽美\", \"url\": \"https://haokantxt.com/category/tags/16/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"悬疑\", \"url\": \"https://haokantxt.com/category/tags/18/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"恐怖\", \"url\": \"https://haokantxt.com/category/tags/19/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"古风\", \"url\": \"https://haokantxt.com/category/tags/28/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"都市\", \"url\": \"https://haokantxt.com/category/tags/31/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"霸总\", \"url\": \"https://haokantxt.com/category/tags/9/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"逆袭\", \"url\": \"https://haokantxt.com/category/tags/56/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"重生\", \"url\": \"https://haokantxt.com/category/tags/94/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"大女主\", \"url\": \"https://haokantxt.com/category/tags/80/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}]",
+  "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; SM-G973F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.105 Mobile Safari/537.36\", \"Referer\": \"https://haokantxt.com/\"}",
+  "lastUpdateTime": 1789278857509,
+  "respondTime": 6275,
+  "ruleBookInfo": {
+   "author": "class.comic-stats@tag.span.2@text##作者：",
+   "coverUrl": "class.comic-cover-large@tag.img@src",
+   "intro": "class.comic-quick-info@text",
+   "kind": "class.comic-tags@tag.span.0@text",
+   "name": "class.comic-meta-info@tag.h1@text##[《》]"
+  },
+  "ruleContent": {
+   "content": "class.comic-content@html"
+  },
+  "ruleExplore": {
+   "author": "class.comic-author@text",
+   "bookList": "class.comic-item",
+   "bookUrl": "tag.h3@tag.a@href",
+   "coverUrl": "class.comic-cover@tag.img@src",
+   "name": "tag.h3@tag.a@text"
+  },
+  "ruleSearch": {
+   "author": "class.comic-author@text",
+   "bookList": "class.comic-item",
+   "bookUrl": "tag.h3@tag.a@href",
+   "coverUrl": "class.comic-cover@tag.img@src",
+   "name": "tag.h3@tag.a@text"
+  },
+  "ruleToc": {
+   "chapterList": "class.chapter-item@tag.a",
+   "chapterName": "text",
+   "chapterUrl": "href"
+  },
+  "searchUrl": "https://haokantxt.com/search?key={{key}}",
+  "weight": 0
+ }
 ]

@@ -1,57 +1,57 @@
 [
-  {
-    "bookSourceComment": "镜像已更新为 tw.bzmgcn.com（cn.cnbzmg.com 已502、cn.twbzmg.com 返回广告图）（2026-09-29）",
-    "bookSourceGroup": "🎨 漫画",
-    "bookSourceName": "包子漫画",
-    "bookSourceType": 2,
-    "bookSourceUrl": "https://tw.bzmgcn.com",
-    "customButton": false,
-    "customOrder": 12,
-    "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "<js>\nvar sort = [];\nvar push = function(title, url, type1, type2) {\n    sort.push({\n        title: title,\n        url: url,\n        style: {\n            layout_flexGrow: type1,\n            layout_flexBasisPercent: type2\n        }\n    });\n};\n\nvar typeNames = [\"全部\", \"恋爱\", \"纯爱\", \"古风\", \"异能\", \"悬疑\", \"剧情\", \"科幻\", \"奇幻\", \"玄幻\", \"穿越\", \"冒险\", \"推理\", \"武侠\", \"格斗\", \"战争\", \"热血\", \"搞笑\", \"大女主\", \"都市\", \"总裁\", \"后宫\", \"日常\", \"韩漫\", \"少年\", \"其它\"];\nvar types = [\"all\",\"lianai\",\"chunai\",\"gufeng\",\"yineng\",\"xuanyi\",\"juqing\",\"kehuan\",\"qihuan\",\"xuanhuan\",\"chuanyue\",\"mouxian\",\"tuili\",\"wuxia\",\"gedou\",\"zhanzheng\",\"rexie\",\"gaoxiao\",\"danuzhu\",\"dushi\",\"zongcai\",\"hougong\",\"richang\",\"hanman\",\"shaonian\",\"qita\"];\n\ntypeNames.forEach(function(item, index) {\n    var url = \"https://tw.bzmgcn.com/api/bzmhq/amp_comic_list?type=\" + types[index] + \"&region=all&filter=&page={{page}}&limit=36&language=cn&__amp_source_origin=https%3A%2F%2Fcn.baozimhcn.com\";\n    push(item, url, 1, 0.25);\n});\nJSON.stringify(sort)\n</js>",
-    "header": "{\"Accept-Language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"}",
-    "lastUpdateTime": 1790640745288,
-    "respondTime": 17563,
-    "ruleBookInfo": {
-      "author": "class.comics-detail__author@text",
-      "coverUrl": "tag.amp-img.0@src",
-      "init": "<js>java.t2s(result)</js>",
-      "intro": "class.comics-detail__desc overflow-hidden@text",
-      "kind": "class.tag-list@text",
-      "lastChapter": "class.comics-chapters__item.0@text",
-      "name": "class.comics-detail__title@text"
-    },
-    "ruleContent": {
-      "content": "<js>\n(function(){\n  var h = '';\n  try { h = String(window.result || ''); } catch(e) {}\n  if (!h) { try { h = String(result || ''); } catch(e) {} }\n  if (!h) return '';\n  var RE = /https?:\\/\\/s\\d+\\.bzcdn\\.net\\/scomic\\/[^\"'\\s\\)>]+?\\.(?:jpg|jpeg|png|webp)/gi;\n  var arr = h.match(RE) || [];\n  var seen = {}, urls = [];\n  for (var i = 0; i < arr.length; i++) { if (!seen[arr[i]]) { seen[arr[i]] = 1; urls.push(arr[i]); } }\n  if (!urls.length) return '';\n  var groups = {}, d;\n  for (var j = 0; j < urls.length; j++) {\n    var u = urls[j], k = u.lastIndexOf('/');\n    if (k < 0) continue;\n    var dir = u.slice(0, k), fn = u.slice(k + 1).replace(/\\.[^.]*$/, '');\n    if (!/^\\d+$/.test(fn)) continue;\n    if (!groups[dir]) groups[dir] = [];\n    groups[dir].push({ n: parseInt(fn, 10), u: u });\n  }\n  var best = null;\n  for (d in groups) { if (!best || groups[d].length > best.length) best = groups[d]; }\n  if (!best || !best.length) return '';\n  best.sort(function(a, b) { return a.n - b.n; });\n  var out = [];\n  for (var m = 0; m < best.length; m++) out.push('<img src=\"' + best[m].u + '\">');\n  return out.join('\\n');\n})()\n</js>",
-      "imageStyle": "FULL",
-      "title": "@css:.article-title@text"
-    },
-    "ruleExplore": {
-      "author": "$.author",
-      "bookList": "$.items[*]",
-      "bookUrl": "https://tw.bzmgcn.com/comic/{{$.comic_id}}",
-      "coverUrl": "https://static-tw.baozimhcn.com/cover/{{$.topic_img}}",
-      "kind": "$.type_names",
-      "name": "$.name"
-    },
-    "ruleSearch": {
-      "author": "small.tags@text",
-      "bookList": "div.comics-card",
-      "bookUrl": "a.comics-card__poster@href",
-      "coverUrl": "tag.amp-img.0@src",
-      "kind": "div.tabs@text",
-      "lastChapter": "class.comics-chapters__item.0@text",
-      "name": "div.comics-card__title@text"
-    },
-    "ruleToc": {
-      "chapterList": "@webjs:\n(function () {\n  var els = document.querySelectorAll('.comics-chapters__item');\n  if (!els || els.length === 0) return null;\n  var map = {}, order = [];\n  for (var i = 0; i < els.length; i++) {\n    var h = els[i].getAttribute('href') || '';\n    var mi = h.match(/comic_id=([^&]+)/);\n    var ms = h.match(/chapter_slot=(\\d+)/);\n    if (!mi || !ms) continue;\n    var slot = parseInt(ms[1], 10);\n    if (map[slot]) continue;\n    var name = (els[i].textContent || '').replace(/\\s+/g, ' ').trim();\n    if (!name) continue;\n    map[slot] = {\n      chapterName: name,\n      chapterUrl: 'https://tw.bzmgcn.com/comic/chapter/' + mi[1] + '/0_' + slot + '.html'\n    };\n    order.push(slot);\n  }\n  order.sort(function (a, b) { return a - b; });\n  var out = [];\n  for (var k = 0; k < order.length; k++) out.push(map[order[k]]);\n  return JSON.stringify(out);\n})()",
-      "chapterName": "chapterName",
-      "chapterUrl": "chapterUrl"
-    },
-    "searchUrl": "https://tw.bzmgcn.com/search?q={{key}}",
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "镜像已更新为 tw.bzmgcn.com（cn.cnbzmg.com 已502、cn.twbzmg.com 返回广告图）（2026-09-29）",
+  "bookSourceGroup": "🎨 漫画",
+  "bookSourceName": "包子漫画",
+  "bookSourceType": 2,
+  "bookSourceUrl": "https://tw.bzmgcn.com",
+  "customButton": false,
+  "customOrder": 12,
+  "enabled": true,
+  "enabledCookieJar": false,
+  "enabledExplore": true,
+  "eventListener": false,
+  "exploreUrl": "<js>\nvar sort = [];\nvar push = function(title, url, type1, type2) {\n    sort.push({\n        title: title,\n        url: url,\n        style: {\n            layout_flexGrow: type1,\n            layout_flexBasisPercent: type2\n        }\n    });\n};\n\nvar typeNames = [\"全部\", \"恋爱\", \"纯爱\", \"古风\", \"异能\", \"悬疑\", \"剧情\", \"科幻\", \"奇幻\", \"玄幻\", \"穿越\", \"冒险\", \"推理\", \"武侠\", \"格斗\", \"战争\", \"热血\", \"搞笑\", \"大女主\", \"都市\", \"总裁\", \"后宫\", \"日常\", \"韩漫\", \"少年\", \"其它\"];\nvar types = [\"all\",\"lianai\",\"chunai\",\"gufeng\",\"yineng\",\"xuanyi\",\"juqing\",\"kehuan\",\"qihuan\",\"xuanhuan\",\"chuanyue\",\"mouxian\",\"tuili\",\"wuxia\",\"gedou\",\"zhanzheng\",\"rexie\",\"gaoxiao\",\"danuzhu\",\"dushi\",\"zongcai\",\"hougong\",\"richang\",\"hanman\",\"shaonian\",\"qita\"];\n\ntypeNames.forEach(function(item, index) {\n    var url = \"https://tw.bzmgcn.com/api/bzmhq/amp_comic_list?type=\" + types[index] + \"&region=all&filter=&page={{page}}&limit=36&language=cn&__amp_source_origin=https%3A%2F%2Fcn.baozimhcn.com\";\n    push(item, url, 1, 0.25);\n});\nJSON.stringify(sort)\n</js>",
+  "header": "{\"Accept-Language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"}",
+  "lastUpdateTime": 1790640745288,
+  "respondTime": 17563,
+  "ruleBookInfo": {
+   "author": "class.comics-detail__author@text",
+   "coverUrl": "tag.amp-img.0@src",
+   "init": "<js>java.t2s(result)</js>",
+   "intro": "class.comics-detail__desc overflow-hidden@text",
+   "kind": "class.tag-list@text",
+   "lastChapter": "class.comics-chapters__item.0@text",
+   "name": "class.comics-detail__title@text"
+  },
+  "ruleContent": {
+   "content": "<js>\n(function(){\n  var h = '';\n  try { h = String(window.result || ''); } catch(e) {}\n  if (!h) { try { h = String(result || ''); } catch(e) {} }\n  if (!h) return '';\n  var RE = /https?:\\/\\/s\\d+\\.bzcdn\\.net\\/scomic\\/[^\"'\\s\\)>]+?\\.(?:jpg|jpeg|png|webp)/gi;\n  var arr = h.match(RE) || [];\n  var seen = {}, urls = [];\n  for (var i = 0; i < arr.length; i++) { if (!seen[arr[i]]) { seen[arr[i]] = 1; urls.push(arr[i]); } }\n  if (!urls.length) return '';\n  var groups = {}, d;\n  for (var j = 0; j < urls.length; j++) {\n    var u = urls[j], k = u.lastIndexOf('/');\n    if (k < 0) continue;\n    var dir = u.slice(0, k), fn = u.slice(k + 1).replace(/\\.[^.]*$/, '');\n    if (!/^\\d+$/.test(fn)) continue;\n    if (!groups[dir]) groups[dir] = [];\n    groups[dir].push({ n: parseInt(fn, 10), u: u });\n  }\n  var best = null;\n  for (d in groups) { if (!best || groups[d].length > best.length) best = groups[d]; }\n  if (!best || !best.length) return '';\n  best.sort(function(a, b) { return a.n - b.n; });\n  var out = [];\n  for (var m = 0; m < best.length; m++) out.push('<img src=\"' + best[m].u + '\">');\n  return out.join('\\n');\n})()\n</js>",
+   "imageStyle": "FULL",
+   "title": "@css:.article-title@text"
+  },
+  "ruleExplore": {
+   "author": "$.author",
+   "bookList": "$.items[*]",
+   "bookUrl": "https://tw.bzmgcn.com/comic/{{$.comic_id}}",
+   "coverUrl": "https://static-tw.baozimhcn.com/cover/{{$.topic_img}}",
+   "kind": "$.type_names",
+   "name": "$.name"
+  },
+  "ruleSearch": {
+   "author": "small.tags@text",
+   "bookList": "div.comics-card",
+   "bookUrl": "a.comics-card__poster@href",
+   "coverUrl": "tag.amp-img.0@src",
+   "kind": "div.tabs@text",
+   "lastChapter": "class.comics-chapters__item.0@text",
+   "name": "div.comics-card__title@text"
+  },
+  "ruleToc": {
+   "chapterList": "@webjs:\n(function () {\n  var els = document.querySelectorAll('.comics-chapters__item');\n  if (!els || els.length === 0) return null;\n  var map = {}, order = [];\n  for (var i = 0; i < els.length; i++) {\n    var h = els[i].getAttribute('href') || '';\n    var mi = h.match(/comic_id=([^&]+)/);\n    var ms = h.match(/chapter_slot=(\\d+)/);\n    if (!mi || !ms) continue;\n    var slot = parseInt(ms[1], 10);\n    if (map[slot]) continue;\n    var name = (els[i].textContent || '').replace(/\\s+/g, ' ').trim();\n    if (!name) continue;\n    map[slot] = {\n      chapterName: name,\n      chapterUrl: 'https://tw.bzmgcn.com/comic/chapter/' + mi[1] + '/0_' + slot + '.html'\n    };\n    order.push(slot);\n  }\n  order.sort(function (a, b) { return a - b; });\n  var out = [];\n  for (var k = 0; k < order.length; k++) out.push(map[order[k]]);\n  return JSON.stringify(out);\n})()",
+   "chapterName": "chapterName",
+   "chapterUrl": "chapterUrl"
+  },
+  "searchUrl": "https://tw.bzmgcn.com/search?q={{key}}",
+  "weight": 0
+ }
 ]

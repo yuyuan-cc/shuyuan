@@ -1,49 +1,49 @@
 [
-  {
-    "bookSourceComment": "by天天的鸟蛋蛋\n自己改\n同模板需要更新匹配换成 by酷酷 的\n同模板：https://luoxia.com\n感谢这两位大佬指点\n我选择的是by@= =的\n正文过滤广告@6月柳\n \n##落.*[霞a].*m.*\\n|落.*?霞.*m|落霞$|[\\u{1F300}-\\u{1FAD6}\\u{1F600}-\\u{1F64F}\\u{1F680}-\\u{1F6FF}\\u{2600}-\\u{26FF}\\u{1F900}-\\u{1FAFF}]\n@= = \n\t\n##\\n[^\\w]*落.*[霞a].*m.*\\n|落.*?霞.*m|落霞$\n@酷酷 \n同模板匹配\n##[^。？！”\\w\\n]*(?:[\\u4e00-\\u9fff][^\\u4e00-\\u9fff]+){2}[小读][^\\u4e00-\\u9fff]+[说书].*",
-    "bookSourceGroup": "📚 搜书",
-    "bookSourceName": "落霞读书（优+）",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://luoxiadushu.com/",
-    "customButton": false,
-    "customOrder": 61,
-    "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "@js:\nsort=[];\npush=(title,url,type)=>sort.push({\n\t\ttitle: title,\n\t\turl: url,\n\t\tstyle: {\n\t\t\t\tlayout_flexGrow: 1,\n\t\t\t\tlayout_flexBasisPercent: type\n\t\t\t}\n\t});\n[\n[\"📚 文学经典\",[\n[\"世界名著\",\"https://luoxiadushu.com/mingzhu/\"],\n[\"古典文学\",\"https://luoxiadushu.com/jingdian/\"],\n[\"现代\",\"https://luoxiadushu.com/xiandai/\"],\n[\"当代\",\"https://luoxiadushu.com/dangdai/\"]\n]],\n[\"🔮 类型小说\",[\n[\"科幻\",\"https://luoxiadushu.com/kehuan/\"],\n[\"武侠\",\"https://luoxiadushu.com/wuxia/\"],\n[\"悬疑\",\"https://luoxiadushu.com/xuanyi/\"],\n[\"推理\",\"https://luoxiadushu.com/tuili/\"],\n[\"言情\",\"https://luoxiadushu.com/yanqing/\"],\n[\"纯爱\",\"https://luoxiadushu.com/dan/\"]\n]]\n].map([title,list]=>{\n\t\tpush(title,null,1);\n\t\tlist.map([name,url]=>{\n\t\t\t\tpush(name,url,1/3);\n\t\t\t});\n\t});\nJSON.stringify(sort);",
-    "lastUpdateTime": 1788058529923,
-    "respondTime": 4619,
-    "ruleBookInfo": {
-      "author": ".book-describe > p:nth-child(2)@text",
-      "coverUrl": "img@src",
-      "intro": ".book-describe > .describe-html:nth-child(8)@text##❀[电梯直达| 喜欢本书，可选购纸质书珍藏： ].*",
-      "kind": ".book-describe > p:nth-child(3)@text&&.book-describe > p:nth-child(4)@text&&.book-describe > p:nth-child(5)@text##.*：",
-      "lastChapter": "p:nth-child(6) > a@text",
-      "name": ".book-describe > h1@text"
-    },
-    "ruleContent": {
-      "content": "#nr1@p@textNodes",
-      "replaceRegex": "##\\n[^\\w]*落.*[霞a].*m.*\\n|落.*?霞.*m|落霞$"
-    },
-    "ruleExplore": {
-      "author": "class.pop-intro@text",
-      "bookList": "id.content-list@tag.ol@tag.li",
-      "bookUrl": "tag.a@href",
-      "coverUrl": "tag.img@src",
-      "name": "class.pop-tit@text"
-    },
-    "ruleSearch": {
-      "bookList": ".cat-search-item:nth-child(n+1) > a",
-      "bookUrl": "href",
-      "name": "text"
-    },
-    "ruleToc": {
-      "chapterList": "#content-list@ul@li",
-      "chapterName": "a@text",
-      "chapterUrl": "a@href"
-    },
-    "searchUrl": "/page/{{page}}/?s={{key}}",
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "by天天的鸟蛋蛋\n自己改\n同模板需要更新匹配换成 by酷酷 的\n同模板：https://luoxia.com\n感谢这两位大佬指点\n我选择的是by@= =的\n正文过滤广告@6月柳\n \n##落.*[霞a].*m.*\\n|落.*?霞.*m|落霞$|[\\u{1F300}-\\u{1FAD6}\\u{1F600}-\\u{1F64F}\\u{1F680}-\\u{1F6FF}\\u{2600}-\\u{26FF}\\u{1F900}-\\u{1FAFF}]\n@= = \n\t\n##\\n[^\\w]*落.*[霞a].*m.*\\n|落.*?霞.*m|落霞$\n@酷酷 \n同模板匹配\n##[^。？！”\\w\\n]*(?:[\\u4e00-\\u9fff][^\\u4e00-\\u9fff]+){2}[小读][^\\u4e00-\\u9fff]+[说书].*",
+  "bookSourceGroup": "📚 搜书",
+  "bookSourceName": "落霞读书（优+）",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://luoxiadushu.com/",
+  "customButton": false,
+  "customOrder": 61,
+  "enabled": true,
+  "enabledCookieJar": false,
+  "enabledExplore": true,
+  "eventListener": false,
+  "exploreUrl": "@js:\nsort=[];\npush=(title,url,type)=>sort.push({\n\t\ttitle: title,\n\t\turl: url,\n\t\tstyle: {\n\t\t\t\tlayout_flexGrow: 1,\n\t\t\t\tlayout_flexBasisPercent: type\n\t\t\t}\n\t});\n[\n[\"📚 文学经典\",[\n[\"世界名著\",\"https://luoxiadushu.com/mingzhu/\"],\n[\"古典文学\",\"https://luoxiadushu.com/jingdian/\"],\n[\"现代\",\"https://luoxiadushu.com/xiandai/\"],\n[\"当代\",\"https://luoxiadushu.com/dangdai/\"]\n]],\n[\"🔮 类型小说\",[\n[\"科幻\",\"https://luoxiadushu.com/kehuan/\"],\n[\"武侠\",\"https://luoxiadushu.com/wuxia/\"],\n[\"悬疑\",\"https://luoxiadushu.com/xuanyi/\"],\n[\"推理\",\"https://luoxiadushu.com/tuili/\"],\n[\"言情\",\"https://luoxiadushu.com/yanqing/\"],\n[\"纯爱\",\"https://luoxiadushu.com/dan/\"]\n]]\n].map([title,list]=>{\n\t\tpush(title,null,1);\n\t\tlist.map([name,url]=>{\n\t\t\t\tpush(name,url,1/3);\n\t\t\t});\n\t});\nJSON.stringify(sort);",
+  "lastUpdateTime": 1788058529923,
+  "respondTime": 4619,
+  "ruleBookInfo": {
+   "author": ".book-describe > p:nth-child(2)@text",
+   "coverUrl": "img@src",
+   "intro": ".book-describe > .describe-html:nth-child(8)@text##❀[电梯直达| 喜欢本书，可选购纸质书珍藏： ].*",
+   "kind": ".book-describe > p:nth-child(3)@text&&.book-describe > p:nth-child(4)@text&&.book-describe > p:nth-child(5)@text##.*：",
+   "lastChapter": "p:nth-child(6) > a@text",
+   "name": ".book-describe > h1@text"
+  },
+  "ruleContent": {
+   "content": "#nr1@p@textNodes",
+   "replaceRegex": "##\\n[^\\w]*落.*[霞a].*m.*\\n|落.*?霞.*m|落霞$"
+  },
+  "ruleExplore": {
+   "author": "class.pop-intro@text",
+   "bookList": "id.content-list@tag.ol@tag.li",
+   "bookUrl": "tag.a@href",
+   "coverUrl": "tag.img@src",
+   "name": "class.pop-tit@text"
+  },
+  "ruleSearch": {
+   "bookList": ".cat-search-item:nth-child(n+1) > a",
+   "bookUrl": "href",
+   "name": "text"
+  },
+  "ruleToc": {
+   "chapterList": "#content-list@ul@li",
+   "chapterName": "a@text",
+   "chapterUrl": "a@href"
+  },
+  "searchUrl": "/page/{{page}}/?s={{key}}",
+  "weight": 0
+ }
 ]

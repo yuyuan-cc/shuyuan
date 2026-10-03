@@ -1,46 +1,62 @@
 [
-  {
-    "bookSourceComment": "新笔趣阁 www.xbiquge.bz  \n分类/详情/目录/正文/封面 均以 jsoup+rhino 实测通过。\n· 目录分页：详情页(第1-100章) → /books_N/ml1.html(第101-200章) → /books_N/ml{k}.html…；子页 ul.section-list.ycxsid 首尾各有 K 条「诱饵」li（由 <style> 的 nth-child/nth-last-child 隐藏），规则按 K 裁剪；下一页用 <select> 中 selected 选项定位，最后一页自动停止。\n· 正文：<script>document.writeln(qsbs.bb('BASE64'))</script>，@js 解码拼接；章节内分页 _1/_2… 由 nextContentUrl 跟进，直到「下一章」指向别的章节 id 才停。\n· 搜索：站点唯一入口 /search.html（method=POST, name=s）对游客一律 302 → /login.html（GET/POST、带/不带 Cookie、带 Referer、移动UA 均如此），匿名不可用，故 searchUrl 置空。",
-    "bookSourceGroup": "📖 小说",
-    "bookSourceName": "新笔趣阁",
-    "bookSourceType": 0,
-    "bookSourceUrl": "http://www.xbiquge.bz",
-    "customButton": false,
-    "customOrder": 19,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "[{\"title\":\"玄幻修真\",\"url\":\"/fenlei/1/{{page}}.html\"},{\"title\":\"重生穿越\",\"url\":\"/fenlei/2/{{page}}.html\"},{\"title\":\"都市小说\",\"url\":\"/fenlei/3/{{page}}.html\"},{\"title\":\"军史小说\",\"url\":\"/fenlei/4/{{page}}.html\"},{\"title\":\"网游小说\",\"url\":\"/fenlei/5/{{page}}.html\"},{\"title\":\"科幻小说\",\"url\":\"/fenlei/6/{{page}}.html\"},{\"title\":\"灵异小说\",\"url\":\"/fenlei/7/{{page}}.html\"},{\"title\":\"其他小说\",\"url\":\"/fenlei/8/{{page}}.html\"}]",
-    "lastUpdateTime": 1790593090729,
-    "respondTime": 7884,
-    "ruleBookInfo": {
-      "author": "meta[property=\"og:novel:author\"]@content",
-      "coverUrl": "@js:(function () {\n  var h = String(result);\n  var m = h.match(/<meta[^>]+property=\"og:image\"[^>]*content=\"([^\"]*)\"/i);\n  if (!m) { m = h.match(/<meta[^>]+content=\"([^\"]*)\"[^>]*property=\"og:image\"/i); }\n  if (!m) { return ''; }\n  var u = m[1];\n  if (u.indexOf('http') !== 0) {\n    var host = 'http://www.xbiquge.bz';\n    var hm = String(bookUrl).match(/^https?:\\/\\/[^\\/]+/);\n    if (hm) { host = hm[0]; }\n    if (u.substring(0, 1) !== '/') { u = '/' + u; }\n    u = host + u;\n  }\n  return u;\n})()",
-      "intro": "meta[property=\"og:description\"]@content",
-      "kind": "meta[property=\"og:novel:category\"]@content",
-      "lastChapter": "meta[property=\"og:novel:latest_chapter_name\"]@content",
-      "name": "meta[property=\"og:novel:book_name\"]@content"
-    },
-    "ruleContent": {
-      "content": "@js:(function () {\n  var h = String(result);\n  var re = /qsbs\\.bb\\('([^']*)'\\)/g;\n  var out = '';\n  var m;\n  while ((m = re.exec(h)) !== null) {\n    try { out += java.base64Decode(m[1]); } catch (e) { }\n  }\n  return out;\n})()",
-      "nextContentUrl": "@js:(function () {\n  var h = String(result);\n  var host = '';\n  var hm = String(baseUrl).match(/^https?:\\/\\/[^\\/]+/);\n  if (hm) { host = hm[0]; }\n  var nb = h.match(/<a href=\"([^\"]+)\">\\u4e0b\\u4e00\\u7ae0<\\/a>/);\n  if (!nb) { return ''; }\n  var nx = nb[1];\n  var cur = String(baseUrl).replace(/^.*\\//, '').replace(/\\.html.*$/, '');\n  var nf = nx.replace(/^.*\\//, '').replace(/\\.html.*$/, '');\n  var ida = cur.replace(/_\\d+$/, '');\n  var idb = nf.replace(/_\\d+$/, '');\n  if (ida === idb) {\n    if (nx.indexOf('http') !== 0 && nx.substring(0, 1) === '/') { nx = host + nx; }\n    return nx;\n  }\n  return '';\n})()"
-    },
-    "ruleExplore": {
-      "author": ".s4@text",
-      "bookList": "ul.txt-list-row5 > li",
-      "bookUrl": ".s2 a@href",
-      "kind": ".s1@text",
-      "lastChapter": ".s3 a@text",
-      "name": ".s2 a@text"
-    },
-    "ruleSearch": {},
-    "ruleToc": {
-      "chapterList": "@js:(function () {\n  var h = String(result);\n  var sm = h.match(/<select[^>]*>([\\s\\S]*?)<\\/select>/);\n  if (sm) {\n    var oc = sm[1].match(/<option/g);\n    var n0 = oc ? oc.length : 0;\n    if (n0 < 2) { return []; }\n  }\n  var doc = org.jsoup.Jsoup.parse(h);\n  var uls = doc.select('ul.section-list');\n  var best = null, bestN = -1, ycx = null;\n  for (var i = 0; i < uls.size(); i++) {\n    var u = uls.get(i);\n    var n = u.select('li').size();\n    if (u.hasClass('ycxsid')) { ycx = u; }\n    if (n >= bestN) { bestN = n; best = u; }\n  }\n  var ul = (ycx !== null) ? ycx : best;\n  if (ul === null) { return []; }\n  var lis = ul.select('li');\n  var N = lis.size();\n  var K1 = 0, K2 = 0;\n  if (ycx !== null) {\n    var st = h.match(/<style>[\\s\\S]*?ycxsid[\\s\\S]*?<\\/style>/);\n    var seg = st ? st[0] : '';\n    var m1 = seg.match(/nth-child\\(\\d+\\)/g);\n    var m2 = seg.match(/nth-last-child\\(\\d+\\)/g);\n    K1 = m1 ? m1.length : 0;\n    K2 = m2 ? m2.length : 0;\n  }\n  var lo = K1, hi = N - K2;\n  if (lo >= hi) { lo = 0; hi = N; }\n  var src = String(baseUrl);\n  if (src.indexOf('http') !== 0) { src = String(bookUrl); }\n  var host = '';\n  var hm = src.match(/^https?:\\/\\/[^\\/]+/);\n  if (hm) { host = hm[0]; }\n  var arr = [];\n  for (var j = lo; j < hi; j++) {\n    var al = lis.get(j).select('a').first();\n    if (al === null) { continue; }\n    var href = String(al.attr('href'));\n    if (href.indexOf('http') !== 0 && href.substring(0, 1) === '/') { href = host + href; }\n    arr.push({ name: String(al.text()), url: href });\n  }\n  return arr;\n})()",
-      "chapterName": "name",
-      "chapterUrl": "url",
-      "nextTocUrl": "@js:(function () {\n  var h = String(result);\n  var host = '';\n  var hm = String(baseUrl).match(/^https?:\\/\\/[^\\/]+/);\n  if (hm) { host = hm[0]; }\n  var sm = h.match(/<select[^>]*>([\\s\\S]*?)<\\/select>/);\n  if (sm) {\n    var opts = sm[1].match(/<option[^>]*>/g);\n    if (opts) {\n      var cur = -1;\n      for (var i = 0; i < opts.length; i++) {\n        if (opts[i].indexOf('selected') >= 0) { cur = i; }\n      }\n      if (cur >= 0 && cur + 1 < opts.length) {\n        var vm = opts[cur + 1].match(/value=\"([^\"]+)\"/);\n        if (vm) {\n          var nx = vm[1];\n          if (nx.indexOf('http') !== 0 && nx.substring(0, 1) === '/') { nx = host + nx; }\n          return nx;\n        }\n      }\n    }\n    return '';\n  }\n  var doc = org.jsoup.Jsoup.parse(h);\n  var uls = doc.select('ul.section-list');\n  var maxN = 0;\n  for (var k = 0; k < uls.size(); k++) {\n    var n = uls.get(k).select('li').size();\n    if (n > maxN) { maxN = n; }\n  }\n  if (maxN < 100) { return ''; }\n  var bm = h.match(/<a href=\"([^\"]+)\" class=\"btn-mulu\"/);\n  if (bm) {\n    var u = bm[1];\n    if (u.indexOf('http') !== 0 && u.substring(0, 1) === '/') { u = host + u; }\n    return u;\n  }\n  return '';\n})()"
-    },
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "修复说明：\n1. 搜索：原搜索页 /so/{关键词} 是前端渲染(SSR 无数据)，改用官方接口 /api/search；\n2. 目录：原目录页为虚拟滚动只出 100 章，改用 /api/book/chapter-list 全量章节；\n3. 正文：改用 /api/book/read 官方接口取全文；\n4. 发现页：改为 21 个接口驱动榜单(/api/book/rank)，全部带封面、每榜 10 页可翻页；\n   (站点分类页无接口且封面懒加载，故不再作为发现页入口)\n- 修复 by 旺仔",
+  "bookSourceGroup": "📖 小说",
+  "bookSourceName": "QQ阅读_修复版",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://ubook.reader.qq.com/",
+  "customButton": false,
+  "customOrder": 25,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "eventListener": false,
+  "exploreUrl": "月票榜::https://ubook.reader.qq.com/api/book/rank?columnId=543063&pageIndex={{page}}&pageSize=20\n畅销榜::https://ubook.reader.qq.com/api/book/rank?columnId=543064&pageIndex={{page}}&pageSize=20\n潜力榜::https://ubook.reader.qq.com/api/book/rank?columnId=543065&pageIndex={{page}}&pageSize=20\n完结榜::https://ubook.reader.qq.com/api/book/rank?columnId=543069&pageIndex={{page}}&pageSize=20\n新书榜::https://ubook.reader.qq.com/api/book/rank?columnId=543072&pageIndex={{page}}&pageSize=20\n比心榜::https://ubook.reader.qq.com/api/book/rank?columnId=543074&pageIndex={{page}}&pageSize=20\n免费爆款::https://ubook.reader.qq.com/api/book/rank?columnId=543077&pageIndex={{page}}&pageSize=20\n免费完结::https://ubook.reader.qq.com/api/book/rank?columnId=543395&pageIndex={{page}}&pageSize=20\n免费飙升::https://ubook.reader.qq.com/api/book/rank?columnId=543085&pageIndex={{page}}&pageSize=20\n免费口碑::https://ubook.reader.qq.com/api/book/rank?columnId=543099&pageIndex={{page}}&pageSize=20\n女频月票::https://ubook.reader.qq.com/api/book/rank?columnId=543100&pageIndex={{page}}&pageSize=20\n女频畅销::https://ubook.reader.qq.com/api/book/rank?columnId=543102&pageIndex={{page}}&pageSize=20\n女频潜力::https://ubook.reader.qq.com/api/book/rank?columnId=543105&pageIndex={{page}}&pageSize=20\n女频完结::https://ubook.reader.qq.com/api/book/rank?columnId=543106&pageIndex={{page}}&pageSize=20\n女频新书::https://ubook.reader.qq.com/api/book/rank?columnId=543109&pageIndex={{page}}&pageSize=20\n女频比心::https://ubook.reader.qq.com/api/book/rank?columnId=543091&pageIndex={{page}}&pageSize=20\n女频免费爆款::https://ubook.reader.qq.com/api/book/rank?columnId=543090&pageIndex={{page}}&pageSize=20\n女频免费完结::https://ubook.reader.qq.com/api/book/rank?columnId=543086&pageIndex={{page}}&pageSize=20\n女频免费飙升::https://ubook.reader.qq.com/api/book/rank?columnId=543084&pageIndex={{page}}&pageSize=20\n女频免费新书::https://ubook.reader.qq.com/api/book/rank?columnId=543081&pageIndex={{page}}&pageSize=20\n女频免费口碑::https://ubook.reader.qq.com/api/book/rank?columnId=543079&pageIndex={{page}}&pageSize=20\n",
+  "lastUpdateTime": 1790058821034,
+  "respondTime": 4657,
+  "ruleBookInfo": {
+   "author": "class.detail-x__header-detail@a.0@text",
+   "coverUrl": "img.0@src",
+   "intro": "class.detail-x__detail-content@text",
+   "kind": "p.0@text##[/·]*",
+   "lastChapter": "class.detail-x__catalogue-list.0@text##[最新章节]*",
+   "name": "h2@text",
+   "tocUrl": "@js:'/api/book/chapter-list?bid='+baseUrl.match(/\\d+/)[0]",
+   "wordCount": "span.3@text##[·]*"
+  },
+  "ruleContent": {
+   "content": "@js:(function(){var m=baseUrl.match(/book-read\\/(\\d+)\\/(\\d+)/);if(!m)return '';var u='https://ubook.reader.qq.com/api/book/read?bid='+m[1]+'&cid='+m[2];var j=JSON.parse(String(java.ajax(u)));var t=(j&&j.data&&j.data.content)?j.data.content:'';return t?'<p>'+t.replace(/\\r?\\n/g,'</p><p>')+'</p>':'';})()"
+  },
+  "ruleExplore": {
+   "author": "$.author",
+   "bookList": "$.data.column.books",
+   "bookUrl": "$.id@js:'/book-detail/'+result",
+   "coverUrl": "$.cover",
+   "intro": "$.intro",
+   "kind": "$.categories[1].name",
+   "lastChapter": "$.lastChapterName",
+   "name": "$.title",
+   "wordCount": "$.totalWords@js:Number(result)>=10000?Math.round(Number(result)/10000)+'万字':result+'字'"
+  },
+  "ruleSearch": {
+   "author": "$.author",
+   "bookList": "$.data.books",
+   "bookUrl": "$.id@js:'/book-detail/'+result",
+   "checkKeyWord": "龙藏",
+   "coverUrl": "$.cover",
+   "intro": "$.intro",
+   "kind": "$.categories[1].name",
+   "name": "$.title",
+   "wordCount": "$.totalWords@js:Number(result)>=10000?Math.round(Number(result)/10000)+'万字':result+'字'"
+  },
+  "ruleToc": {
+   "chapterList": "$.data.chapters",
+   "chapterName": "$.title",
+   "chapterUrl": "$.seq@js:'/book-read/'+baseUrl.match(/\\d+/)[0]+'/'+result",
+   "isVip": "$.free@js:(result===true||result==='true')?'':'💎'",
+   "updateTime": "$.publishTime"
+  },
+  "searchUrl": "https://ubook.reader.qq.com/api/search?keywords={{key}}&pageIndex={{page}}&pageSize=20",
+  "weight": 0
+ }
 ]

@@ -1,50 +1,46 @@
 [
-  {
-    "bookSourceComment": "好看漫画排行榜 haokantxt.com，含发现页四列分类",
-    "bookSourceGroup": "🎨 漫画",
-    "bookSourceName": "好看漫画",
-    "bookSourceType": 2,
-    "bookSourceUrl": "https://haokantxt.com/",
-    "customButton": false,
-    "customOrder": 46,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "[{\"title\": \"热血\", \"url\": \"https://haokantxt.com/category/tags/6/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"冒险\", \"url\": \"https://haokantxt.com/category/tags/7/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"科幻\", \"url\": \"https://haokantxt.com/category/tags/8/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"玄幻\", \"url\": \"https://haokantxt.com/category/tags/10/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"校园\", \"url\": \"https://haokantxt.com/category/tags/11/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"修真\", \"url\": \"https://haokantxt.com/category/tags/12/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"搞笑\", \"url\": \"https://haokantxt.com/category/tags/13/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"穿越\", \"url\": \"https://haokantxt.com/category/tags/14/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"恋爱\", \"url\": \"https://haokantxt.com/category/tags/17/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"耽美\", \"url\": \"https://haokantxt.com/category/tags/16/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"悬疑\", \"url\": \"https://haokantxt.com/category/tags/18/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"恐怖\", \"url\": \"https://haokantxt.com/category/tags/19/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"古风\", \"url\": \"https://haokantxt.com/category/tags/28/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"都市\", \"url\": \"https://haokantxt.com/category/tags/31/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"霸总\", \"url\": \"https://haokantxt.com/category/tags/9/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"逆袭\", \"url\": \"https://haokantxt.com/category/tags/56/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"重生\", \"url\": \"https://haokantxt.com/category/tags/94/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}, {\"title\": \"大女主\", \"url\": \"https://haokantxt.com/category/tags/80/page/{{page}}\", \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.25}}]",
-    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; SM-G973F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.105 Mobile Safari/537.36\", \"Referer\": \"https://haokantxt.com/\"}",
-    "lastUpdateTime": 1789278857509,
-    "respondTime": 6275,
-    "ruleBookInfo": {
-      "author": "class.comic-stats@tag.span.2@text##作者：",
-      "coverUrl": "class.comic-cover-large@tag.img@src",
-      "intro": "class.comic-quick-info@text",
-      "kind": "class.comic-tags@tag.span.0@text",
-      "name": "class.comic-meta-info@tag.h1@text##[《》]"
-    },
-    "ruleContent": {
-      "content": "class.comic-content@html"
-    },
-    "ruleExplore": {
-      "author": "class.comic-author@text",
-      "bookList": "class.comic-item",
-      "bookUrl": "tag.h3@tag.a@href",
-      "coverUrl": "class.comic-cover@tag.img@src",
-      "name": "tag.h3@tag.a@text"
-    },
-    "ruleSearch": {
-      "author": "class.comic-author@text",
-      "bookList": "class.comic-item",
-      "bookUrl": "tag.h3@tag.a@href",
-      "coverUrl": "class.comic-cover@tag.img@src",
-      "name": "tag.h3@tag.a@text"
-    },
-    "ruleToc": {
-      "chapterList": "class.chapter-item@tag.a",
-      "chapterName": "text",
-      "chapterUrl": "href"
-    },
-    "searchUrl": "https://haokantxt.com/search?key={{key}}",
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "新笔趣阁 www.xbiquge.bz  \n分类/详情/目录/正文/封面 均以 jsoup+rhino 实测通过。\n· 目录分页：详情页(第1-100章) → /books_N/ml1.html(第101-200章) → /books_N/ml{k}.html…；子页 ul.section-list.ycxsid 首尾各有 K 条「诱饵」li（由 <style> 的 nth-child/nth-last-child 隐藏），规则按 K 裁剪；下一页用 <select> 中 selected 选项定位，最后一页自动停止。\n· 正文：<script>document.writeln(qsbs.bb('BASE64'))</script>，@js 解码拼接；章节内分页 _1/_2… 由 nextContentUrl 跟进，直到「下一章」指向别的章节 id 才停。\n· 搜索：站点唯一入口 /search.html（method=POST, name=s）对游客一律 302 → /login.html（GET/POST、带/不带 Cookie、带 Referer、移动UA 均如此），匿名不可用，故 searchUrl 置空。",
+  "bookSourceGroup": "📖 小说",
+  "bookSourceName": "新笔趣阁",
+  "bookSourceType": 0,
+  "bookSourceUrl": "http://www.xbiquge.bz",
+  "customButton": false,
+  "customOrder": 19,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "eventListener": false,
+  "exploreUrl": "[{\"title\":\"玄幻修真\",\"url\":\"/fenlei/1/{{page}}.html\"},{\"title\":\"重生穿越\",\"url\":\"/fenlei/2/{{page}}.html\"},{\"title\":\"都市小说\",\"url\":\"/fenlei/3/{{page}}.html\"},{\"title\":\"军史小说\",\"url\":\"/fenlei/4/{{page}}.html\"},{\"title\":\"网游小说\",\"url\":\"/fenlei/5/{{page}}.html\"},{\"title\":\"科幻小说\",\"url\":\"/fenlei/6/{{page}}.html\"},{\"title\":\"灵异小说\",\"url\":\"/fenlei/7/{{page}}.html\"},{\"title\":\"其他小说\",\"url\":\"/fenlei/8/{{page}}.html\"}]",
+  "lastUpdateTime": 1790593090729,
+  "respondTime": 7884,
+  "ruleBookInfo": {
+   "author": "meta[property=\"og:novel:author\"]@content",
+   "coverUrl": "@js:(function () {\n  var h = String(result);\n  var m = h.match(/<meta[^>]+property=\"og:image\"[^>]*content=\"([^\"]*)\"/i);\n  if (!m) { m = h.match(/<meta[^>]+content=\"([^\"]*)\"[^>]*property=\"og:image\"/i); }\n  if (!m) { return ''; }\n  var u = m[1];\n  if (u.indexOf('http') !== 0) {\n    var host = 'http://www.xbiquge.bz';\n    var hm = String(bookUrl).match(/^https?:\\/\\/[^\\/]+/);\n    if (hm) { host = hm[0]; }\n    if (u.substring(0, 1) !== '/') { u = '/' + u; }\n    u = host + u;\n  }\n  return u;\n})()",
+   "intro": "meta[property=\"og:description\"]@content",
+   "kind": "meta[property=\"og:novel:category\"]@content",
+   "lastChapter": "meta[property=\"og:novel:latest_chapter_name\"]@content",
+   "name": "meta[property=\"og:novel:book_name\"]@content"
+  },
+  "ruleContent": {
+   "content": "@js:(function () {\n  var h = String(result);\n  var re = /qsbs\\.bb\\('([^']*)'\\)/g;\n  var out = '';\n  var m;\n  while ((m = re.exec(h)) !== null) {\n    try { out += java.base64Decode(m[1]); } catch (e) { }\n  }\n  return out;\n})()",
+   "nextContentUrl": "@js:(function () {\n  var h = String(result);\n  var host = '';\n  var hm = String(baseUrl).match(/^https?:\\/\\/[^\\/]+/);\n  if (hm) { host = hm[0]; }\n  var nb = h.match(/<a href=\"([^\"]+)\">\\u4e0b\\u4e00\\u7ae0<\\/a>/);\n  if (!nb) { return ''; }\n  var nx = nb[1];\n  var cur = String(baseUrl).replace(/^.*\\//, '').replace(/\\.html.*$/, '');\n  var nf = nx.replace(/^.*\\//, '').replace(/\\.html.*$/, '');\n  var ida = cur.replace(/_\\d+$/, '');\n  var idb = nf.replace(/_\\d+$/, '');\n  if (ida === idb) {\n    if (nx.indexOf('http') !== 0 && nx.substring(0, 1) === '/') { nx = host + nx; }\n    return nx;\n  }\n  return '';\n})()"
+  },
+  "ruleExplore": {
+   "author": ".s4@text",
+   "bookList": "ul.txt-list-row5 > li",
+   "bookUrl": ".s2 a@href",
+   "kind": ".s1@text",
+   "lastChapter": ".s3 a@text",
+   "name": ".s2 a@text"
+  },
+  "ruleSearch": {},
+  "ruleToc": {
+   "chapterList": "@js:(function () {\n  var h = String(result);\n  var sm = h.match(/<select[^>]*>([\\s\\S]*?)<\\/select>/);\n  if (sm) {\n    var oc = sm[1].match(/<option/g);\n    var n0 = oc ? oc.length : 0;\n    if (n0 < 2) { return []; }\n  }\n  var doc = org.jsoup.Jsoup.parse(h);\n  var uls = doc.select('ul.section-list');\n  var best = null, bestN = -1, ycx = null;\n  for (var i = 0; i < uls.size(); i++) {\n    var u = uls.get(i);\n    var n = u.select('li').size();\n    if (u.hasClass('ycxsid')) { ycx = u; }\n    if (n >= bestN) { bestN = n; best = u; }\n  }\n  var ul = (ycx !== null) ? ycx : best;\n  if (ul === null) { return []; }\n  var lis = ul.select('li');\n  var N = lis.size();\n  var K1 = 0, K2 = 0;\n  if (ycx !== null) {\n    var st = h.match(/<style>[\\s\\S]*?ycxsid[\\s\\S]*?<\\/style>/);\n    var seg = st ? st[0] : '';\n    var m1 = seg.match(/nth-child\\(\\d+\\)/g);\n    var m2 = seg.match(/nth-last-child\\(\\d+\\)/g);\n    K1 = m1 ? m1.length : 0;\n    K2 = m2 ? m2.length : 0;\n  }\n  var lo = K1, hi = N - K2;\n  if (lo >= hi) { lo = 0; hi = N; }\n  var src = String(baseUrl);\n  if (src.indexOf('http') !== 0) { src = String(bookUrl); }\n  var host = '';\n  var hm = src.match(/^https?:\\/\\/[^\\/]+/);\n  if (hm) { host = hm[0]; }\n  var arr = [];\n  for (var j = lo; j < hi; j++) {\n    var al = lis.get(j).select('a').first();\n    if (al === null) { continue; }\n    var href = String(al.attr('href'));\n    if (href.indexOf('http') !== 0 && href.substring(0, 1) === '/') { href = host + href; }\n    arr.push({ name: String(al.text()), url: href });\n  }\n  return arr;\n})()",
+   "chapterName": "name",
+   "chapterUrl": "url",
+   "nextTocUrl": "@js:(function () {\n  var h = String(result);\n  var host = '';\n  var hm = String(baseUrl).match(/^https?:\\/\\/[^\\/]+/);\n  if (hm) { host = hm[0]; }\n  var sm = h.match(/<select[^>]*>([\\s\\S]*?)<\\/select>/);\n  if (sm) {\n    var opts = sm[1].match(/<option[^>]*>/g);\n    if (opts) {\n      var cur = -1;\n      for (var i = 0; i < opts.length; i++) {\n        if (opts[i].indexOf('selected') >= 0) { cur = i; }\n      }\n      if (cur >= 0 && cur + 1 < opts.length) {\n        var vm = opts[cur + 1].match(/value=\"([^\"]+)\"/);\n        if (vm) {\n          var nx = vm[1];\n          if (nx.indexOf('http') !== 0 && nx.substring(0, 1) === '/') { nx = host + nx; }\n          return nx;\n        }\n      }\n    }\n    return '';\n  }\n  var doc = org.jsoup.Jsoup.parse(h);\n  var uls = doc.select('ul.section-list');\n  var maxN = 0;\n  for (var k = 0; k < uls.size(); k++) {\n    var n = uls.get(k).select('li').size();\n    if (n > maxN) { maxN = n; }\n  }\n  if (maxN < 100) { return ''; }\n  var bm = h.match(/<a href=\"([^\"]+)\" class=\"btn-mulu\"/);\n  if (bm) {\n    var u = bm[1];\n    if (u.indexOf('http') !== 0 && u.substring(0, 1) === '/') { u = host + u; }\n    return u;\n  }\n  return '';\n})()"
+  },
+  "weight": 0
+ }
 ]

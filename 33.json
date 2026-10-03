@@ -1,54 +1,52 @@
 [
-  {
-    "bookSourceComment": "",
-    "bookSourceGroup": "📖 小说",
-    "bookSourceName": "海棠书屋",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://wap.haitangshuwu.info",
-    "customButton": false,
-    "customOrder": 76,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "@js:\nvar menus = [\n    { title: \"完本\", url: \"/full/{{page}}/\", flexBasis: 1 },\n    \n    { title: \"════ 排 行 ════\", url: \"\", flexBasis: 1 },\n    \n    { title: \"总点击\", url: \"/top/allvisit_{{page}}/\", flexBasis: 0.2 },\n    { title: \"月点击\", url: \"/top/monthvisit_{{page}}/\", flexBasis: 0.2 },\n    { title: \"周点击\", url: \"/top/weekvisit_{{page}}/\", flexBasis: 0.2 },\n    \n    { title: \"════ 分 类 ════\", url: \"\", flexBasis: 1 },\n    \n    { title: \"玄幻奇幻\", url: \"/sort/1_{{page}}/\", flexBasis: 0.25 },\n    { title: \"武侠仙侠\", url: \"/sort/2_{{page}}/\", flexBasis: 0.25 },\n    { title: \"都市言情\", url: \"/sort/3_{{page}}/\", flexBasis: 0.25 },\n    { title: \"历史穿越\", url: \"/sort/4_{{page}}/\", flexBasis: 0.25 },\n    \n    { title: \"网游竞技\", url: \"/sort/5_{{page}}/\", flexBasis: 0.25 },\n    { title: \"科幻灵异\", url: \"/sort/6_{{page}}/\", flexBasis: 0.25 },\n    { title: \"恐怖惊悚\", url: \"/sort/7_{{page}}/\", flexBasis: 0.25 },\n    { title: \"其他类型\", url: \"/sort/8_{{page}}/\", flexBasis: 0.25 }\n];\n\nvar result = [];\nfor (var i = 0; i < menus.length; i++) {\n    var item = menus[i];\n    var style = {\n        layout_flexGrow: 1,\n        layout_flexBasisPercent: item.flexBasis\n    };\n    \n    result.push({\n        title: item.title,\n        url: item.url,\n        style: style\n    });\n}\n\nJSON.stringify(result);",
-    "lastUpdateTime": 1785664944946,
-    "respondTime": 19017,
-    "ruleBookInfo": {
-      "author": "class.xx@ul@li.2@text",
-      "coverUrl": "class.xsfm@img@src",
-      "intro": "class.jianjie@text",
-      "kind": "class.xx@ul@li.1@a@text",
-      "lastChapter": "class.xx@ul@li.3@a@text",
-      "name": "class.xx@ul@li.0@text",
-      "tocUrl": "text.查看更多章节@href"
-    },
-    "ruleContent": {
-      "content": "article@html@js:java.t2s(result)"
-    },
-    "ruleExplore": {
-      "author": "span.1@a@text",
-      "bookList": "class.list@ul",
-      "bookUrl": "li.0@a@href",
-      "coverUrl": "li.0@a@img@src",
-      "intro": "span.2@text",
-      "kind": "span.3@text",
-      "name": "span.0@text"
-    },
-    "ruleSearch": {
-      "author": "@a.2@text",
-      "bookList": "class.fk@li",
-      "bookUrl": "@a.1@href",
-      "kind": "@a.0@text",
-      "name": "@a.1@text"
-    },
-    "ruleToc": {
-      "chapterList": "class.zjlb@class.lb@ul@li!-1",
-      "chapterName": "a@text",
-      "chapterUrl": "a@href",
-      "nextTocUrl": "class.showpage@ul@li.-3@a@href\n<js>\nlet list = [];\nconst maxPageUrl = String(result[0]);\nconst baseMatch = maxPageUrl.match(/(.*)_/);\nconst pageMatch = maxPageUrl.match(/_(\\d+)\\//);\n\nif (baseMatch && pageMatch) {\n    const basePath = baseMatch[1];\n    const maxPageNum = parseInt(pageMatch[1]);\n    \n    if (maxPageNum > 2) {\n        for (let pageIndex = 2; pageIndex <= maxPageNum; pageIndex++) {\n            list.push(`${basePath}_${pageIndex}/`);\n        }\n    }\n}\nlist;\n</js>"
-    },
-    "searchUrl": "https://wap.haitangshuwu.info/s.php,{\n  \"body\": \"submit=&type=articlename&s={{key}}\",\n  \"charset\": \"GBK\",\n  \"method\": \"POST\"\n}",
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "爱笔楼（www.ibiquge.net 301→www.biqutu.info）。搜索/详情/目录/正文均实测通过。",
+  "bookSourceGroup": "📖 小说",
+  "bookSourceName": "爱笔楼",
+  "bookSourceType": 0,
+  "bookSourceUrl": "http://www.biqutu.info",
+  "customButton": false,
+  "customOrder": 16,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "eventListener": false,
+  "exploreUrl": "玄幻奇幻::/xuanhuanxiaoshuo/1_{{page}}.html\n修真仙侠::/xiuzhenxiaoshuo/2_{{page}}.html\n都市青春::/dushixiaoshuo/3_{{page}}.html\n历史军事::/lishixiaoshuo/4_{{page}}.html\n网游竞技::/wangyouxiaoshuo/5_{{page}}.html\n科幻灵异::/kehuanxiaoshuo/6_{{page}}.html\n其它小说::/qitaxiaoshuo/7_{{page}}.html",
+  "header": "{\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\", \"Accept\": \"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\", \"Accept-Language\": \"zh-CN,zh;q=0.9\"}",
+  "lastUpdateTime": 1790593059105,
+  "respondTime": 2948,
+  "ruleBookInfo": {
+   "author": "id.info@tag.p.0@tag.a@text",
+   "coverUrl": "#fmimg img@src",
+   "intro": "#intro@text",
+   "kind": "meta[property=\"og:novel:category\"]@content",
+   "lastChapter": "id.info@tag.p.3@tag.a@text",
+   "name": "#info h1@text"
+  },
+  "ruleContent": {
+   "content": "id.content@html##<p>[\\s\\S]*?</p>|<div align=\"center\">[\\s\\S]*?</div>"
+  },
+  "ruleExplore": {
+   "author": "span.s4 a@text",
+   "bookList": "#newscontent .l ul li",
+   "bookUrl": "span.s2 a@href",
+   "kind": "span.s1@text##[\\[\\]]",
+   "lastChapter": "span.s3 a@text",
+   "name": "span.s2 a@text"
+  },
+  "ruleSearch": {
+   "author": "span.s4 a@text",
+   "bookList": "div.novelslist2 li+li",
+   "bookUrl": "span.s2 a@href",
+   "lastChapter": "span.s3 a@text",
+   "name": "span.s2 a@text"
+  },
+  "ruleToc": {
+   "chapterList": "#list dt:contains(正文) ~ dd",
+   "chapterName": "a@text",
+   "chapterUrl": "a@href"
+  },
+  "searchUrl": "/search.html?name={{key}}",
+  "weight": 0
+ }
 ]

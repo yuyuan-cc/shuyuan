@@ -1,80 +1,44 @@
 [
-  {
-    "bookSourceComment": "",
-    "bookSourceGroup": "📖 小说",
-    "bookSourceName": "轻之文库（优）",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://www.linovel.net#",
-    "bookUrlPattern": "",
-    "concurrentRate": "",
-    "coverDecodeJs": "",
-    "customButton": false,
-    "customOrder": 301,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreScreen": "",
-    "exploreUrl": "[{\"title\":\"榜单\",\"url\":\"\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"重推周榜\",\"url\":\"/hub/getTopBooks?unit=zt&time=week&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"佳作周榜\",\"url\":\"/hub/getTopBooks?unit=jz&time=week&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"月票周榜\",\"url\":\"/hub/getTopBooks?unit=ticket&time=week&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"轻币周榜\",\"url\":\"/hub/getTopBooks?unit=coin&time=week&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"墨水周榜\",\"url\":\"/hub/getTopBooks?unit=ink&time=week&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"应援周榜\",\"url\":\"/hub/getTopBooks?unit=supp&time=week&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"重推月榜\",\"url\":\"/hub/getTopBooks?unit=zt&time=month&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"佳作月榜\",\"url\":\"/hub/getTopBooks?unit=jz&time=month&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"月票月榜\",\"url\":\"/hub/getTopBooks?unit=ticket&time=month&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"轻币月榜\",\"url\":\"/hub/getTopBooks?unit=coin&time=month&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"墨水月榜\",\"url\":\"/hub/getTopBooks?unit=ink&time=month&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"应援月榜\",\"url\":\"/hub/getTopBooks?unit=supp&time=month&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"重推新人\",\"url\":\"/hub/getTopBooks?unit=zt&time=new&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"佳作新人\",\"url\":\"/hub/getTopBooks?unit=jz&time=new&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"轻币新人\",\"url\":\"/hub/getTopBooks?unit=coin&time=new&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"墨水新人\",\"url\":\"/hub/getTopBooks?unit=ink&time=new&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"应援新人\",\"url\":\"/hub/getTopBooks?unit=supp&time=new&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"月票新人\",\"url\":\"/hub/getTopBooks?unit=ticket&time=new&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"分类\",\"url\":\"\",\"style\":{\"layout_flexBasisPercent\":1,\"layout_flexGrow\":1}},\n{\"title\":\"精选\",\"url\":\"/cat/2000.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"全部\",\"url\":\"/cat/-1.html?sort=hot&sign=-1&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"幻想\",\"url\":\"/cat/1.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"战斗\",\"url\":\"/cat/2.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"恋爱\",\"url\":\"/cat/3.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"异界\",\"url\":\"/cat/4.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"搞笑\",\"url\":\"/cat/5.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"日常\",\"url\":\"/cat/6.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"校园\",\"url\":\"/cat/7.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"后宫\",\"url\":\"/cat/8.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"科幻\",\"url\":\"/cat/10.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"治愈\",\"url\":\"/cat/11.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"超能\",\"url\":\"/cat/12.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"节操\",\"url\":\"/cat/13.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"妖怪\",\"url\":\"/cat/14.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"恐怖\",\"url\":\"/cat/15.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"妹控\",\"url\":\"/cat/16.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"伪娘\",\"url\":\"/cat/17.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"魔法\",\"url\":\"/cat/18.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"乙女\",\"url\":\"/cat/19.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"同人\",\"url\":\"/cat/20.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"百合\",\"url\":\"/cat/21.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"偶像\",\"url\":\"/cat/22.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}},\n{\"title\":\"悬疑\",\"url\":\"/cat/104.html?page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.2,\"layout_flexGrow\":1}}]",
-    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0\"\n}",
-    "lastUpdateTime": 1735068529082,
-    "loginCheckJs": "",
-    "loginUi": "",
-    "loginUrl": "https://www.linovel.net/",
-    "respondTime": 34167,
-    "ruleBookInfo": {
-      "author": ".name@a@text",
-      "canReName": "",
-      "coverUrl": ".book-cover@img@src",
-      "init": "",
-      "intro": "🏷️   {{@.book-cats@text}}{{'\\n'+'​'}}\n{{@.about-text@text}}##(^|[。！？]+[”」）】]?)##$1<br>",
-      "kind": ".book-data@span.-2@text&&.book-last-update@text##更新于|\\s.*",
-      "lastChapter": ".recent-update@a.0@text",
-      "name": "h1@text",
-      "tocUrl": "",
-      "wordCount": ".book-data@span.0@text"
-    },
-    "ruleContent": {
-      "content": ".article-text@html",
-      "imageStyle": "",
-      "nextContentUrl": "",
-      "replaceRegex": "",
-      "sourceRegex": "",
-      "webJs": ""
-    },
-    "ruleExplore": {
-      "author": ".book-extra@text||$.author##\\s*丨.+$",
-      "bookList": ".rank-book||$.data.books[*]",
-      "bookUrl": "a.0@href||https://www.linovel.net/book/{$.id}.html",
-      "coverUrl": "img@src||$.coverUrl",
-      "intro": ".book-intro@text||$.about",
-      "kind": ".book-extra@text&&.book-tag@text&&$.cat[*]##^[^丨]+丨\\s*|\\s.*",
-      "lastChapter": "p.-1@text||$.lastVolName",
-      "name": "a.0@text||$.name",
-      "wordCount": "words"
-    },
-    "ruleSearch": {
-      "author": "div.-1@text##\\s*丨.+$",
-      "bookList": ".rank-book-list@a",
-      "bookUrl": "href",
-      "coverUrl": "img@src",
-      "intro": "div.-2@text",
-      "kind": "div.-1@text&&.book-tag@text##^[^丨]+丨\\s*|\\s.*",
-      "lastChapter": "",
-      "name": "div.4@text",
-      "wordCount": ""
-    },
-    "ruleToc": {
-      "chapterList": ".chapter",
-      "chapterName": "@js:\nvar title = result.parentNode().parentNode().parentNode().parentNode().parentNode();\nresult = title.select('h2').text() +'：'+ result.text()",
-      "chapterUrl": "a@href",
-      "isVip": "",
-      "isVolume": "",
-      "nextTocUrl": "",
-      "updateTime": ""
-    },
-    "searchUrl": "/search/?kw={{key}}&page={{page}}",
-    "variableComment": "",
-    "weight": 2
-  }
+ {
+  "bookSourceComment": "//By情无羁25.04.28",
+  "bookSourceGroup": "📚 搜书",
+  "bookSourceName": "万相书城（优）",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://www.wxsck.com",
+  "customButton": false,
+  "customOrder": 95,
+  "enabled": true,
+  "enabledCookieJar": false,
+  "enabledExplore": true,
+  "eventListener": false,
+  "exploreScreen": "",
+  "exploreUrl": "@js:\nvar result = [];\njava.toast(\"🔥正在刷新列表,请稍等！\");\nvar push = (title, url, size) => result.push({\n    \"title\": title,\n    \"url\": url,\n    \"style\": {\n        \"layout_flexGrow\": 1,\n        \"layout_flexBasisPercent\": size\n    }\n});\nvar baseUrl = \"https://www.wxsck.com/\";\nvar tag = java.ajax(baseUrl);\nif (tag) {\n    var a = org.jsoup.Jsoup.parse(tag).select(\".breadcrumb li a\");\n    push(\"🔥分类小说🔥\", null, 1);\n    for (var i = 0; i < a.length -1; i++) {\n        var title = a[i].text();\n        var url = a[i].attr(\"href\");\n        var size = 0.25;\n        title = String(title).replace(/\\s/g, \"\");\n        url = String(url).replace(/\\.html/,'_{{page}}.html');      \n        push(title, url, size);\n    }\n} else {\n  java.toast(\"🤔列表刷新失败！！！\");     \n} \nJSON.stringify(result);",
+  "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; U; Android 14; zh-cn; M2102K1AC Build/UKQ1.231207.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/109.0.5414.118 Mobile Safari/537.36 MQQBrowser/10.1.0\"}",
+  "lastUpdateTime": 1788021576639,
+  "respondTime": 8992,
+  "ruleBookInfo": {
+   "coverUrl": ".book-img-middel@src",
+   "intro": "@js:if (source.bookSourceType=='3'){\tresult=java.getString('.panel-body@html')\n\t}else {\n\t\tresult=java.getString('.book-detail@html')\n\t\t}"
+  },
+  "ruleContent": {
+   "content": "#cont-body@p@html"
+  },
+  "ruleExplore": {},
+  "ruleSearch": {
+   "author": "td.1@text",
+   "bookList": "tbody tr||class.col-md-12 b10",
+   "bookUrl": "a@href\n<js>\nif (source.bookSourceType=='0'){\n\tresult=result\n\t}else {\n\t\tresult=java.get(\"x\")\n\t\t}\n</js>",
+   "coverUrl": "a.1@href##.*?(\\d+).*##/uploads/cover/pic$1.jpg",
+   "intro": ".media-info@text",
+   "name": "h4@text||td.0@text##《|》",
+   "wordCount": "td.2@a.0@href\n<js>\nvar result=result.replace(/^/,'https://www.wxsck.com')\njava.put(\"x\",result)\nre=''\n</js>"
+  },
+  "ruleToc": {
+   "chapterList": "class.col-md-6 item@a",
+   "chapterName": "text",
+   "chapterUrl": "href"
+  },
+  "searchUrl": "https://www.wxsck.com/plus/search.php?q={{key}}",
+  "weight": 2
+ }
 ]

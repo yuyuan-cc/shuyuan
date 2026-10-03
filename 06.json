@@ -1,54 +1,54 @@
 [
-  {
-    "bookSourceComment": "直连修复版(2026-09-16): 去掉 Cloudflare Worker 反代(mink.de5.net 被后端 s3file.top 的CF对数据中心IP弹质询而失效), 改为直接访问 hipapi1.s3file.top / cover.s3imgs.top / reader.hipmh.top。后端对真实客户端直连200、CORS开放(access-control-allow-origin:*) 、无防盗链。",
-    "bookSourceGroup": "🎨 漫画",
-    "bookSourceName": "嬉皮漫画（优+）",
-    "bookSourceType": 2,
-    "bookSourceUrl": "https://m.hipmh.com/",
-    "customButton": false,
-    "customOrder": 31,
-    "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "人气榜::https://hipapi1.s3file.top/v1/mangas?sort=popular&page={{page}}&per_page=100&&最新::https://hipapi1.s3file.top/v1/mangas?sort=latest&page={{page}}&per_page=100&&国漫::https://hipapi1.s3file.top/v1/mangas?category=2&sort=updated&page={{page}}&per_page=100&&韩漫::https://hipapi1.s3file.top/v1/mangas?category=1&sort=updated&page={{page}}&per_page=100&&武侠::https://hipapi1.s3file.top/v1/mangas?genre=39&sort=updated&page={{page}}&per_page=100&&系统::https://hipapi1.s3file.top/v1/mangas?genre=67&sort=updated&page={{page}}&per_page=100&&冒险::https://hipapi1.s3file.top/v1/mangas?genre=38&sort=updated&page={{page}}&per_page=100&&异能::https://hipapi1.s3file.top/v1/mangas?genre=51&sort=updated&page={{page}}&per_page=100&&剧情::https://hipapi1.s3file.top/v1/mangas?genre=3&sort=updated&page={{page}}&per_page=100&&宫斗::https://hipapi1.s3file.top/v1/mangas?genre=44&sort=updated&page={{page}}&per_page=100&&逆袭::https://hipapi1.s3file.top/v1/mangas?genre=32&sort=updated&page={{page}}&per_page=100",
-    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 15; V2304A Build/AP3A.240905.015.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/126.0.6478.71 Mobile Safari/537.36\", \"Accept\": \"application/json, text/plain, */*\", \"Accept-Language\": \"zh-CN,zh;q=0.9\"}",
-    "lastUpdateTime": 1789490536763,
-    "respondTime": 30354,
-    "ruleBookInfo": {
-      "author": "<js>(function(){var i=result.indexOf('href=\"/author/');if(i<0)return '';var s=result.indexOf('title=\"',i);if(s<0)return '';var e=result.indexOf('\"',s+7);return result.substring(s+7,e);})()</js>",
-      "coverUrl": "<js>(function(){var i=result.indexOf('data-cover=\"');if(i<0)return '';var s=i+12;var e=result.indexOf('\"',s);return ''+result.substring(s,e);})()</js>",
-      "name": "tag.h1@text",
-      "tocUrl": "<js>(function(){var i=result.indexOf('data-mid=\"');if(i<0)return '';var s=i+10;var e=result.indexOf('\"',s);var mid=result.substring(s,e);return 'https://hipapi1.s3file.top/v1/manga/chapters?mid='+mid+'&page=1&per_page=50&order=asc';})()</js>"
-    },
-    "ruleContent": {
-      "content": "@webjs:(function(){\n  var P = \"\";\n  var ALPHA = \"-0123456789ABCDEFGHIJKLMNOPQRSTUWX_abcdefghijklmnopqrstuvwxyz\";\n  var MAPP  = \"BLKJIHGFEDCmnopqrstuvwxyz012345689AMNOPQRSTUVWXYZabcdefghijkl\";\n  var MAP = {};\n  for (var i = 0; i < ALPHA.length; i++) MAP[ALPHA.charAt(i)] = MAPP.charAt(i);\n  function decodeImages(images) {\n    var core = images.substring(3, images.length - 2);\n    var kVx = core.indexOf(\"Vx\"), kP = core.indexOf(\"pL0\");\n    if (kVx < 0 || kP < 0) throw new Error(\"markers not found\");\n    var head = core.substring(0, kVx);\n    var mid  = core.substring(kVx + 2, kP);\n    var tail = core.substring(kP + 3);\n    var combined = tail + head + mid;\n    var s = \"\", gi = 0;\n    for (var i = 0; i < combined.length; i += 7) {\n      var ch = combined.substring(i, i + 7);\n      s += (gi % 2 === 1) ? ch.split(\"\").reverse().join(\"\") : ch;\n      gi++;\n    }\n    var s1 = \"\";\n    for (var j = 0; j < s.length; j++) {\n      var c = s.charAt(j);\n      s1 += (MAP[c] !== undefined) ? MAP[c] : c;\n    }\n    var pad = (4 - (s1.length % 4)) % 4;\n    var b64 = s1 + (pad ? \"====\".substring(0, pad) : \"\");\n    return JSON.parse(atob(b64));\n  }\n  function shuffle(t, l, u) {\n    if (!t || !t.length) return t;\n    var d = t.length;\n    var ml = (l === null || l === undefined) ? null : Number(l);\n    var gu = (u === null || u === undefined) ? null : Number(u);\n    if (ml === null || gu === null || !(ml >= 0 && ml <= 4294967295) || !(gu >= 0 && gu <= 4294967295)) return t;\n    var D = (40503 << 16) | 31153, R = (34283 << 16) | 51819;\n    function mul32(a, b){var ah=Math.floor(a/65536),al=a%65536,bh=Math.floor(b/65536),bl=b%65536;var p00=al*bl,p01=al*bh,p10=ah*bl,p11=ah*bh;var mid=p01+p10+Math.floor(p00/65536);var lo=(p00&0xFFFF)|((mid%65536)<<16);var hi=p11+Math.floor(mid/65536);return {hi:hi>>>0,lo:lo>>>0};}\n    function xor64(x,y){return {hi:(x.hi^y.hi)>>>0,lo:(x.lo^y.lo)>>>0};}\n    function mod64(x,m){var b16=[x.hi>>>16,x.hi&0xFFFF,x.lo>>>16,x.lo&0xFFFF];var rem=0;for(var i=0;i<4;i++)rem=((rem*65536)%m+b16[i])%m;return rem;}\n    var L = mul32(gu, D), V = mul32(d, R);\n    var b = mod64(xor64(L, V), d);\n    var h = (ml ^ b) >>> 0;\n    if (h >= d) return t;\n    var arr = t.slice();\n    arr.splice(h, 1);\n    return arr;\n  }\n  if (window.__hipReady && window.__hipUrls) {\n    var html = \"\";\n    for (var x = 0; x < window.__hipUrls.length; x++) html += \"<img src=\\\"\" + window.__hipBase + window.__hipUrls[x] + \"\\\">\";\n    return html;\n  }\n  var el = document.querySelector(\"[data-api-hid]\");\n  if (!el) { window.__hipReady = true; window.asyncR = \"1\"; return \"<p>未找到 data-api-hid</p>\"; }\n  var apiHid = el.getAttribute(\"data-api-hid\");\n  var xhr = new XMLHttpRequest();\n  xhr.open(\"GET\", P + \"https://hipapi1.s3file.top/v2/chapter?hid=\" + encodeURIComponent(apiHid), true);\n  xhr.onload = function() {\n    try {\n      var data = JSON.parse(xhr.responseText).data;\n      var images = data.images;\n      var urls = typeof images === \"string\" ? decodeImages(images) : (images instanceof Array ? images : []);\n      urls = urls.filter(function(x){ return typeof x === \"string\"; });\n      urls = shuffle(urls, data.order_id, data.sid);\n      var base = \"https://hip-tx-1.s3imgs.top\";\n      if (data.line == 9) {\n        var l1s = document.querySelector(\"[data-chapter-img-base-line1s]\");\n        var l2s = document.querySelector(\"[data-chapter-img-base-line2s]\");\n        if (l1s) base = l1s.getAttribute(\"data-chapter-img-base-line1s\");\n        else if (l2s) base = l2s.getAttribute(\"data-chapter-img-base-line2s\");\n      } else {\n        var b2 = document.querySelector(\"[data-chapter-img-base]\");\n        if (b2) base = b2.getAttribute(\"data-chapter-img-base\");\n      }\n      window.__hipUrls = urls;\n      window.__hipBase = P + base;\n    } catch(e) { window.__hipErr = String(e); }\n    window.__hipReady = true;\n    window.asyncR = \"1\";\n  };\n  xhr.onerror = function() { window.__hipErr = \"xhr_error\"; window.__hipReady = true; window.asyncR = \"1\"; };\n  xhr.send();\n  return null;\n})()",
-      "imageStyle": "FULL"
-    },
-    "ruleExplore": {
-      "author": "$.author_names[0]",
-      "bookList": "$.data.items",
-      "bookUrl": "$.mid##^##https://m.hipmh.com/works/",
-      "coverUrl": "$.vertical_image_url##^##https://cover.s3imgs.top",
-      "kind": "$.genres[0]",
-      "name": "$.title"
-    },
-    "ruleSearch": {
-      "author": "$.authors[0].name",
-      "bookList": "$.data.data",
-      "bookUrl": "$.id##^##https://m.hipmh.com/works/",
-      "coverUrl": "$.vertical_image_url##^##https://cover.s3imgs.top",
-      "intro": "$.description",
-      "kind": "$.genres[0].name",
-      "name": "$.title"
-    },
-    "ruleToc": {
-      "chapterList": "$.data.items",
-      "chapterName": "$.title",
-      "chapterUrl": "$.hid##^##https://reader.hipmh.top/chapter/",
-      "nextTocUrl": "<js>(function(){var d=JSON.parse(result).data;var cur=d.page||1;var total=d.total_pages||1;var i=baseUrl.indexOf('mid=');var mid='';if(i>=0){mid=baseUrl.substring(i+4).split('&')[0];}if(cur<total&&mid){return 'https://hipapi1.s3file.top/v1/manga/chapters?mid='+mid+'&page='+(cur+1)+'&per_page=50&order=asc';}return '';})()</js>"
-    },
-    "searchUrl": "https://hipapi1.s3file.top/v1/search?q={{key}}&page={{page}}&page_size=20",
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "直连修复版(2026-09-16): 去掉 Cloudflare Worker 反代(mink.de5.net 被后端 s3file.top 的CF对数据中心IP弹质询而失效), 改为直接访问 hipapi1.s3file.top / cover.s3imgs.top / reader.hipmh.top。后端对真实客户端直连200、CORS开放(access-control-allow-origin:*) 、无防盗链。",
+  "bookSourceGroup": "🎨 漫画",
+  "bookSourceName": "嬉皮漫画（优+）",
+  "bookSourceType": 2,
+  "bookSourceUrl": "https://m.hipmh.com/",
+  "customButton": false,
+  "customOrder": 31,
+  "enabled": true,
+  "enabledCookieJar": false,
+  "enabledExplore": true,
+  "eventListener": false,
+  "exploreUrl": "人气榜::https://hipapi1.s3file.top/v1/mangas?sort=popular&page={{page}}&per_page=100&&最新::https://hipapi1.s3file.top/v1/mangas?sort=latest&page={{page}}&per_page=100&&国漫::https://hipapi1.s3file.top/v1/mangas?category=2&sort=updated&page={{page}}&per_page=100&&韩漫::https://hipapi1.s3file.top/v1/mangas?category=1&sort=updated&page={{page}}&per_page=100&&武侠::https://hipapi1.s3file.top/v1/mangas?genre=39&sort=updated&page={{page}}&per_page=100&&系统::https://hipapi1.s3file.top/v1/mangas?genre=67&sort=updated&page={{page}}&per_page=100&&冒险::https://hipapi1.s3file.top/v1/mangas?genre=38&sort=updated&page={{page}}&per_page=100&&异能::https://hipapi1.s3file.top/v1/mangas?genre=51&sort=updated&page={{page}}&per_page=100&&剧情::https://hipapi1.s3file.top/v1/mangas?genre=3&sort=updated&page={{page}}&per_page=100&&宫斗::https://hipapi1.s3file.top/v1/mangas?genre=44&sort=updated&page={{page}}&per_page=100&&逆袭::https://hipapi1.s3file.top/v1/mangas?genre=32&sort=updated&page={{page}}&per_page=100",
+  "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 15; V2304A Build/AP3A.240905.015.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/126.0.6478.71 Mobile Safari/537.36\", \"Accept\": \"application/json, text/plain, */*\", \"Accept-Language\": \"zh-CN,zh;q=0.9\"}",
+  "lastUpdateTime": 1789490536763,
+  "respondTime": 30354,
+  "ruleBookInfo": {
+   "author": "<js>(function(){var i=result.indexOf('href=\"/author/');if(i<0)return '';var s=result.indexOf('title=\"',i);if(s<0)return '';var e=result.indexOf('\"',s+7);return result.substring(s+7,e);})()</js>",
+   "coverUrl": "<js>(function(){var i=result.indexOf('data-cover=\"');if(i<0)return '';var s=i+12;var e=result.indexOf('\"',s);return ''+result.substring(s,e);})()</js>",
+   "name": "tag.h1@text",
+   "tocUrl": "<js>(function(){var i=result.indexOf('data-mid=\"');if(i<0)return '';var s=i+10;var e=result.indexOf('\"',s);var mid=result.substring(s,e);return 'https://hipapi1.s3file.top/v1/manga/chapters?mid='+mid+'&page=1&per_page=50&order=asc';})()</js>"
+  },
+  "ruleContent": {
+   "content": "@webjs:(function(){\n  var P = \"\";\n  var ALPHA = \"-0123456789ABCDEFGHIJKLMNOPQRSTUWX_abcdefghijklmnopqrstuvwxyz\";\n  var MAPP  = \"BLKJIHGFEDCmnopqrstuvwxyz012345689AMNOPQRSTUVWXYZabcdefghijkl\";\n  var MAP = {};\n  for (var i = 0; i < ALPHA.length; i++) MAP[ALPHA.charAt(i)] = MAPP.charAt(i);\n  function decodeImages(images) {\n    var core = images.substring(3, images.length - 2);\n    var kVx = core.indexOf(\"Vx\"), kP = core.indexOf(\"pL0\");\n    if (kVx < 0 || kP < 0) throw new Error(\"markers not found\");\n    var head = core.substring(0, kVx);\n    var mid  = core.substring(kVx + 2, kP);\n    var tail = core.substring(kP + 3);\n    var combined = tail + head + mid;\n    var s = \"\", gi = 0;\n    for (var i = 0; i < combined.length; i += 7) {\n      var ch = combined.substring(i, i + 7);\n      s += (gi % 2 === 1) ? ch.split(\"\").reverse().join(\"\") : ch;\n      gi++;\n    }\n    var s1 = \"\";\n    for (var j = 0; j < s.length; j++) {\n      var c = s.charAt(j);\n      s1 += (MAP[c] !== undefined) ? MAP[c] : c;\n    }\n    var pad = (4 - (s1.length % 4)) % 4;\n    var b64 = s1 + (pad ? \"====\".substring(0, pad) : \"\");\n    return JSON.parse(atob(b64));\n  }\n  function shuffle(t, l, u) {\n    if (!t || !t.length) return t;\n    var d = t.length;\n    var ml = (l === null || l === undefined) ? null : Number(l);\n    var gu = (u === null || u === undefined) ? null : Number(u);\n    if (ml === null || gu === null || !(ml >= 0 && ml <= 4294967295) || !(gu >= 0 && gu <= 4294967295)) return t;\n    var D = (40503 << 16) | 31153, R = (34283 << 16) | 51819;\n    function mul32(a, b){var ah=Math.floor(a/65536),al=a%65536,bh=Math.floor(b/65536),bl=b%65536;var p00=al*bl,p01=al*bh,p10=ah*bl,p11=ah*bh;var mid=p01+p10+Math.floor(p00/65536);var lo=(p00&0xFFFF)|((mid%65536)<<16);var hi=p11+Math.floor(mid/65536);return {hi:hi>>>0,lo:lo>>>0};}\n    function xor64(x,y){return {hi:(x.hi^y.hi)>>>0,lo:(x.lo^y.lo)>>>0};}\n    function mod64(x,m){var b16=[x.hi>>>16,x.hi&0xFFFF,x.lo>>>16,x.lo&0xFFFF];var rem=0;for(var i=0;i<4;i++)rem=((rem*65536)%m+b16[i])%m;return rem;}\n    var L = mul32(gu, D), V = mul32(d, R);\n    var b = mod64(xor64(L, V), d);\n    var h = (ml ^ b) >>> 0;\n    if (h >= d) return t;\n    var arr = t.slice();\n    arr.splice(h, 1);\n    return arr;\n  }\n  if (window.__hipReady && window.__hipUrls) {\n    var html = \"\";\n    for (var x = 0; x < window.__hipUrls.length; x++) html += \"<img src=\\\"\" + window.__hipBase + window.__hipUrls[x] + \"\\\">\";\n    return html;\n  }\n  var el = document.querySelector(\"[data-api-hid]\");\n  if (!el) { window.__hipReady = true; window.asyncR = \"1\"; return \"<p>未找到 data-api-hid</p>\"; }\n  var apiHid = el.getAttribute(\"data-api-hid\");\n  var xhr = new XMLHttpRequest();\n  xhr.open(\"GET\", P + \"https://hipapi1.s3file.top/v2/chapter?hid=\" + encodeURIComponent(apiHid), true);\n  xhr.onload = function() {\n    try {\n      var data = JSON.parse(xhr.responseText).data;\n      var images = data.images;\n      var urls = typeof images === \"string\" ? decodeImages(images) : (images instanceof Array ? images : []);\n      urls = urls.filter(function(x){ return typeof x === \"string\"; });\n      urls = shuffle(urls, data.order_id, data.sid);\n      var base = \"https://hip-tx-1.s3imgs.top\";\n      if (data.line == 9) {\n        var l1s = document.querySelector(\"[data-chapter-img-base-line1s]\");\n        var l2s = document.querySelector(\"[data-chapter-img-base-line2s]\");\n        if (l1s) base = l1s.getAttribute(\"data-chapter-img-base-line1s\");\n        else if (l2s) base = l2s.getAttribute(\"data-chapter-img-base-line2s\");\n      } else {\n        var b2 = document.querySelector(\"[data-chapter-img-base]\");\n        if (b2) base = b2.getAttribute(\"data-chapter-img-base\");\n      }\n      window.__hipUrls = urls;\n      window.__hipBase = P + base;\n    } catch(e) { window.__hipErr = String(e); }\n    window.__hipReady = true;\n    window.asyncR = \"1\";\n  };\n  xhr.onerror = function() { window.__hipErr = \"xhr_error\"; window.__hipReady = true; window.asyncR = \"1\"; };\n  xhr.send();\n  return null;\n})()",
+   "imageStyle": "FULL"
+  },
+  "ruleExplore": {
+   "author": "$.author_names[0]",
+   "bookList": "$.data.items",
+   "bookUrl": "$.mid##^##https://m.hipmh.com/works/",
+   "coverUrl": "$.vertical_image_url##^##https://cover.s3imgs.top",
+   "kind": "$.genres[0]",
+   "name": "$.title"
+  },
+  "ruleSearch": {
+   "author": "$.authors[0].name",
+   "bookList": "$.data.data",
+   "bookUrl": "$.id##^##https://m.hipmh.com/works/",
+   "coverUrl": "$.vertical_image_url##^##https://cover.s3imgs.top",
+   "intro": "$.description",
+   "kind": "$.genres[0].name",
+   "name": "$.title"
+  },
+  "ruleToc": {
+   "chapterList": "$.data.items",
+   "chapterName": "$.title",
+   "chapterUrl": "$.hid##^##https://reader.hipmh.top/chapter/",
+   "nextTocUrl": "<js>(function(){var d=JSON.parse(result).data;var cur=d.page||1;var total=d.total_pages||1;var i=baseUrl.indexOf('mid=');var mid='';if(i>=0){mid=baseUrl.substring(i+4).split('&')[0];}if(cur<total&&mid){return 'https://hipapi1.s3file.top/v1/manga/chapters?mid='+mid+'&page='+(cur+1)+'&per_page=50&order=asc';}return '';})()</js>"
+  },
+  "searchUrl": "https://hipapi1.s3file.top/v1/search?q={{key}}&page={{page}}&page_size=20",
+  "weight": 0
+ }
 ]

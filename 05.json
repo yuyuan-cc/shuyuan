@@ -1,52 +1,52 @@
 [
-  {
-    "bookSourceComment": "热辣漫画(重制版) 拷贝/copymanga API | 多镜像自动选优 | 无需登录 | 发现页:榜单/热门/题材| 纯接口无广告",
-    "bookSourceGroup": "🎨 漫画",
-    "bookSourceName": "热辣漫画",
-    "bookSourceType": 2,
-    "bookSourceUrl": "https://mapi.fgjfghkk.club",
-    "bookUrlPattern": "https://[^/]+/api/v3/comic2/.*",
-    "customButton": false,
-    "customOrder": 40,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "@js:(function(){var _HS=['https://mapi.fgjfghkk.club','https://www.manga2024.com','https://api.2024manga.com','https://mapi.hotmangasg.com','https://mapi.hotmangasf.com','https://mapi.hotmangasd.com'];function _ok(h){try{var r=java.ajax(h+'/api/v3/comics?ordering=-popular&limit=1&offset=0&platform=3&free_type=1&_update=true');return r&&String(r).indexOf('code')>-1;}catch(e){return false;}}function _pick(){var c=cache.get('_rlh'),t=cache.get('_rlht');if(c&&t&&(Date.now()-t<900000)){return String(c);}for(var i=0;i<_HS.length;i++){if(_ok(_HS[i])){cache.put('_rlh',_HS[i]);cache.put('_rlht',Date.now());return _HS[i];}}return c?String(c):_HS[0];}var h=_pick();var base=h+'/api/v3';var LB='{'+'{',RB='}'+'}';var out=[];function it(t,u){return {title:t,url:u};}function grp(title,items){out.push({title:title,url:'',style:{layout_flexGrow:1,layout_flexBasisPercent:1}});var n=items.length;var cands=[4,3,2,5,6];var cols=4;for(var j=0;j<cands.length;j++){if(n%cands[j]===0){cols=cands[j];break;}}var bp=1/cols;for(var k=0;k<items.length;k++){out.push({title:items[k].title,url:items[k].url,style:{layout_flexGrow:1,layout_flexBasisPercent:bp}});}}grp('❖ 榜 单',[it('总榜',base+'/ranks?date_type=total&_update=true&limit=24&offset='+LB+'24*(page-1)'+RB),it('月榜',base+'/ranks?date_type=month&_update=true&limit=24&offset='+LB+'24*(page-1)'+RB),it('周榜',base+'/ranks?date_type=week&_update=true&limit=24&offset='+LB+'24*(page-1)'+RB),it('日榜',base+'/ranks?date_type=day&_update=true&limit=24&offset='+LB+'24*(page-1)'+RB)]);grp('❖ 热 门',[it('人气',base+'/comics?ordering=-popular&limit=30&offset='+LB+'30*(page-1)'+RB+'&platform=3&free_type=1&_update=true'),it('最新',base+'/comics?ordering=-datetime_updated&limit=30&offset='+LB+'30*(page-1)'+RB+'&platform=3&free_type=1&_update=true')]);var themes=[];try{var th=JSON.parse(java.ajax(base+'/theme/comic/count?free_type=1&limit=500&offset=0&_update=true')).results.list;th.sort(function(a,b){return (b.count||0)-(a.count||0);});for(var i=0;i<th.length;i++){var t=th[i];var nm=String(t.name);if(nm.charAt(0)==='C'&&nm.length>1&&!isNaN(Number(nm.charAt(1)))){continue;}if(nm.indexOf('百合')>-1||nm.indexOf('真')>-1||nm.indexOf('音乐')>-1||nm.indexOf('舞蹈')>-1||nm.indexOf('性转换')>-1||nm.indexOf('伪娘')>-1||nm.indexOf('修正')>-1){continue;}themes.push(it(nm,base+'/comics?theme='+t.path_word+'&ordering=-popular&limit=30&offset='+LB+'30*(page-1)'+RB+'&platform=3&free_type=1&_update=true'));}}catch(e){}grp('❖ 题 材',themes);return JSON.stringify(out);})()",
-    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36 EdgA/127.0.0.0\", \"version\": \"2024.04.28\", \"platform\": \"3\", \"webp\": \"1\"}",
-    "lastUpdateTime": 1789288951307,
-    "respondTime": 10264,
-    "ruleBookInfo": {
-      "author": "@js:JSON.parse(result).results.comic.author.map(function(a){return a.name}).join('/')",
-      "coverUrl": "@js:JSON.parse(result).results.comic.cover",
-      "intro": "@js:JSON.parse(result).results.comic.brief",
-      "kind": "@js:(function(){var c=JSON.parse(result).results.comic;var t=c.theme.map(function(a){return a.name}).join(',');var st=(c.status&&c.status.display)?c.status.display:'';var rg=(c.region&&c.region.display)?c.region.display:'';return [st,rg,t].filter(function(s){return s}).join(',')})()",
-      "lastChapter": "@js:JSON.parse(result).results.comic.last_chapter.name",
-      "name": "@js:JSON.parse(result).results.comic.name"
-    },
-    "ruleContent": {
-      "content": "@js:(function(){try{var ch=JSON.parse(result).results.chapter;var cs=ch.contents||[];var out='';for(var i=0;i<cs.length;i++){out+='<img src=\"'+cs[i].url+'\">';}return out;}catch(e){return '';}})()"
-    },
-    "ruleExplore": {
-      "author": "@js:String(JSON.parse(result).author||'')",
-      "bookList": "@js:(function(){var _HS=['https://mapi.fgjfghkk.club','https://www.manga2024.com','https://api.2024manga.com','https://mapi.hotmangasg.com','https://mapi.hotmangasf.com','https://mapi.hotmangasd.com'];function _ok(h){try{var r=java.ajax(h+'/api/v3/comics?ordering=-popular&limit=1&offset=0&platform=3&free_type=1&_update=true');return r&&String(r).indexOf('code')>-1;}catch(e){return false;}}function _pick(){var c=cache.get('_rlh'),t=cache.get('_rlht');if(c&&t&&(Date.now()-t<900000)){return String(c);}for(var i=0;i<_HS.length;i++){if(_ok(_HS[i])){cache.put('_rlh',_HS[i]);cache.put('_rlht',Date.now());return _HS[i];}}return c?String(c):_HS[0];}var h=_pick();var L=JSON.parse(result).results.list;var out=[];for(var i=0;i<L.length;i++){var x=L[i];var c=x.comic?x.comic:x;var au='';try{if(c.author&&c.author.length){au=String(c.author[0].name||'');}}catch(e){}out.push(JSON.stringify({name:String(c.name||''),cover:String(c.cover||''),author:au,url:h+'/api/v3/comic2/'+String(c.path_word)+'?platform=3&_update=true'}));}return out;})()",
-      "bookUrl": "@js:JSON.parse(result).url",
-      "coverUrl": "@js:JSON.parse(result).cover",
-      "name": "@js:JSON.parse(result).name"
-    },
-    "ruleSearch": {
-      "author": "@js:String(JSON.parse(result).author||'')",
-      "bookList": "@js:(function(){var _HS=['https://mapi.fgjfghkk.club','https://www.manga2024.com','https://api.2024manga.com','https://mapi.hotmangasg.com','https://mapi.hotmangasf.com','https://mapi.hotmangasd.com'];function _ok(h){try{var r=java.ajax(h+'/api/v3/comics?ordering=-popular&limit=1&offset=0&platform=3&free_type=1&_update=true');return r&&String(r).indexOf('code')>-1;}catch(e){return false;}}function _pick(){var c=cache.get('_rlh'),t=cache.get('_rlht');if(c&&t&&(Date.now()-t<900000)){return String(c);}for(var i=0;i<_HS.length;i++){if(_ok(_HS[i])){cache.put('_rlh',_HS[i]);cache.put('_rlht',Date.now());return _HS[i];}}return c?String(c):_HS[0];}var h=_pick();var L=JSON.parse(result).results.list;var out=[];for(var i=0;i<L.length;i++){var x=L[i];var c=x.comic?x.comic:x;var au='';try{if(c.author&&c.author.length){au=String(c.author[0].name||'');}}catch(e){}out.push(JSON.stringify({name:String(c.name||''),cover:String(c.cover||''),author:au,url:h+'/api/v3/comic2/'+String(c.path_word)+'?platform=3&_update=true'}));}return out;})()",
-      "bookUrl": "@js:JSON.parse(result).url",
-      "coverUrl": "@js:JSON.parse(result).cover",
-      "name": "@js:JSON.parse(result).name"
-    },
-    "ruleToc": {
-      "chapterList": "@js:(function(){try{var r=JSON.parse(result).results;var c=r.comic;var ks=Object.keys(r.groups);var _HS=['https://mapi.fgjfghkk.club','https://www.manga2024.com','https://api.2024manga.com','https://mapi.hotmangasg.com','https://mapi.hotmangasf.com','https://mapi.hotmangasd.com'];function _ok(h){try{var r=java.ajax(h+'/api/v3/comics?ordering=-popular&limit=1&offset=0&platform=3&free_type=1&_update=true');return r&&String(r).indexOf('code')>-1;}catch(e){return false;}}function _pick(){var c=cache.get('_rlh'),t=cache.get('_rlht');if(c&&t&&(Date.now()-t<900000)){return String(c);}for(var i=0;i<_HS.length;i++){if(_ok(_HS[i])){cache.put('_rlh',_HS[i]);cache.put('_rlht',Date.now());return _HS[i];}}return c?String(c):_HS[0];}var h=_pick();var api=h+'/api/v3';var all=[];for(var gi=0;gi<ks.length;gi++){var u=api+'/comic/'+c.path_word+'/group/'+ks[gi]+'/chapters?limit=500&offset=0';var j=JSON.parse(java.ajax(u));var lst=(j&&j.results&&j.results.list)?j.results.list:[];for(var i=0;i<lst.length;i++){all.push(lst[i]);}}if(!all.length){return [];}var arr=[];for(var i=0;i<all.length;i++){var ch=all[i];arr.push(JSON.stringify({chapterName:String(ch.name)+' ('+ch.size+'p)',chapterUrl:api+'/comic/'+ch.comic_path_word+'/chapter/'+ch.uuid+'?platform=3&_update=true'}));}return arr;}catch(e){return [];}})()",
-      "chapterName": "@js:JSON.parse(result).chapterName",
-      "chapterUrl": "@js:JSON.parse(result).chapterUrl"
-    },
-    "searchUrl": "@js:(function(){var _HS=['https://mapi.fgjfghkk.club','https://www.manga2024.com','https://api.2024manga.com','https://mapi.hotmangasg.com','https://mapi.hotmangasf.com','https://mapi.hotmangasd.com'];function _ok(h){try{var r=java.ajax(h+'/api/v3/comics?ordering=-popular&limit=1&offset=0&platform=3&free_type=1&_update=true');return r&&String(r).indexOf('code')>-1;}catch(e){return false;}}function _pick(){var c=cache.get('_rlh'),t=cache.get('_rlht');if(c&&t&&(Date.now()-t<900000)){return String(c);}for(var i=0;i<_HS.length;i++){if(_ok(_HS[i])){cache.put('_rlh',_HS[i]);cache.put('_rlht',Date.now());return _HS[i];}}return c?String(c):_HS[0];}var h=_pick();var LB='{'+'{',RB='}'+'}';return h+'/api/v3/search/comic?q='+LB+'key'+RB+'&limit=20&offset='+LB+'20*(page-1)'+RB+'&platform=3&free_type=1&_update=true';})()",
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "热辣漫画(重制版) 拷贝/copymanga API | 多镜像自动选优 | 无需登录 | 发现页:榜单/热门/题材| 纯接口无广告",
+  "bookSourceGroup": "🎨 漫画",
+  "bookSourceName": "热辣漫画",
+  "bookSourceType": 2,
+  "bookSourceUrl": "https://mapi.fgjfghkk.club",
+  "bookUrlPattern": "https://[^/]+/api/v3/comic2/.*",
+  "customButton": false,
+  "customOrder": 40,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "eventListener": false,
+  "exploreUrl": "@js:(function(){var _HS=['https://mapi.fgjfghkk.club','https://www.manga2024.com','https://api.2024manga.com','https://mapi.hotmangasg.com','https://mapi.hotmangasf.com','https://mapi.hotmangasd.com'];function _ok(h){try{var r=java.ajax(h+'/api/v3/comics?ordering=-popular&limit=1&offset=0&platform=3&free_type=1&_update=true');return r&&String(r).indexOf('code')>-1;}catch(e){return false;}}function _pick(){var c=cache.get('_rlh'),t=cache.get('_rlht');if(c&&t&&(Date.now()-t<900000)){return String(c);}for(var i=0;i<_HS.length;i++){if(_ok(_HS[i])){cache.put('_rlh',_HS[i]);cache.put('_rlht',Date.now());return _HS[i];}}return c?String(c):_HS[0];}var h=_pick();var base=h+'/api/v3';var LB='{'+'{',RB='}'+'}';var out=[];function it(t,u){return {title:t,url:u};}function grp(title,items){out.push({title:title,url:'',style:{layout_flexGrow:1,layout_flexBasisPercent:1}});var n=items.length;var cands=[4,3,2,5,6];var cols=4;for(var j=0;j<cands.length;j++){if(n%cands[j]===0){cols=cands[j];break;}}var bp=1/cols;for(var k=0;k<items.length;k++){out.push({title:items[k].title,url:items[k].url,style:{layout_flexGrow:1,layout_flexBasisPercent:bp}});}}grp('❖ 榜 单',[it('总榜',base+'/ranks?date_type=total&_update=true&limit=24&offset='+LB+'24*(page-1)'+RB),it('月榜',base+'/ranks?date_type=month&_update=true&limit=24&offset='+LB+'24*(page-1)'+RB),it('周榜',base+'/ranks?date_type=week&_update=true&limit=24&offset='+LB+'24*(page-1)'+RB),it('日榜',base+'/ranks?date_type=day&_update=true&limit=24&offset='+LB+'24*(page-1)'+RB)]);grp('❖ 热 门',[it('人气',base+'/comics?ordering=-popular&limit=30&offset='+LB+'30*(page-1)'+RB+'&platform=3&free_type=1&_update=true'),it('最新',base+'/comics?ordering=-datetime_updated&limit=30&offset='+LB+'30*(page-1)'+RB+'&platform=3&free_type=1&_update=true')]);var themes=[];try{var th=JSON.parse(java.ajax(base+'/theme/comic/count?free_type=1&limit=500&offset=0&_update=true')).results.list;th.sort(function(a,b){return (b.count||0)-(a.count||0);});for(var i=0;i<th.length;i++){var t=th[i];var nm=String(t.name);if(nm.charAt(0)==='C'&&nm.length>1&&!isNaN(Number(nm.charAt(1)))){continue;}if(nm.indexOf('百合')>-1||nm.indexOf('真')>-1||nm.indexOf('音乐')>-1||nm.indexOf('舞蹈')>-1||nm.indexOf('性转换')>-1||nm.indexOf('伪娘')>-1||nm.indexOf('修正')>-1){continue;}themes.push(it(nm,base+'/comics?theme='+t.path_word+'&ordering=-popular&limit=30&offset='+LB+'30*(page-1)'+RB+'&platform=3&free_type=1&_update=true'));}}catch(e){}grp('❖ 题 材',themes);return JSON.stringify(out);})()",
+  "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36 EdgA/127.0.0.0\", \"version\": \"2024.04.28\", \"platform\": \"3\", \"webp\": \"1\"}",
+  "lastUpdateTime": 1789288951307,
+  "respondTime": 10264,
+  "ruleBookInfo": {
+   "author": "@js:JSON.parse(result).results.comic.author.map(function(a){return a.name}).join('/')",
+   "coverUrl": "@js:JSON.parse(result).results.comic.cover",
+   "intro": "@js:JSON.parse(result).results.comic.brief",
+   "kind": "@js:(function(){var c=JSON.parse(result).results.comic;var t=c.theme.map(function(a){return a.name}).join(',');var st=(c.status&&c.status.display)?c.status.display:'';var rg=(c.region&&c.region.display)?c.region.display:'';return [st,rg,t].filter(function(s){return s}).join(',')})()",
+   "lastChapter": "@js:JSON.parse(result).results.comic.last_chapter.name",
+   "name": "@js:JSON.parse(result).results.comic.name"
+  },
+  "ruleContent": {
+   "content": "@js:(function(){try{var ch=JSON.parse(result).results.chapter;var cs=ch.contents||[];var out='';for(var i=0;i<cs.length;i++){out+='<img src=\"'+cs[i].url+'\">';}return out;}catch(e){return '';}})()"
+  },
+  "ruleExplore": {
+   "author": "@js:String(JSON.parse(result).author||'')",
+   "bookList": "@js:(function(){var _HS=['https://mapi.fgjfghkk.club','https://www.manga2024.com','https://api.2024manga.com','https://mapi.hotmangasg.com','https://mapi.hotmangasf.com','https://mapi.hotmangasd.com'];function _ok(h){try{var r=java.ajax(h+'/api/v3/comics?ordering=-popular&limit=1&offset=0&platform=3&free_type=1&_update=true');return r&&String(r).indexOf('code')>-1;}catch(e){return false;}}function _pick(){var c=cache.get('_rlh'),t=cache.get('_rlht');if(c&&t&&(Date.now()-t<900000)){return String(c);}for(var i=0;i<_HS.length;i++){if(_ok(_HS[i])){cache.put('_rlh',_HS[i]);cache.put('_rlht',Date.now());return _HS[i];}}return c?String(c):_HS[0];}var h=_pick();var L=JSON.parse(result).results.list;var out=[];for(var i=0;i<L.length;i++){var x=L[i];var c=x.comic?x.comic:x;var au='';try{if(c.author&&c.author.length){au=String(c.author[0].name||'');}}catch(e){}out.push(JSON.stringify({name:String(c.name||''),cover:String(c.cover||''),author:au,url:h+'/api/v3/comic2/'+String(c.path_word)+'?platform=3&_update=true'}));}return out;})()",
+   "bookUrl": "@js:JSON.parse(result).url",
+   "coverUrl": "@js:JSON.parse(result).cover",
+   "name": "@js:JSON.parse(result).name"
+  },
+  "ruleSearch": {
+   "author": "@js:String(JSON.parse(result).author||'')",
+   "bookList": "@js:(function(){var _HS=['https://mapi.fgjfghkk.club','https://www.manga2024.com','https://api.2024manga.com','https://mapi.hotmangasg.com','https://mapi.hotmangasf.com','https://mapi.hotmangasd.com'];function _ok(h){try{var r=java.ajax(h+'/api/v3/comics?ordering=-popular&limit=1&offset=0&platform=3&free_type=1&_update=true');return r&&String(r).indexOf('code')>-1;}catch(e){return false;}}function _pick(){var c=cache.get('_rlh'),t=cache.get('_rlht');if(c&&t&&(Date.now()-t<900000)){return String(c);}for(var i=0;i<_HS.length;i++){if(_ok(_HS[i])){cache.put('_rlh',_HS[i]);cache.put('_rlht',Date.now());return _HS[i];}}return c?String(c):_HS[0];}var h=_pick();var L=JSON.parse(result).results.list;var out=[];for(var i=0;i<L.length;i++){var x=L[i];var c=x.comic?x.comic:x;var au='';try{if(c.author&&c.author.length){au=String(c.author[0].name||'');}}catch(e){}out.push(JSON.stringify({name:String(c.name||''),cover:String(c.cover||''),author:au,url:h+'/api/v3/comic2/'+String(c.path_word)+'?platform=3&_update=true'}));}return out;})()",
+   "bookUrl": "@js:JSON.parse(result).url",
+   "coverUrl": "@js:JSON.parse(result).cover",
+   "name": "@js:JSON.parse(result).name"
+  },
+  "ruleToc": {
+   "chapterList": "@js:(function(){try{var r=JSON.parse(result).results;var c=r.comic;var ks=Object.keys(r.groups);var _HS=['https://mapi.fgjfghkk.club','https://www.manga2024.com','https://api.2024manga.com','https://mapi.hotmangasg.com','https://mapi.hotmangasf.com','https://mapi.hotmangasd.com'];function _ok(h){try{var r=java.ajax(h+'/api/v3/comics?ordering=-popular&limit=1&offset=0&platform=3&free_type=1&_update=true');return r&&String(r).indexOf('code')>-1;}catch(e){return false;}}function _pick(){var c=cache.get('_rlh'),t=cache.get('_rlht');if(c&&t&&(Date.now()-t<900000)){return String(c);}for(var i=0;i<_HS.length;i++){if(_ok(_HS[i])){cache.put('_rlh',_HS[i]);cache.put('_rlht',Date.now());return _HS[i];}}return c?String(c):_HS[0];}var h=_pick();var api=h+'/api/v3';var all=[];for(var gi=0;gi<ks.length;gi++){var u=api+'/comic/'+c.path_word+'/group/'+ks[gi]+'/chapters?limit=500&offset=0';var j=JSON.parse(java.ajax(u));var lst=(j&&j.results&&j.results.list)?j.results.list:[];for(var i=0;i<lst.length;i++){all.push(lst[i]);}}if(!all.length){return [];}var arr=[];for(var i=0;i<all.length;i++){var ch=all[i];arr.push(JSON.stringify({chapterName:String(ch.name)+' ('+ch.size+'p)',chapterUrl:api+'/comic/'+ch.comic_path_word+'/chapter/'+ch.uuid+'?platform=3&_update=true'}));}return arr;}catch(e){return [];}})()",
+   "chapterName": "@js:JSON.parse(result).chapterName",
+   "chapterUrl": "@js:JSON.parse(result).chapterUrl"
+  },
+  "searchUrl": "@js:(function(){var _HS=['https://mapi.fgjfghkk.club','https://www.manga2024.com','https://api.2024manga.com','https://mapi.hotmangasg.com','https://mapi.hotmangasf.com','https://mapi.hotmangasd.com'];function _ok(h){try{var r=java.ajax(h+'/api/v3/comics?ordering=-popular&limit=1&offset=0&platform=3&free_type=1&_update=true');return r&&String(r).indexOf('code')>-1;}catch(e){return false;}}function _pick(){var c=cache.get('_rlh'),t=cache.get('_rlht');if(c&&t&&(Date.now()-t<900000)){return String(c);}for(var i=0;i<_HS.length;i++){if(_ok(_HS[i])){cache.put('_rlh',_HS[i]);cache.put('_rlht',Date.now());return _HS[i];}}return c?String(c):_HS[0];}var h=_pick();var LB='{'+'{',RB='}'+'}';return h+'/api/v3/search/comic?q='+LB+'key'+RB+'&limit=20&offset='+LB+'20*(page-1)'+RB+'&platform=3&free_type=1&_update=true';})()",
+  "weight": 0
+ }
 ]

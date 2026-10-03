@@ -1,51 +1,54 @@
 [
-  {
-    "bookSourceComment": "动漫啦（dongman.la）｜日漫/国漫/港台/欧美，正常向作品，无广告。正文走 all.html（一话全部图片单页加载）。",
-    "bookSourceGroup": "🎨 漫画",
-    "bookSourceName": "动漫啦",
-    "bookSourceType": 2,
-    "bookSourceUrl": "https://www.dongman.la",
-    "customButton": false,
-    "customOrder": 14,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "[{\"title\": \"日本漫画\", \"url\": \"https://www.dongman.la/manhua/japan/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"国产漫画\", \"url\": \"https://www.dongman.la/manhua/guochan/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"韩国漫画\", \"url\": \"https://www.dongman.la/manhua/hanguo/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"港台漫画\", \"url\": \"https://www.dongman.la/manhua/hongkongtaiwan/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"欧美漫画\", \"url\": \"https://www.dongman.la/manhua/oumei/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"连载中\", \"url\": \"https://www.dongman.la/manhua/serial/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"已完结\", \"url\": \"https://www.dongman.la/manhua/finish/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"少年热血\", \"url\": \"https://www.dongman.la/manhua/node/2/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"少女爱情\", \"url\": \"https://www.dongman.la/manhua/node/3/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"耽美百合\", \"url\": \"https://www.dongman.la/manhua/node/10/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"恐怖灵异\", \"url\": \"https://www.dongman.la/manhua/node/1/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"武侠格斗\", \"url\": \"https://www.dongman.la/manhua/node/4/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"竞技体育\", \"url\": \"https://www.dongman.la/manhua/node/5/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"侦探悬疑\", \"url\": \"https://www.dongman.la/manhua/node/6/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"幽默搞笑\", \"url\": \"https://www.dongman.la/manhua/node/7/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"科幻魔法\", \"url\": \"https://www.dongman.la/manhua/node/8/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}, {\"title\": \"其他漫画\", \"url\": \"https://www.dongman.la/manhua/node/9/{{page}}.html\", \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 0.3}]",
-    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 13; SM-S918B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\", \"Referer\": \"https://www.dongman.la/\"}",
-    "lastUpdateTime": 1790594306065,
-    "respondTime": 13815,
-    "ruleBookInfo": {
-      "author": "a[href=\"#\"] span[itemprop=\"name\"]@text",
-      "coverUrl": "meta[property=\"og:image\"]@content",
-      "intro": "meta[property=\"og:description\"]@content",
-      "name": "h1@text"
-    },
-    "ruleContent": {
-      "content": "@webjs:(function(){var im=document.querySelectorAll('img.lazy-image');var out=[];for(var i=0;i<im.length;i++){var s=im[i].getAttribute('data-src')||im[i].getAttribute('src');if(s&&s.indexOf('img.dongman.la')>-1){if(s.indexOf('//')===0)s='https:'+s;out.push('<img src=\"'+s+'\">');}}return out.join('\\n');})()"
-    },
-    "ruleExplore": {
-      "bookList": ".cy_list_mh > ul",
-      "bookUrl": "li.title a@href",
-      "coverUrl": "a.pic img@src",
-      "intro": "li.info@text##^简介：##",
-      "kind": "li.biaoqian@text##^标签：##",
-      "name": "li.title a@text"
-    },
-    "ruleSearch": {
-      "bookList": ".cy_list_mh > ul",
-      "bookUrl": "li.title a@href",
-      "coverUrl": "a.pic img@src",
-      "intro": "li.info@text##^简介：##",
-      "kind": "li.biaoqian@text##^标签：##",
-      "name": "li.title a@text"
-    },
-    "ruleToc": {
-      "chapterList": "@webjs:(function(){var a=[].slice.call(document.querySelectorAll('div.grid > a[href^=\"/manhua/chapter/\"]'));a.reverse();var seen={},r=[];for(var i=0;i<a.length;i++){var u=a[i].getAttribute('href');if(u&&!seen[u]){seen[u]=1;r.push({name:a[i].textContent.trim(),url:'https://www.dongman.la'+u+'all.html'});}}return JSON.stringify(r);})()",
-      "chapterName": "name",
-      "chapterUrl": "url"
-    },
-    "searchUrl": "https://www.dongman.la/manhua/search/?key={key}",
-    "weight": 0
-  }
+ {
+  "bookSourceComment": "",
+  "bookSourceGroup": "📖 小说",
+  "bookSourceName": "海棠书屋",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://wap.haitangshuwu.info",
+  "customButton": false,
+  "customOrder": 76,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": true,
+  "eventListener": false,
+  "exploreUrl": "@js:\nvar menus = [\n    { title: \"完本\", url: \"/full/{{page}}/\", flexBasis: 1 },\n    \n    { title: \"════ 排 行 ════\", url: \"\", flexBasis: 1 },\n    \n    { title: \"总点击\", url: \"/top/allvisit_{{page}}/\", flexBasis: 0.2 },\n    { title: \"月点击\", url: \"/top/monthvisit_{{page}}/\", flexBasis: 0.2 },\n    { title: \"周点击\", url: \"/top/weekvisit_{{page}}/\", flexBasis: 0.2 },\n    \n    { title: \"════ 分 类 ════\", url: \"\", flexBasis: 1 },\n    \n    { title: \"玄幻奇幻\", url: \"/sort/1_{{page}}/\", flexBasis: 0.25 },\n    { title: \"武侠仙侠\", url: \"/sort/2_{{page}}/\", flexBasis: 0.25 },\n    { title: \"都市言情\", url: \"/sort/3_{{page}}/\", flexBasis: 0.25 },\n    { title: \"历史穿越\", url: \"/sort/4_{{page}}/\", flexBasis: 0.25 },\n    \n    { title: \"网游竞技\", url: \"/sort/5_{{page}}/\", flexBasis: 0.25 },\n    { title: \"科幻灵异\", url: \"/sort/6_{{page}}/\", flexBasis: 0.25 },\n    { title: \"恐怖惊悚\", url: \"/sort/7_{{page}}/\", flexBasis: 0.25 },\n    { title: \"其他类型\", url: \"/sort/8_{{page}}/\", flexBasis: 0.25 }\n];\n\nvar result = [];\nfor (var i = 0; i < menus.length; i++) {\n    var item = menus[i];\n    var style = {\n        layout_flexGrow: 1,\n        layout_flexBasisPercent: item.flexBasis\n    };\n    \n    result.push({\n        title: item.title,\n        url: item.url,\n        style: style\n    });\n}\n\nJSON.stringify(result);",
+  "lastUpdateTime": 1785664944946,
+  "respondTime": 19017,
+  "ruleBookInfo": {
+   "author": "class.xx@ul@li.2@text",
+   "coverUrl": "class.xsfm@img@src",
+   "intro": "class.jianjie@text",
+   "kind": "class.xx@ul@li.1@a@text",
+   "lastChapter": "class.xx@ul@li.3@a@text",
+   "name": "class.xx@ul@li.0@text",
+   "tocUrl": "text.查看更多章节@href"
+  },
+  "ruleContent": {
+   "content": "article@html@js:java.t2s(result)"
+  },
+  "ruleExplore": {
+   "author": "span.1@a@text",
+   "bookList": "class.list@ul",
+   "bookUrl": "li.0@a@href",
+   "coverUrl": "li.0@a@img@src",
+   "intro": "span.2@text",
+   "kind": "span.3@text",
+   "name": "span.0@text"
+  },
+  "ruleSearch": {
+   "author": "@a.2@text",
+   "bookList": "class.fk@li",
+   "bookUrl": "@a.1@href",
+   "kind": "@a.0@text",
+   "name": "@a.1@text"
+  },
+  "ruleToc": {
+   "chapterList": "class.zjlb@class.lb@ul@li!-1",
+   "chapterName": "a@text",
+   "chapterUrl": "a@href",
+   "nextTocUrl": "class.showpage@ul@li.-3@a@href\n<js>\nlet list = [];\nconst maxPageUrl = String(result[0]);\nconst baseMatch = maxPageUrl.match(/(.*)_/);\nconst pageMatch = maxPageUrl.match(/_(\\d+)\\//);\n\nif (baseMatch && pageMatch) {\n    const basePath = baseMatch[1];\n    const maxPageNum = parseInt(pageMatch[1]);\n    \n    if (maxPageNum > 2) {\n        for (let pageIndex = 2; pageIndex <= maxPageNum; pageIndex++) {\n            list.push(`${basePath}_${pageIndex}/`);\n        }\n    }\n}\nlist;\n</js>"
+  },
+  "searchUrl": "https://wap.haitangshuwu.info/s.php,{\n  \"body\": \"submit=&type=articlename&s={{key}}\",\n  \"charset\": \"GBK\",\n  \"method\": \"POST\"\n}",
+  "weight": 0
+ }
 ]
